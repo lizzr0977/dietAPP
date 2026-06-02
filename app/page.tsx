@@ -1410,23 +1410,50 @@ export default function Home() {
   }
 
   async function analyzeProduct() {
-    if (!productPhotos.length) return;
-    setProductResult(lang === 'es' ? 'Analizando...' : 'Analyzing...');
+    if (!productPhotos.length) {
+      setProductResult(lang === 'es' ? 'Primero toma o sube una foto del producto.' : 'Take or upload a product photo first.');
+      return;
+    }
+
+    setProductResult(lang === 'es' ? 'Analizando producto con IA...' : 'Analyzing product with AI...');
+
     try {
       const res = await fetch('/api/ai/analyze-product', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ lang, profile: activeProfile, images: productPhotos }),
       });
-      const data = await res.json();
-      setProductResult(data.result || data.error || 'Sin respuesta');
-    } catch {
-      setProductResult('No se pudo analizar. Revisa OPENAI_API_KEY en Vercel.');
+
+      const data = await res.json().catch(() => null);
+
+      if (!data) {
+        setProductResult(lang === 'es' ? 'La IA no devolvió respuesta válida.' : 'AI did not return a valid response.');
+        return;
+      }
+
+      setProductResult(data.result || data.error || data.details || (lang === 'es' ? 'Sin respuesta.' : 'No response.'));
+    } catch (error: any) {
+      setProductResult(
+        (lang === 'es' ? 'No se pudo analizar el producto: ' : 'Could not analyze product: ') +
+          (error?.message || 'error')
+      );
     }
+  }
+
+  function clearProductAnalysis() {
+    setProductPhotos([]);
+    setProductResult('');
+    const input = document.getElementById('product-photo-input') as HTMLInputElement | null;
+    if (input) input.value = '';
   }
 
   function handlePhoto(e: any) {
     const files = Array.from(e.target.files || []) as File[];
+
+    // Cada nuevo análisis empieza limpio: no se guarda en Supabase ni en ningún lado.
+    setProductPhotos([]);
+    setProductResult('');
+
     files.slice(0, 3).forEach((file) => {
       const reader = new FileReader();
       reader.onload = (ev) => setProductPhotos((prev) => [...prev, String(ev.target?.result)].slice(0, 3));
@@ -1547,6 +1574,7 @@ export default function Home() {
             productResult={productResult}
             handlePhoto={handlePhoto}
             analyzeProduct={analyzeProduct}
+            clearProductAnalysis={clearProductAnalysis}
           />
         )}
 
@@ -1580,7 +1608,7 @@ export default function Home() {
         )}
       </main>
 
-      {selectedDish && <RecipeModal L={L} lang={lang} dish={selectedDish} profile={activeProfile} onClose={() => setSelectedDish(null)} />}
+      {selectedDish && <RecipeModal L={L} lang={lang} dish={selectedDish} activeProfile={activeProfile} onClose={() => setSelectedDish(null)} />}
 
       {showReminderModal && (
         <FormModal title={L.newReminder} L={L} onClose={() => setShowReminderModal(false)} onSave={saveReminder}>
@@ -1846,7 +1874,7 @@ function WeekPlan({ L, lang, plan, profile, dishById, changeDish, setSelectedDis
   );
 }
 
-function MarketView({ L, lang, profiles, marketProfiles, setMarketProfiles, pendingItems, foundItems, buildMarket, toggleFound, markMissing, setReplacement, addManualMarketItem, exportWhatsapp, productPhotos, productResult, handlePhoto, analyzeProduct }: any) {
+function MarketView({ L, lang, profiles, marketProfiles, setMarketProfiles, pendingItems, foundItems, buildMarket, toggleFound, markMissing, setReplacement, addManualMarketItem, exportWhatsapp, productPhotos, productResult, handlePhoto, analyzeProduct, clearProductAnalysis }: any) {
   const [showFound, setShowFound] = useState(false);
 
   function toggleProfile(id: string) {
@@ -1930,10 +1958,24 @@ function MarketView({ L, lang, profiles, marketProfiles, setMarketProfiles, pend
         <div className="col4 card">
           <h2>📷 {L.analyze}</h2>
           <p className="muted">{L.analyzeDesc}</p>
-          <input type="file" accept="image/*" capture="environment" multiple onChange={handlePhoto} />
-          <div className="actions">{productPhotos.map((p: string, i: number) => <img key={i} src={p} style={{ width: 78, height: 78, objectFit: 'cover', borderRadius: 14 }} />)}</div>
-          <button className="btn" style={{ width: '100%', marginTop: 10 }} onClick={analyzeProduct}>{L.analyzeBtn}</button>
-          {productResult && <div className="notice" style={{ marginTop: 10 }}>{productResult}</div>}
+          <input id="product-photo-input" type="file" accept="image/*" capture="environment" multiple onChange={handlePhoto} />
+          <p className="muted">
+            {lang === 'es'
+              ? 'La foto solo se usa para este análisis. No se guarda en Supabase.'
+              : 'The photo is only used for this analysis. It is not saved in Supabase.'}
+          </p>
+          <div className="actions">
+            {productPhotos.map((p: string, i: number) => (
+              <img key={i} src={p} style={{ width: 78, height: 78, objectFit: 'cover', borderRadius: 14 }} />
+            ))}
+          </div>
+          <div className="actions">
+            <button className="btn" style={{ flex: 1 }} onClick={analyzeProduct}>{L.analyzeBtn}</button>
+            <button className="btn secondary" onClick={clearProductAnalysis}>
+              {lang === 'es' ? 'Analizar otro' : 'Analyze another'}
+            </button>
+          </div>
+          {productResult && <div className="notice" style={{ marginTop: 10, whiteSpace: 'pre-wrap' }}>{productResult}</div>}
         </div>
       </div>
     </section>
@@ -2306,80 +2348,196 @@ function FormModal({ title, L, children, onClose, onSave }: any) {
   );
 }
 
-function RecipeModal({ L, lang, dish, profile, onClose }: any) {
-  const recipe = buildRealRecipe(dish, lang);
-  const [aiRecipe, setAiRecipe] = useState<any>(null);
-  const [loadingAi, setLoadingAi] = useState(false);
+function RecipeModal({ L, lang, dish, onClose, activeProfile }: any) {
+  const recipe = typeof buildRealRecipe === 'function'
+    ? buildRealRecipe(dish, lang)
+    : {
+        ingredients: (lang === 'es' ? dish.ingredients_es : dish.ingredients_en) || [],
+        utensils: (lang === 'es' ? dish.utensils_es : dish.utensils_en) || [],
+        steps: (lang === 'es' ? dish.steps_es : dish.steps_en) || [],
+        tips: (lang === 'es' ? dish.tips_es : dish.tips_en) || [],
+      };
 
-  async function improveWithAi() {
-    setLoadingAi(true);
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiResult, setAiResult] = useState('');
+  const [aiError, setAiError] = useState('');
+  const [imageLoading, setImageLoading] = useState(false);
+  const [dishImageUrl, setDishImageUrl] = useState('');
+
+  useEffect(() => {
+    let alive = true;
+
+    async function checkExistingImage() {
+      if (!dish?.id) return;
+
+      try {
+        const response = await fetch(`/api/ai/dish-image?dishId=${encodeURIComponent(dish.id)}`);
+        const data = await response.json().catch(() => null);
+
+        if (alive && data?.imageUrl) {
+          setDishImageUrl(data.imageUrl);
+        }
+      } catch {
+        // No hacemos nada. Si no existe, el usuario puede generarla.
+      }
+    }
+
+    setAiResult('');
+    setAiError('');
+    setDishImageUrl('');
+    checkExistingImage();
+
+    return () => {
+      alive = false;
+    };
+  }, [dish?.id]);
+
+  async function improveWithAI() {
+    setAiLoading(true);
+    setAiError('');
+    setAiResult('');
+
     try {
-      const res = await fetch('/api/ai/recipe', {
+      const response = await fetch('/api/ai/recipe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           lang,
-          profile,
+          profile: activeProfile || {},
           dish,
-          baseRecipe: recipe,
-          instruction: lang === 'es'
-            ? 'Haz una receta mexicana clara, real y paso a paso. No uses frases genéricas. Incluye tiempos, orden de preparación, tips de tupper y cómo avanzar rápido mientras se cocina.'
-            : 'Create a clear real Mexican-style step-by-step recipe. Avoid generic wording. Include timing, prep order, container tips and multitasking tips.',
+          recipe,
         }),
       });
-      const data = await res.json();
-      if (!res.ok || data.error) throw new Error(data.error || 'AI error');
-      setAiRecipe(data.recipe);
-    } catch (e: any) {
-      alert(e.message || 'No se pudo usar IA. Revisa GEMINI_API_KEY en Vercel.');
+
+      const data = await response.json().catch(() => null);
+
+      if (!data) {
+        setAiError(lang === 'es' ? 'La IA no devolvió respuesta válida.' : 'AI did not return a valid response.');
+        return;
+      }
+
+      const result = data.result || data.recipe || data.text || '';
+      const error = data.error || '';
+
+      if (result) {
+        setAiResult(String(result));
+      } else if (error) {
+        setAiError(String(error));
+      } else {
+        setAiError(lang === 'es' ? 'La IA respondió vacío.' : 'AI returned an empty response.');
+      }
+    } catch (err: any) {
+      setAiError(err?.message || (lang === 'es' ? 'No se pudo conectar con la IA.' : 'Could not connect to AI.'));
     } finally {
-      setLoadingAi(false);
+      setAiLoading(false);
     }
   }
 
-  const view = aiRecipe || recipe;
+  async function generateDishImage() {
+    setImageLoading(true);
+    setAiError('');
+
+    try {
+      const response = await fetch('/api/ai/dish-image', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ lang, profile: activeProfile || {}, dish }),
+      });
+
+      const data = await response.json().catch(() => null);
+
+      if (data?.imageUrl) {
+        setDishImageUrl(data.imageUrl);
+      } else {
+        setAiError(
+          data?.error ||
+            data?.result ||
+            (lang === 'es' ? 'No se pudo generar la imagen.' : 'Could not generate image.')
+        );
+      }
+    } catch (err: any) {
+      setAiError(err?.message || (lang === 'es' ? 'No se pudo conectar con la IA de imagen.' : 'Could not connect to image AI.'));
+    } finally {
+      setImageLoading(false);
+    }
+  }
+
+  const displayImage = dishImageUrl || dish.image_url || '/dishes/placeholder-meal.jpg';
 
   return (
     <div className="modal" onClick={onClose}>
       <div className="card modalbox" onClick={(e) => e.stopPropagation()}>
-        <button className="btn secondary small" onClick={onClose}>{L.closeRecipe}</button>
+        <button className="btn secondary small" onClick={onClose}>{L.closeRecipe || 'Cerrar'}</button>
 
-        <img className="recipe-hero" src={dish.image_url || '/dishes/placeholder-meal.jpg'} alt={dishName(dish, lang)} />
-        <p className="muted">{L.recipeImageNote}</p>
+        <img className="recipe-hero" src={displayImage} alt={dishName(dish, lang)} />
+        <p className="muted">
+          {dishImageUrl
+            ? (lang === 'es' ? 'Imagen generada con IA y guardada para este platillo.' : 'AI image generated and saved for this dish.')
+            : (L.recipeImageNote || '')}
+        </p>
 
         <h1>{dishName(dish, lang)}</h1>
         <span className="badge">{dish.calories} cal</span>
         <span className="badge blue">{dish.protein_g}g</span>
         <span className="badge orange">{dish.total_minutes} min</span>
 
-        <div className="actions">
-          <button className="btn" onClick={improveWithAi} disabled={loadingAi}>
-            {loadingAi ? (lang === 'es' ? 'Mejorando...' : 'Improving...') : (lang === 'es' ? '✨ Mejorar receta con IA' : '✨ Improve with AI')}
-          </button>
-        </div>
+        <div className="card" style={{ boxShadow: 'none' }}>
+          <h2>✨ {lang === 'es' ? 'IA para esta receta' : 'AI for this recipe'}</h2>
+          <p className="muted">
+            {lang === 'es'
+              ? 'Puedes mejorar la receta o generar una imagen realista del platillo. La receta no se guarda; la imagen sí se guarda para reutilizarla.'
+              : 'You can improve the recipe or generate a realistic dish image. The recipe is not saved; the image is saved for reuse.'}
+          </p>
 
-        {aiRecipe?.notes && <div className="notice">{aiRecipe.notes}</div>}
+          <div className="actions">
+            <button className="btn" onClick={improveWithAI} disabled={aiLoading}>
+              {aiLoading
+                ? (lang === 'es' ? 'Generando...' : 'Generating...')
+                : (lang === 'es' ? '✨ Mejorar receta con IA' : '✨ Improve recipe with AI')}
+            </button>
+
+            <button className="btn secondary" onClick={generateDishImage} disabled={imageLoading}>
+              {imageLoading
+                ? (lang === 'es' ? 'Creando imagen...' : 'Creating image...')
+                : dishImageUrl
+                  ? (lang === 'es' ? 'Regenerar imagen' : 'Regenerate image')
+                  : (lang === 'es' ? '🖼️ Generar imagen' : '🖼️ Generate image')}
+            </button>
+          </div>
+
+          {aiError && (
+            <div className="error" style={{ marginTop: 12 }}>
+              {aiError}
+            </div>
+          )}
+
+          {aiResult && (
+            <div className="notice" style={{ marginTop: 12, whiteSpace: 'pre-wrap' }}>
+              {aiResult}
+            </div>
+          )}
+        </div>
 
         <h2>{L.ingredients}</h2>
         <ul>
-          {view.ingredients.map((i: string) => <li key={i}>{i}</li>)}
+          {recipe.ingredients.map((i: string, idx: number) => <li key={`${idx}-${i}`}>{i}</li>)}
         </ul>
 
         <h2>{L.utensils}</h2>
         <ul>
-          {view.utensils.map((i: string) => <li key={i}>{i}</li>)}
+          {recipe.utensils.map((i: string, idx: number) => <li key={`${idx}-${i}`}>{i}</li>)}
         </ul>
 
         <h2>{L.stepByStep}</h2>
         <ol>
-          {view.steps.map((i: string, idx: number) => (
+          {recipe.steps.map((i: string, idx: number) => (
             <li key={`${idx}-${i}`} style={{ marginBottom: 10 }}>{i}</li>
           ))}
         </ol>
 
         <h2>{L.tips}</h2>
         <ul>
-          {view.tips.map((i: string, idx: number) => <li key={`${idx}-${i}`}>{i}</li>)}
+          {recipe.tips.map((i: string, idx: number) => <li key={`${idx}-${i}`}>{i}</li>)}
         </ul>
       </div>
     </div>
