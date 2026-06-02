@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export const runtime = 'nodejs';
 
-function cleanGeminiText(text: string) {
+function cleanText(text: string) {
   return String(text || '')
     .replace(/^```json\s*/i, '')
     .replace(/^```\s*/i, '')
@@ -10,31 +10,57 @@ function cleanGeminiText(text: string) {
     .trim();
 }
 
-function extractJsonObject(text: string) {
-  const cleaned = cleanGeminiText(text);
-
-  try {
-    return JSON.parse(cleaned);
-  } catch {
-    // Sigue abajo: a veces Gemini devuelve texto antes/después del JSON.
-  }
-
-  const first = cleaned.indexOf('{');
-  const last = cleaned.lastIndexOf('}');
-  if (first !== -1 && last !== -1 && last > first) {
-    const possibleJson = cleaned.slice(first, last + 1);
-    try {
-      return JSON.parse(possibleJson);
-    } catch {
-      // Si el JSON viene mal cerrado o con comillas raras, no rompemos la app.
-    }
-  }
-
-  return null;
+function getGeminiText(data: any) {
+  const parts = data?.candidates?.[0]?.content?.parts || [];
+  return parts
+    .map((part: any) => (typeof part?.text === 'string' ? part.text : ''))
+    .filter(Boolean)
+    .join('\n')
+    .trim();
 }
 
-function safeText(value: unknown) {
-  return typeof value === 'string' ? value : '';
+async function callGemini(apiKey: string, prompt: string, model: string) {
+  const url =
+    `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=` +
+    encodeURIComponent(apiKey);
+
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      contents: [
+        {
+          role: 'user',
+          parts: [{ text: prompt }],
+        },
+      ],
+      generationConfig: {
+        temperature: 0.55,
+        topP: 0.9,
+        maxOutputTokens: 2200,
+      },
+    }),
+  });
+
+  const raw = await response.text();
+
+  let data: any = null;
+  try {
+    data = JSON.parse(raw);
+  } catch {
+    data = null;
+  }
+
+  return {
+    ok: response.ok,
+    status: response.status,
+    raw,
+    data,
+    text: data ? getGeminiText(data) : '',
+    model,
+  };
 }
 
 export async function POST(request: Request) {
@@ -44,10 +70,11 @@ export async function POST(request: Request) {
     if (!apiKey) {
       return NextResponse.json(
         {
-          error:
-            'Falta GEMINI_API_KEY en Vercel. Agrega la variable en Settings > Environment Variables y redeploy.',
+          result:
+            'Falta GEMINI_API_KEY en Vercel. Ve a Settings > Environment Variables, agrega GEMINI_API_KEY y haz redeploy.',
+          error: 'missing_api_key',
         },
-        { status: 500 }
+        { status: 200 }
       );
     }
 
@@ -55,8 +82,11 @@ export async function POST(request: Request) {
 
     if (!body) {
       return NextResponse.json(
-        { error: 'No se recibió información de la receta.' },
-        { status: 400 }
+        {
+          result: 'No se recibió información de la receta.',
+          error: 'missing_body',
+        },
+        { status: 200 }
       );
     }
 
@@ -68,26 +98,25 @@ export async function POST(request: Request) {
     const prompt =
       lang === 'es'
         ? `
-Eres un chef mexicano y asesor de meal prep para una app llamada DietApp.
+Eres un chef mexicano experto en meal prep para una app llamada DietApp.
 
-Tu tarea: mejorar esta receta para que sea REAL, clara, práctica y mexicana cuando sea posible.
+OBJETIVO:
+Convierte el platillo en una receta mexicana real, clara, práctica y paso a paso.
 
-REGLAS IMPORTANTES:
+REGLAS:
 - Responde SOLO en español.
-- No devuelvas markdown.
-- No devuelvas JSON si no puedes cerrarlo perfectamente.
-- La receta debe ser paso a paso, específica y útil.
+- Devuelve TEXTO PLANO, no JSON y no markdown.
 - No uses frases genéricas como "cocina hasta que esté listo".
-- Explica tiempos aproximados, fuego, orden de preparación y tips de tupper/trabajo.
-- Si algo dice "caldo", NO digas que compre caldo. Explica cómo hacerlo simple con agua, sal, carne/hueso/verduras si aplica.
+- Da tiempos aproximados, nivel de fuego, orden de preparación y tips de tupper/trabajo.
+- Si aparece "caldo", NO digas que compre caldo. Explica cómo hacerlo simple con agua, sal, carne/hueso/verduras si aplica.
 - Respeta la dieta del perfil.
-- Respeta alimentos omitidos o preferidos si existen.
-- Mantén la receta realista para una persona en Estados Unidos con comida mexicana.
-- Si es carnívora, evita meter tortillas, arroz, frijoles o verduras salvo que el perfil/dieta lo permita.
-- Si es vegetariana/vegana, no uses carne.
-- Si es para llevar al trabajo, agrega tips de enfriar, tupper, recalentar o comer frío.
+- Respeta alimentos omitidos y preferidos.
+- Si la dieta es carnívora, evita tortillas, arroz, frijoles o verduras salvo que el perfil lo permita.
+- Si la dieta es vegetariana o vegana, no uses carne.
+- La receta debe sonar como comida casera mexicana para alguien en USA.
+- Si es para trabajo, incluye cómo enfriar, guardar, recalentar o comer frío.
 
-Devuelve tu respuesta en este formato de texto, sin JSON:
+FORMATO EXACTO:
 Título:
 Ingredientes:
 Utensilios:
@@ -95,7 +124,7 @@ Paso a paso:
 Tips para trabajo/meal prep:
 Notas de dieta:
 
-DATOS DEL PERFIL:
+PERFIL:
 ${JSON.stringify(profile, null, 2)}
 
 PLATILLO:
@@ -105,26 +134,25 @@ RECETA ACTUAL:
 ${JSON.stringify(recipe, null, 2)}
 `
         : `
-You are a Mexican food chef and meal-prep advisor for an app called DietApp.
+You are a Mexican meal-prep chef for an app called DietApp.
 
-Task: improve this recipe so it is REAL, clear, practical, and Mexican-style when possible.
+GOAL:
+Turn this dish into a real, clear, practical, step-by-step Mexican-style recipe.
 
-IMPORTANT RULES:
+RULES:
 - Respond ONLY in English.
-- Do not return markdown.
-- Do not return JSON unless perfectly valid.
-- The recipe must be step-by-step, specific and useful.
+- Return PLAIN TEXT, no JSON and no markdown.
 - Do not use generic phrases like "cook until done".
-- Explain approximate timing, heat level, prep order, and work/meal-prep container tips.
-- If something says "broth", do NOT say to buy broth. Explain a simple homemade version using water, salt, meat/bone/vegetables if applicable.
-- Respect the profile's diet.
-- Respect avoided or preferred foods if present.
-- Keep the recipe realistic for someone in the US making Mexican-style food.
-- If carnivore, avoid tortillas, rice, beans or vegetables unless allowed by the profile/diet.
-- If vegetarian/vegan, do not use meat.
-- If taking to work, add cooling, container, reheating or cold-eating tips.
+- Give approximate times, heat level, preparation order and work/container tips.
+- If "broth" appears, do NOT say to buy broth. Explain a simple homemade version with water, salt, meat/bone/vegetables if applicable.
+- Respect the profile diet.
+- Respect avoided and preferred foods.
+- If carnivore, avoid tortillas, rice, beans or vegetables unless the profile allows it.
+- If vegetarian or vegan, do not use meat.
+- The recipe should feel like homemade Mexican food for someone in the USA.
+- If for work, include cooling, packing, reheating or cold-eating tips.
 
-Return plain text in this format, no JSON:
+EXACT FORMAT:
 Title:
 Ingredients:
 Utensils:
@@ -132,7 +160,7 @@ Step by step:
 Work/meal-prep tips:
 Diet notes:
 
-PROFILE DATA:
+PROFILE:
 ${JSON.stringify(profile, null, 2)}
 
 DISH:
@@ -142,104 +170,50 @@ CURRENT RECIPE:
 ${JSON.stringify(recipe, null, 2)}
 `;
 
-    const geminiUrl =
-      'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' +
-      encodeURIComponent(apiKey);
+    // Modelo principal actual en docs de Gemini. Si falla por disponibilidad,
+    // probamos gemini-2.0-flash como fallback.
+    const modelsToTry = ['gemini-2.5-flash', 'gemini-2.0-flash'];
 
-    const geminiResponse = await fetch(geminiUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        contents: [
-          {
-            role: 'user',
-            parts: [{ text: prompt }],
-          },
-        ],
-        generationConfig: {
-          temperature: 0.65,
-          topP: 0.9,
-          maxOutputTokens: 1800,
-        },
-      }),
-    });
-
-    const raw = await geminiResponse.text();
-
-    if (!geminiResponse.ok) {
-      return NextResponse.json(
-        {
-          error: 'Gemini respondió con error.',
-          details: raw.slice(0, 1000),
-        },
-        { status: 500 }
-      );
-    }
-
-    let parsedGemini: any = null;
-    try {
-      parsedGemini = JSON.parse(raw);
-    } catch {
-      return NextResponse.json(
-        {
-          error: 'Gemini respondió algo que no fue JSON válido.',
-          result:
-            'No se pudo leer la respuesta de Gemini. Intenta otra vez en unos segundos.',
-          raw: raw.slice(0, 1000),
-        },
-        { status: 200 }
-      );
-    }
-
-    const text =
-      parsedGemini?.candidates?.[0]?.content?.parts
-        ?.map((part: any) => safeText(part?.text))
-        .filter(Boolean)
-        .join('\n')
-        .trim() || '';
-
-    if (!text) {
-      return NextResponse.json(
-        {
-          error: 'Gemini no devolvió texto.',
-          result:
-            'Gemini no devolvió una receta. Intenta otra vez o revisa tu API key.',
-        },
-        { status: 200 }
-      );
-    }
-
-    // Por si en el futuro Gemini devuelve JSON, lo aceptamos.
-    // Pero si viene mal cerrado, no tronamos: usamos texto plano.
-    const maybeJson = extractJsonObject(text);
-
-    if (maybeJson && typeof maybeJson === 'object') {
-      const result =
-        maybeJson.result ||
-        maybeJson.recipe ||
-        maybeJson.text ||
-        maybeJson.content ||
-        text;
-
-      return NextResponse.json({
-        result: String(result || text),
-        parsed: true,
+    const attempts = [];
+    for (const model of modelsToTry) {
+      const attempt = await callGemini(apiKey, prompt, model);
+      attempts.push({
+        model: attempt.model,
+        ok: attempt.ok,
+        status: attempt.status,
+        error: attempt.data?.error || null,
+        rawPreview: attempt.raw?.slice(0, 800) || '',
       });
+
+      if (attempt.ok && attempt.text) {
+        return NextResponse.json({
+          result: cleanText(attempt.text),
+          model,
+        });
+      }
     }
 
-    return NextResponse.json({
-      result: cleanGeminiText(text),
-      parsed: false,
-    });
+    const last = attempts[attempts.length - 1];
+
+    return NextResponse.json(
+      {
+        result:
+          'Gemini respondió con error. Revisa que tu GEMINI_API_KEY esté bien copiada en Vercel y que la API key esté activa en Google AI Studio. Detalle técnico: ' +
+          JSON.stringify(last?.error || last?.rawPreview || attempts),
+        error: 'gemini_error',
+        attempts,
+      },
+      { status: 200 }
+    );
   } catch (error: any) {
     return NextResponse.json(
       {
-        error: 'Error interno generando receta con IA.',
-        details: error?.message || String(error),
+        result:
+          'Error interno generando receta con IA: ' +
+          (error?.message || String(error)),
+        error: 'internal_error',
       },
-      { status: 500 }
+      { status: 200 }
     );
   }
 }
