@@ -826,14 +826,21 @@ export default function Home() {
   const [modalForm, setModalForm] = useState<any>({});
   const [productPhotos, setProductPhotos] = useState<string[]>([]);
   const [productResult, setProductResult] = useState('');
+  const [recipeOverrides, setRecipeOverrides] = useState<any[]>([]);
 
   const L = UI[lang];
 
   useEffect(() => {
     const savedLang = (localStorage.getItem('dietapp_lang') as Lang) || 'es';
     const savedUnit = (localStorage.getItem('dietapp_unit') as UnitMode) || 'kg';
+    const savedPlanStart = localStorage.getItem('dietapp_plan_start');
+    const savedPlanDays = localStorage.getItem('dietapp_plan_days');
+    const savedActiveProfile = localStorage.getItem('dietapp_active_profile_id');
     setLang(savedLang);
     setUnitMode(savedUnit);
+    if (savedPlanStart) setPlanStart(savedPlanStart);
+    if (savedPlanDays) setPlanDays(Number(savedPlanDays) || 7);
+    if (savedActiveProfile) setActiveProfileId(savedActiveProfile);
 
     const splashTimer = setTimeout(() => setShowSplash(false), 1900);
 
@@ -856,6 +863,15 @@ export default function Home() {
   useEffect(() => {
     if (session) boot();
   }, [session, planStart]);
+
+  useEffect(() => {
+    if (planStart) localStorage.setItem('dietapp_plan_start', planStart);
+    localStorage.setItem('dietapp_plan_days', String(planDays || 7));
+  }, [planStart, planDays]);
+
+  useEffect(() => {
+    if (activeProfileId) localStorage.setItem('dietapp_active_profile_id', activeProfileId);
+  }, [activeProfileId]);
 
   const activeProfile = profiles.find((p) => p.id === activeProfileId);
   const activePlan = plans.find((p) => p.profile_id === activeProfileId && p.week_start === planStart);
@@ -973,12 +989,13 @@ export default function Home() {
   async function loadAll(hid = householdId) {
     if (!hid) return;
 
-    const [profilesRes, plansRes, mealsRes, waterRes, remindersRes] = await Promise.all([
+    const [profilesRes, plansRes, mealsRes, waterRes, remindersRes, overridesRes] = await Promise.all([
       supabase.from('profiles').select('*').eq('household_id', hid).order('created_at'),
       supabase.from('weekly_plans').select('*').eq('household_id', hid).eq('week_start', planStart),
       supabase.from('meal_logs').select('*').eq('household_id', hid).gte('meal_date', datePlus(todayISO(), -35)),
       supabase.from('water_logs').select('*').eq('household_id', hid).gte('log_date', datePlus(todayISO(), -35)),
       supabase.from('reminders').select('*').eq('household_id', hid).eq('done', false).order('remind_at'),
+      supabase.from('recipe_overrides').select('*').eq('household_id', hid).eq('lang', lang),
     ]);
 
     setProfiles(profilesRes.data || []);
@@ -986,6 +1003,7 @@ export default function Home() {
     setMealLogs(mealsRes.data || []);
     setWaterLogs(waterRes.data || []);
     setReminders(remindersRes.data || []);
+    setRecipeOverrides(overridesRes.data || []);
 
     if ((profilesRes.data || []).length && !activeProfileId) {
       setActiveProfileId((profilesRes.data || [])[0].id);
@@ -1266,6 +1284,54 @@ export default function Home() {
     }
   }
 
+
+  function getRecipeOverride(dishId: string, profileId = activeProfileId) {
+    return recipeOverrides.find((r) =>
+      r.dish_id === dishId &&
+      r.lang === lang &&
+      (!r.profile_id || !profileId || r.profile_id === profileId)
+    );
+  }
+
+  function getDishShoppingItems(dish: any, profileId: string) {
+    const override = getRecipeOverride(dish?.id, profileId);
+    if (override?.shopping_items && Array.isArray(override.shopping_items) && override.shopping_items.length) {
+      return override.shopping_items;
+    }
+    return dish?.shopping_items || [];
+  }
+
+  async function saveRecipeOverride(dish: any, aiRecipe: any) {
+    if (!householdId || !dish?.id) return { error: 'Falta household o dish.' };
+
+    const payload = {
+      household_id: householdId,
+      profile_id: activeProfileId || null,
+      dish_id: dish.id,
+      lang,
+      title: aiRecipe?.title || dishName(dish, lang),
+      ingredients: aiRecipe?.ingredients || [],
+      utensils: aiRecipe?.utensils || [],
+      steps: aiRecipe?.steps || [],
+      tips: aiRecipe?.tips || [],
+      diet_notes: aiRecipe?.diet_notes || '',
+      shopping_items: aiRecipe?.shopping_items || [],
+      raw_text: aiRecipe?.raw_text || '',
+      updated_at: new Date().toISOString(),
+    };
+
+    const { error } = await supabase
+      .from('recipe_overrides')
+      .upsert(payload, { onConflict: 'household_id,profile_id,dish_id,lang' });
+
+    if (!error) {
+      await loadAll();
+      if (marketProfiles.length) await buildMarket(marketProfiles, true);
+    }
+
+    return { error };
+  }
+
   async function buildMarket(selectedIds: string[], keepChecks = false, mode = unitMode) {
     const savedItems = keepChecks ? await loadSavedGroceryList(selectedIds) : [];
     const prev = new Map([...marketItems, ...savedItems].map((i) => [i.key, i]));
@@ -1279,7 +1345,7 @@ export default function Home() {
           const d = dishById(meal.dishId);
           if (!d) return;
 
-          (d.shopping_items || []).forEach((ing: any) => {
+          getDishShoppingItems(d, plan.profile_id).forEach((ing: any) => {
             const normalizedName = normalizeIngredientName(String(ing.name || ''));
             const normalizedUnit = normalizeIngredientUnit(String(ing.unit || 'item'));
             const key = `${normalizeTextKey(normalizedName)}__${normalizedUnit}`;
@@ -1493,9 +1559,18 @@ export default function Home() {
           <div className="logo">DietApp</div>
 
           <div className="quick-controls">
-            <select value={activeProfileId} onChange={(e) => setActiveProfileId(e.target.value)}>
-              {profiles.map((p) => <option key={p.id} value={p.id}>{p.name}</option>)}
-            </select>
+            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
+              {profiles.map((p) => (
+                <button
+                  key={p.id}
+                  className={`btn small ${activeProfileId === p.id ? '' : 'secondary'}`}
+                  onClick={() => setActiveProfileId(p.id)}
+                  title={p.name}
+                >
+                  {activeProfileId === p.id ? '✅ ' : '👤 '}{p.name}
+                </button>
+              ))}
+            </div>
 
             <Switch labelLeft="ES" labelRight="EN" checked={lang === 'en'} onChange={toggleLanguage} />
             <Switch labelLeft="kg" labelRight="lb" checked={unitMode === 'lb'} onChange={toggleUnitMode} />
@@ -1608,7 +1683,7 @@ export default function Home() {
         )}
       </main>
 
-      {selectedDish && <RecipeModal L={L} lang={lang} dish={selectedDish} activeProfile={activeProfile} onClose={() => setSelectedDish(null)} />}
+      {selectedDish && <RecipeModal L={L} lang={lang} dish={selectedDish} activeProfile={activeProfile} recipeOverride={getRecipeOverride(selectedDish.id)} onSaveOverride={saveRecipeOverride} onClose={() => setSelectedDish(null)} />}
 
       {showReminderModal && (
         <FormModal title={L.newReminder} L={L} onClose={() => setShowReminderModal(false)} onSave={saveReminder}>
@@ -2348,8 +2423,8 @@ function FormModal({ title, L, children, onClose, onSave }: any) {
   );
 }
 
-function RecipeModal({ L, lang, dish, onClose, activeProfile }: any) {
-  const recipe = typeof buildRealRecipe === 'function'
+function RecipeModal({ L, lang, dish, onClose, activeProfile, recipeOverride, onSaveOverride }: any) {
+  const baseRecipe = typeof buildRealRecipe === 'function'
     ? buildRealRecipe(dish, lang)
     : {
         ingredients: (lang === 'es' ? dish.ingredients_es : dish.ingredients_en) || [],
@@ -2358,9 +2433,25 @@ function RecipeModal({ L, lang, dish, onClose, activeProfile }: any) {
         tips: (lang === 'es' ? dish.tips_es : dish.tips_en) || [],
       };
 
+  const savedRecipe = recipeOverride
+    ? {
+        title: recipeOverride.title || dishName(dish, lang),
+        ingredients: recipeOverride.ingredients || [],
+        utensils: recipeOverride.utensils || [],
+        steps: recipeOverride.steps || [],
+        tips: recipeOverride.tips || [],
+        diet_notes: recipeOverride.diet_notes || '',
+        shopping_items: recipeOverride.shopping_items || [],
+        raw_text: recipeOverride.raw_text || '',
+      }
+    : null;
+
+  const recipe = savedRecipe || baseRecipe;
+
   const [aiLoading, setAiLoading] = useState(false);
-  const [aiResult, setAiResult] = useState('');
+  const [aiRecipe, setAiRecipe] = useState<any>(null);
   const [aiError, setAiError] = useState('');
+  const [savingRecipe, setSavingRecipe] = useState(false);
   const [imageLoading, setImageLoading] = useState(false);
   const [dishImageUrl, setDishImageUrl] = useState('');
 
@@ -2377,12 +2468,10 @@ function RecipeModal({ L, lang, dish, onClose, activeProfile }: any) {
         if (alive && data?.imageUrl) {
           setDishImageUrl(data.imageUrl);
         }
-      } catch {
-        // No hacemos nada. Si no existe, el usuario puede generarla.
-      }
+      } catch {}
     }
 
-    setAiResult('');
+    setAiRecipe(null);
     setAiError('');
     setDishImageUrl('');
     checkExistingImage();
@@ -2395,18 +2484,13 @@ function RecipeModal({ L, lang, dish, onClose, activeProfile }: any) {
   async function improveWithAI() {
     setAiLoading(true);
     setAiError('');
-    setAiResult('');
+    setAiRecipe(null);
 
     try {
       const response = await fetch('/api/ai/recipe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          lang,
-          profile: activeProfile || {},
-          dish,
-          recipe,
-        }),
+        body: JSON.stringify({ lang, profile: activeProfile || {}, dish, recipe }),
       });
 
       const data = await response.json().catch(() => null);
@@ -2416,20 +2500,45 @@ function RecipeModal({ L, lang, dish, onClose, activeProfile }: any) {
         return;
       }
 
-      const result = data.result || data.recipe || data.text || '';
-      const error = data.error || '';
-
-      if (result) {
-        setAiResult(String(result));
-      } else if (error) {
-        setAiError(String(error));
+      if (data.recipe) {
+        setAiRecipe(data.recipe);
+      } else if (data.result) {
+        setAiRecipe({
+          title: lang === 'es' ? 'Receta mejorada con IA' : 'AI improved recipe',
+          ingredients: [],
+          utensils: [],
+          steps: String(data.result).split('\\n').filter(Boolean),
+          tips: [],
+          diet_notes: '',
+          shopping_items: [],
+          raw_text: String(data.result),
+        });
       } else {
-        setAiError(lang === 'es' ? 'La IA respondió vacío.' : 'AI returned an empty response.');
+        setAiError(data.error || (lang === 'es' ? 'La IA respondió vacío.' : 'AI returned empty.'));
       }
     } catch (err: any) {
       setAiError(err?.message || (lang === 'es' ? 'No se pudo conectar con la IA.' : 'Could not connect to AI.'));
     } finally {
       setAiLoading(false);
+    }
+  }
+
+  async function saveAIRecipe() {
+    if (!aiRecipe) return;
+    setSavingRecipe(true);
+    setAiError('');
+
+    try {
+      const result = await onSaveOverride?.(dish, aiRecipe);
+      if (result?.error) {
+        setAiError(result.error.message || String(result.error));
+      } else {
+        setAiRecipe(null);
+      }
+    } catch (err: any) {
+      setAiError(err?.message || String(err));
+    } finally {
+      setSavingRecipe(false);
     }
   }
 
@@ -2452,7 +2561,7 @@ function RecipeModal({ L, lang, dish, onClose, activeProfile }: any) {
         setAiError(
           data?.error ||
             data?.result ||
-            (lang === 'es' ? 'No se pudo generar la imagen.' : 'Could not generate image.')
+            (lang === 'es' ? 'No se pudo generar la imagen. Tu API key tal vez no tiene acceso a imágenes.' : 'Could not generate image. Your API key may not have image access.')
         );
       }
     } catch (err: any) {
@@ -2463,37 +2572,41 @@ function RecipeModal({ L, lang, dish, onClose, activeProfile }: any) {
   }
 
   const displayImage = dishImageUrl || dish.image_url || '/dishes/placeholder-meal.jpg';
+  const visibleTitle = savedRecipe?.title || dishName(dish, lang);
 
   return (
     <div className="modal" onClick={onClose}>
       <div className="card modalbox" onClick={(e) => e.stopPropagation()}>
         <button className="btn secondary small" onClick={onClose}>{L.closeRecipe || 'Cerrar'}</button>
 
-        <img className="recipe-hero" src={displayImage} alt={dishName(dish, lang)} />
+        <img className="recipe-hero" src={displayImage} alt={visibleTitle} />
         <p className="muted">
           {dishImageUrl
             ? (lang === 'es' ? 'Imagen generada con IA y guardada para este platillo.' : 'AI image generated and saved for this dish.')
             : (L.recipeImageNote || '')}
         </p>
 
-        <h1>{dishName(dish, lang)}</h1>
+        <h1>{visibleTitle}</h1>
         <span className="badge">{dish.calories} cal</span>
         <span className="badge blue">{dish.protein_g}g</span>
         <span className="badge orange">{dish.total_minutes} min</span>
+        {savedRecipe && <span className="badge blue">{lang === 'es' ? 'Receta IA guardada' : 'Saved AI recipe'}</span>}
 
         <div className="card" style={{ boxShadow: 'none' }}>
           <h2>✨ {lang === 'es' ? 'IA para esta receta' : 'AI for this recipe'}</h2>
           <p className="muted">
             {lang === 'es'
-              ? 'Puedes mejorar la receta o generar una imagen realista del platillo. La receta no se guarda; la imagen sí se guarda para reutilizarla.'
-              : 'You can improve the recipe or generate a realistic dish image. The recipe is not saved; the image is saved for reuse.'}
+              ? 'Puedes generar otra versión y guardarla como receta principal. Si la guardas, también se usarán sus ingredientes para Super.'
+              : 'Generate another version and save it as the main recipe. If saved, its ingredients will also be used for groceries.'}
           </p>
 
           <div className="actions">
             <button className="btn" onClick={improveWithAI} disabled={aiLoading}>
               {aiLoading
-                ? (lang === 'es' ? 'Generando...' : 'Generating...')
-                : (lang === 'es' ? '✨ Mejorar receta con IA' : '✨ Improve recipe with AI')}
+                ? (lang === 'es' ? 'Generando receta completa...' : 'Generating full recipe...')
+                : savedRecipe
+                  ? (lang === 'es' ? '✨ Volver a mejorar con IA' : '✨ Improve again with AI')
+                  : (lang === 'es' ? '✨ Mejorar receta con IA' : '✨ Improve recipe with AI')}
             </button>
 
             <button className="btn secondary" onClick={generateDishImage} disabled={imageLoading}>
@@ -2505,40 +2618,75 @@ function RecipeModal({ L, lang, dish, onClose, activeProfile }: any) {
             </button>
           </div>
 
-          {aiError && (
-            <div className="error" style={{ marginTop: 12 }}>
-              {aiError}
-            </div>
-          )}
+          {aiError && <div className="error" style={{ marginTop: 12 }}>{aiError}</div>}
 
-          {aiResult && (
-            <div className="notice" style={{ marginTop: 12, whiteSpace: 'pre-wrap' }}>
-              {aiResult}
+          {aiRecipe && (
+            <div className="notice" style={{ marginTop: 12 }}>
+              <h3>{aiRecipe.title}</h3>
+
+              {!!aiRecipe.ingredients?.length && (
+                <>
+                  <b>{L.ingredients}</b>
+                  <ul>{aiRecipe.ingredients.map((i: string, idx: number) => <li key={`ai-ing-${idx}`}>{i}</li>)}</ul>
+                </>
+              )}
+
+              {!!aiRecipe.utensils?.length && (
+                <>
+                  <b>{L.utensils}</b>
+                  <ul>{aiRecipe.utensils.map((i: string, idx: number) => <li key={`ai-ut-${idx}`}>{i}</li>)}</ul>
+                </>
+              )}
+
+              {!!aiRecipe.steps?.length && (
+                <>
+                  <b>{L.stepByStep}</b>
+                  <ol>{aiRecipe.steps.map((i: string, idx: number) => <li key={`ai-step-${idx}`} style={{ marginBottom: 8 }}>{i}</li>)}</ol>
+                </>
+              )}
+
+              {!!aiRecipe.tips?.length && (
+                <>
+                  <b>{L.tips}</b>
+                  <ul>{aiRecipe.tips.map((i: string, idx: number) => <li key={`ai-tip-${idx}`}>{i}</li>)}</ul>
+                </>
+              )}
+
+              {aiRecipe.diet_notes && <p><b>{lang === 'es' ? 'Nota:' : 'Note:'}</b> {aiRecipe.diet_notes}</p>}
+
+              <div className="actions">
+                <button className="btn" onClick={saveAIRecipe} disabled={savingRecipe}>
+                  {savingRecipe
+                    ? (lang === 'es' ? 'Guardando...' : 'Saving...')
+                    : (lang === 'es' ? 'Guardar como receta principal' : 'Save as main recipe')}
+                </button>
+              </div>
             </div>
           )}
         </div>
 
         <h2>{L.ingredients}</h2>
-        <ul>
-          {recipe.ingredients.map((i: string, idx: number) => <li key={`${idx}-${i}`}>{i}</li>)}
-        </ul>
+        <ul>{(recipe.ingredients || []).map((i: string, idx: number) => <li key={`${idx}-${i}`}>{i}</li>)}</ul>
 
         <h2>{L.utensils}</h2>
-        <ul>
-          {recipe.utensils.map((i: string, idx: number) => <li key={`${idx}-${i}`}>{i}</li>)}
-        </ul>
+        <ul>{(recipe.utensils || []).map((i: string, idx: number) => <li key={`${idx}-${i}`}>{i}</li>)}</ul>
 
         <h2>{L.stepByStep}</h2>
         <ol>
-          {recipe.steps.map((i: string, idx: number) => (
+          {(recipe.steps || []).map((i: string, idx: number) => (
             <li key={`${idx}-${i}`} style={{ marginBottom: 10 }}>{i}</li>
           ))}
         </ol>
 
         <h2>{L.tips}</h2>
-        <ul>
-          {recipe.tips.map((i: string, idx: number) => <li key={`${idx}-${i}`}>{i}</li>)}
-        </ul>
+        <ul>{(recipe.tips || []).map((i: string, idx: number) => <li key={`${idx}-${i}`}>{i}</li>)}</ul>
+
+        {savedRecipe?.diet_notes && (
+          <>
+            <h2>{lang === 'es' ? 'Notas de dieta' : 'Diet notes'}</h2>
+            <p>{savedRecipe.diet_notes}</p>
+          </>
+        )}
       </div>
     </div>
   );
