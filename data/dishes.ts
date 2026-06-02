@@ -1,10905 +1,2201 @@
-export const DISHES = [
-  {
-    "id": "huevos-con-carne-molida",
-    "name_es": "Huevos con carne molida",
-    "name_en": "Eggs with ground beef",
-    "image_url": "/dishes/huevos-con-carne-molida.jpg",
-    "diet_tags": [
-      "carnivore_strict",
-      "carnivore_flexible",
-      "keto_carnivore"
-    ],
-    "calories": 520,
-    "protein_g": 55,
-    "carbs_g": 2,
-    "fat_g": 34,
-    "total_minutes": 18,
-    "prep_minutes": 6,
-    "cook_minutes": 12,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "200 g de carne molida",
-      "2 piezas huevos",
-      "1 cucharadita mantequilla",
-      "sal al gusto"
-    ],
-    "ingredients_en": [
-      "200 g ground beef",
-      "2 piezas eggs",
-      "1 cucharadita butter",
-      "salt to taste"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "carne molida",
-        "amount": 200,
-        "unit": "g"
-      },
-      {
-        "name": "huevos",
-        "amount": 2,
-        "unit": "piezas"
-      },
-      {
-        "name": "mantequilla",
-        "amount": 1,
-        "unit": "cucharadita"
-      },
-      {
-        "name": "sal",
-        "amount": 1,
-        "unit": "al gusto"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "bistec-con-huevos",
-    "name_es": "Bistec con huevos",
-    "name_en": "Steak and eggs",
-    "image_url": "/dishes/bistec-con-huevos.jpg",
-    "diet_tags": [
-      "carnivore_strict",
-      "carnivore_flexible",
-      "keto_carnivore"
-    ],
-    "calories": 650,
-    "protein_g": 62,
-    "carbs_g": 1,
-    "fat_g": 44,
-    "total_minutes": 20,
-    "prep_minutes": 6,
-    "cook_minutes": 14,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "220 g de bistec",
-      "2 piezas huevos",
-      "1 cucharadita mantequilla",
-      "sal al gusto"
-    ],
-    "ingredients_en": [
-      "220 g steak",
-      "2 piezas eggs",
-      "1 cucharadita butter",
-      "salt to taste"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "bistec",
-        "amount": 220,
-        "unit": "g"
-      },
-      {
-        "name": "huevos",
-        "amount": 2,
-        "unit": "piezas"
-      },
-      {
-        "name": "mantequilla",
-        "amount": 1,
-        "unit": "cucharadita"
-      },
-      {
-        "name": "sal",
-        "amount": 1,
-        "unit": "al gusto"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "pollo-dorado-con-mantequilla",
-    "name_es": "Pollo dorado con mantequilla",
-    "name_en": "Butter seared chicken",
-    "image_url": "/dishes/pollo-dorado-con-mantequilla.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "keto_carnivore"
-    ],
-    "calories": 520,
-    "protein_g": 58,
-    "carbs_g": 1,
-    "fat_g": 29,
-    "total_minutes": 22,
-    "prep_minutes": 7,
-    "cook_minutes": 15,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "220 g de pollo",
-      "1 cucharada mantequilla",
-      "sal al gusto"
-    ],
-    "ingredients_en": [
-      "220 g chicken",
-      "1 cucharada butter",
-      "salt to taste"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "pollo",
-        "amount": 220,
-        "unit": "g"
-      },
-      {
-        "name": "mantequilla",
-        "amount": 1,
-        "unit": "cucharada"
-      },
-      {
-        "name": "sal",
-        "amount": 1,
-        "unit": "al gusto"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "atun-con-huevos-cocidos",
-    "name_es": "Atún con huevos cocidos",
-    "name_en": "Tuna with boiled eggs",
-    "image_url": "/dishes/atun-con-huevos-cocidos.jpg",
-    "diet_tags": [
-      "carnivore_strict",
-      "carnivore_flexible"
-    ],
-    "calories": 430,
-    "protein_g": 52,
-    "carbs_g": 1,
-    "fat_g": 22,
-    "total_minutes": 14,
-    "prep_minutes": 4,
-    "cook_minutes": 10,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "1 lata atún",
-      "2 piezas huevos",
-      "sal al gusto"
-    ],
-    "ingredients_en": [
-      "1 lata tuna",
-      "2 piezas eggs",
-      "salt to taste"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "atún",
-        "amount": 1,
-        "unit": "lata"
-      },
-      {
-        "name": "huevos",
-        "amount": 2,
-        "unit": "piezas"
-      },
-      {
-        "name": "sal",
-        "amount": 1,
-        "unit": "al gusto"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "hamburguesas-sin-pan-con-queso",
-    "name_es": "Hamburguesas sin pan con queso",
-    "name_en": "Bunless cheeseburgers",
-    "image_url": "/dishes/hamburguesas-sin-pan-con-queso.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "keto_carnivore"
-    ],
-    "calories": 690,
-    "protein_g": 60,
-    "carbs_g": 3,
-    "fat_g": 48,
-    "total_minutes": 18,
-    "prep_minutes": 6,
-    "cook_minutes": 12,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "250 g de carne molida",
-      "40 g de queso",
-      "1 cucharadita mantequilla",
-      "sal al gusto"
-    ],
-    "ingredients_en": [
-      "250 g ground beef",
-      "40 g cheese",
-      "1 cucharadita butter",
-      "salt to taste"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "carne molida",
-        "amount": 250,
-        "unit": "g"
-      },
-      {
-        "name": "queso",
-        "amount": 40,
-        "unit": "g"
-      },
-      {
-        "name": "mantequilla",
-        "amount": 1,
-        "unit": "cucharadita"
-      },
-      {
-        "name": "sal",
-        "amount": 1,
-        "unit": "al gusto"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "chuleta-de-cerdo-con-huevos",
-    "name_es": "Chuleta de cerdo con huevos",
-    "name_en": "Pork chop with eggs",
-    "image_url": "/dishes/chuleta-de-cerdo-con-huevos.jpg",
-    "diet_tags": [
-      "carnivore_strict",
-      "carnivore_flexible",
-      "keto_carnivore"
-    ],
-    "calories": 640,
-    "protein_g": 58,
-    "carbs_g": 1,
-    "fat_g": 44,
-    "total_minutes": 22,
-    "prep_minutes": 7,
-    "cook_minutes": 15,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "250 g de chuleta de cerdo",
-      "2 piezas huevos",
-      "1 cucharadita mantequilla",
-      "sal al gusto"
-    ],
-    "ingredients_en": [
-      "250 g pork chop",
-      "2 piezas eggs",
-      "1 cucharadita butter",
-      "salt to taste"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "chuleta de cerdo",
-        "amount": 250,
-        "unit": "g"
-      },
-      {
-        "name": "huevos",
-        "amount": 2,
-        "unit": "piezas"
-      },
-      {
-        "name": "mantequilla",
-        "amount": 1,
-        "unit": "cucharadita"
-      },
-      {
-        "name": "sal",
-        "amount": 1,
-        "unit": "al gusto"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "salmon-con-mantequilla",
-    "name_es": "Salmón con mantequilla",
-    "name_en": "Butter salmon",
-    "image_url": "/dishes/salmon-con-mantequilla.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "keto_carnivore"
-    ],
-    "calories": 560,
-    "protein_g": 48,
-    "carbs_g": 1,
-    "fat_g": 39,
-    "total_minutes": 16,
-    "prep_minutes": 5,
-    "cook_minutes": 11,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "200 g de salmón",
-      "1 cucharada mantequilla",
-      "sal al gusto"
-    ],
-    "ingredients_en": [
-      "200 g salmon",
-      "1 cucharada butter",
-      "salt to taste"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "salmón",
-        "amount": 200,
-        "unit": "g"
-      },
-      {
-        "name": "mantequilla",
-        "amount": 1,
-        "unit": "cucharada"
-      },
-      {
-        "name": "sal",
-        "amount": 1,
-        "unit": "al gusto"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "camarones-con-huevos",
-    "name_es": "Camarones con huevos",
-    "name_en": "Shrimp and eggs",
-    "image_url": "/dishes/camarones-con-huevos.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "keto_carnivore"
-    ],
-    "calories": 470,
-    "protein_g": 54,
-    "carbs_g": 2,
-    "fat_g": 25,
-    "total_minutes": 15,
-    "prep_minutes": 5,
-    "cook_minutes": 10,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "200 g de camarones",
-      "2 piezas huevos",
-      "1 cucharada mantequilla",
-      "sal al gusto"
-    ],
-    "ingredients_en": [
-      "200 g shrimp",
-      "2 piezas eggs",
-      "1 cucharada butter",
-      "salt to taste"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "camarones",
-        "amount": 200,
-        "unit": "g"
-      },
-      {
-        "name": "huevos",
-        "amount": 2,
-        "unit": "piezas"
-      },
-      {
-        "name": "mantequilla",
-        "amount": 1,
-        "unit": "cucharada"
-      },
-      {
-        "name": "sal",
-        "amount": 1,
-        "unit": "al gusto"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "pollo-con-queso-gratinado",
-    "name_es": "Pollo con queso gratinado",
-    "name_en": "Chicken with melted cheese",
-    "image_url": "/dishes/pollo-con-queso-gratinado.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "keto_carnivore"
-    ],
-    "calories": 610,
-    "protein_g": 65,
-    "carbs_g": 2,
-    "fat_g": 36,
-    "total_minutes": 24,
-    "prep_minutes": 8,
-    "cook_minutes": 16,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "240 g de pollo",
-      "50 g de queso",
-      "1 cucharadita mantequilla",
-      "sal al gusto"
-    ],
-    "ingredients_en": [
-      "240 g chicken",
-      "50 g cheese",
-      "1 cucharadita butter",
-      "salt to taste"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "pollo",
-        "amount": 240,
-        "unit": "g"
-      },
-      {
-        "name": "queso",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "name": "mantequilla",
-        "amount": 1,
-        "unit": "cucharadita"
-      },
-      {
-        "name": "sal",
-        "amount": 1,
-        "unit": "al gusto"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "caldo-simple-de-res",
-    "name_es": "Caldo simple de res",
-    "name_en": "Simple beef broth bowl",
-    "image_url": "/dishes/caldo-simple-de-res.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "animal_based"
-    ],
-    "calories": 520,
-    "protein_g": 50,
-    "carbs_g": 5,
-    "fat_g": 32,
-    "total_minutes": 35,
-    "prep_minutes": 10,
-    "cook_minutes": 25,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "220 g de carne de res",
-      "2 taza caldo",
-      "sal al gusto"
-    ],
-    "ingredients_en": [
-      "220 g beef",
-      "2 taza broth",
-      "salt to taste"
-    ],
-    "utensils_es": [
-      "Olla",
-      "Cuchara",
-      "Tupper térmico"
-    ],
-    "utensils_en": [
-      "Pot",
-      "Spoon",
-      "Thermal container"
-    ],
-    "steps_es": [
-      "Coloca la olla a fuego medio y agrega los ingredientes que tardan más.",
-      "Agrega líquido si la receta lo necesita y deja hervir suave.",
-      "Mientras se cocina, prepara el tupper, cuchara y servilletas para el trabajo.",
-      "Cocina hasta que la proteína o legumbre esté lista y ajusta sal.",
-      "Deja reposar unos minutos antes de cerrar el tupper para evitar vapor."
-    ],
-    "steps_en": [
-      "Place pot over medium heat and add the ingredients that take longest.",
-      "Add liquid if needed and simmer gently.",
-      "While it cooks, prepare the container, spoon and napkins for work.",
-      "Cook until the protein or legume is ready and adjust salt.",
-      "Let it rest a few minutes before closing the container to avoid steam."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "carne de res",
-        "amount": 220,
-        "unit": "g"
-      },
-      {
-        "name": "caldo",
-        "amount": 2,
-        "unit": "taza"
-      },
-      {
-        "name": "sal",
-        "amount": 1,
-        "unit": "al gusto"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "omelet-de-jamon-y-queso",
-    "name_es": "Omelet de jamón y queso",
-    "name_en": "Ham and cheese omelet",
-    "image_url": "/dishes/omelet-de-jamon-y-queso.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "keto_carnivore",
-      "lacto_ovo_vegetarian"
-    ],
-    "calories": 480,
-    "protein_g": 38,
-    "carbs_g": 3,
-    "fat_g": 35,
-    "total_minutes": 12,
-    "prep_minutes": 4,
-    "cook_minutes": 8,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "3 piezas huevos",
-      "40 g de jamón",
-      "30 g de queso",
-      "1 cucharadita mantequilla"
-    ],
-    "ingredients_en": [
-      "3 piezas eggs",
-      "40 g ham",
-      "30 g cheese",
-      "1 cucharadita butter"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "huevos",
-        "amount": 3,
-        "unit": "piezas"
-      },
-      {
-        "name": "jamón",
-        "amount": 40,
-        "unit": "g"
-      },
-      {
-        "name": "queso",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "name": "mantequilla",
-        "amount": 1,
-        "unit": "cucharadita"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "higado-con-huevos",
-    "name_es": "Hígado con huevos",
-    "name_en": "Liver with eggs",
-    "image_url": "/dishes/higado-con-huevos.jpg",
-    "diet_tags": [
-      "carnivore_strict",
-      "carnivore_flexible"
-    ],
-    "calories": 500,
-    "protein_g": 55,
-    "carbs_g": 4,
-    "fat_g": 28,
-    "total_minutes": 18,
-    "prep_minutes": 6,
-    "cook_minutes": 12,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "180 g de hígado de res",
-      "2 piezas huevos",
-      "1 cucharada mantequilla",
-      "sal al gusto"
-    ],
-    "ingredients_en": [
-      "180 g beef liver",
-      "2 piezas eggs",
-      "1 cucharada butter",
-      "salt to taste"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "hígado de res",
-        "amount": 180,
-        "unit": "g"
-      },
-      {
-        "name": "huevos",
-        "amount": 2,
-        "unit": "piezas"
-      },
-      {
-        "name": "mantequilla",
-        "amount": 1,
-        "unit": "cucharada"
-      },
-      {
-        "name": "sal",
-        "amount": 1,
-        "unit": "al gusto"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "carne-asada-con-huevos",
-    "name_es": "Carne asada con huevos",
-    "name_en": "Carne asada with eggs",
-    "image_url": "/dishes/carne-asada-con-huevos.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "animal_based"
-    ],
-    "calories": 620,
-    "protein_g": 60,
-    "carbs_g": 4,
-    "fat_g": 38,
-    "total_minutes": 22,
-    "prep_minutes": 7,
-    "cook_minutes": 15,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "220 g de carne asada",
-      "2 piezas huevos",
-      "sal al gusto"
-    ],
-    "ingredients_en": [
-      "220 g carne asada",
-      "2 piezas eggs",
-      "salt to taste"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "carne asada",
-        "amount": 220,
-        "unit": "g"
-      },
-      {
-        "name": "huevos",
-        "amount": 2,
-        "unit": "piezas"
-      },
-      {
-        "name": "sal",
-        "amount": 1,
-        "unit": "al gusto"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "chorizo-con-huevos",
-    "name_es": "Chorizo con huevos",
-    "name_en": "Chorizo and eggs",
-    "image_url": "/dishes/chorizo-con-huevos.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "keto_carnivore"
-    ],
-    "calories": 590,
-    "protein_g": 36,
-    "carbs_g": 4,
-    "fat_g": 47,
-    "total_minutes": 15,
-    "prep_minutes": 5,
-    "cook_minutes": 10,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "100 g de chorizo",
-      "3 piezas huevos",
-      "30 g de queso opcional"
-    ],
-    "ingredients_en": [
-      "100 g chorizo",
-      "3 piezas eggs",
-      "30 g optional cheese"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "chorizo",
-        "amount": 100,
-        "unit": "g"
-      },
-      {
-        "name": "huevos",
-        "amount": 3,
-        "unit": "piezas"
-      },
-      {
-        "name": "queso opcional",
-        "amount": 30,
-        "unit": "g"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "picadillo-carnivoro",
-    "name_es": "Picadillo carnívoro",
-    "name_en": "Carnivore picadillo",
-    "image_url": "/dishes/picadillo-carnivoro.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "animal_based"
-    ],
-    "calories": 560,
-    "protein_g": 48,
-    "carbs_g": 5,
-    "fat_g": 38,
-    "total_minutes": 20,
-    "prep_minutes": 6,
-    "cook_minutes": 14,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "220 g de carne molida",
-      "1 pieza huevo",
-      "0.5 taza caldo"
-    ],
-    "ingredients_en": [
-      "220 g ground beef",
-      "1 pieza egg",
-      "0.5 taza broth"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "carne molida",
-        "amount": 220,
-        "unit": "g"
-      },
-      {
-        "name": "huevo",
-        "amount": 1,
-        "unit": "pieza"
-      },
-      {
-        "name": "caldo",
-        "amount": 0.5,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "albondigas-de-res-sin-pan",
-    "name_es": "Albondigas de res sin pan",
-    "name_en": "No-bread beef meatballs",
-    "image_url": "/dishes/albondigas-de-res-sin-pan.jpg",
-    "diet_tags": [
-      "carnivore_strict",
-      "carnivore_flexible"
-    ],
-    "calories": 610,
-    "protein_g": 58,
-    "carbs_g": 2,
-    "fat_g": 40,
-    "total_minutes": 25,
-    "prep_minutes": 8,
-    "cook_minutes": 17,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "250 g de carne molida",
-      "1 pieza huevo",
-      "sal al gusto"
-    ],
-    "ingredients_en": [
-      "250 g ground beef",
-      "1 pieza egg",
-      "salt to taste"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "carne molida",
-        "amount": 250,
-        "unit": "g"
-      },
-      {
-        "name": "huevo",
-        "amount": 1,
-        "unit": "pieza"
-      },
-      {
-        "name": "sal",
-        "amount": 1,
-        "unit": "al gusto"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "tiritas-de-res-con-queso",
-    "name_es": "Tiritas de res con queso",
-    "name_en": "Beef strips with cheese",
-    "image_url": "/dishes/tiritas-de-res-con-queso.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "keto_carnivore"
-    ],
-    "calories": 620,
-    "protein_g": 58,
-    "carbs_g": 2,
-    "fat_g": 42,
-    "total_minutes": 18,
-    "prep_minutes": 6,
-    "cook_minutes": 12,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "230 g de tiras de res",
-      "40 g de queso",
-      "1 cucharadita mantequilla"
-    ],
-    "ingredients_en": [
-      "230 g beef strips",
-      "40 g cheese",
-      "1 cucharadita butter"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "tiras de res",
-        "amount": 230,
-        "unit": "g"
-      },
-      {
-        "name": "queso",
-        "amount": 40,
-        "unit": "g"
-      },
-      {
-        "name": "mantequilla",
-        "amount": 1,
-        "unit": "cucharadita"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "muslos-de-pollo-crujientes",
-    "name_es": "Muslos de pollo crujientes",
-    "name_en": "Crispy chicken thighs",
-    "image_url": "/dishes/muslos-de-pollo-crujientes.jpg",
-    "diet_tags": [
-      "carnivore_strict",
-      "carnivore_flexible"
-    ],
-    "calories": 680,
-    "protein_g": 58,
-    "carbs_g": 0,
-    "fat_g": 48,
-    "total_minutes": 35,
-    "prep_minutes": 10,
-    "cook_minutes": 25,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "280 g de muslos de pollo",
-      "sal al gusto",
-      "1 cucharadita mantequilla"
-    ],
-    "ingredients_en": [
-      "280 g chicken thighs",
-      "salt to taste",
-      "1 cucharadita butter"
-    ],
-    "utensils_es": [
-      "Charola u horno",
-      "Pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Sheet pan or oven",
-      "Tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Precalienta el horno o air fryer si lo usarás.",
-      "Sazona la proteína o base principal y acomódala en una sola capa.",
-      "Hornea hasta que esté cocida, volteando a la mitad si hace falta.",
-      "Mientras se cocina, prepara guarnición, tupper y cubiertos.",
-      "Deja enfriar unos minutos antes de guardar."
-    ],
-    "steps_en": [
-      "Preheat oven or air fryer if using.",
-      "Season the main protein or base and arrange in one layer.",
-      "Bake until cooked, flipping halfway if needed.",
-      "While it cooks, prepare side items, container and utensils.",
-      "Let cool a few minutes before packing."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "muslos de pollo",
-        "amount": 280,
-        "unit": "g"
-      },
-      {
-        "name": "sal",
-        "amount": 1,
-        "unit": "al gusto"
-      },
-      {
-        "name": "mantequilla",
-        "amount": 1,
-        "unit": "cucharadita"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "piernas-de-pollo-al-horno",
-    "name_es": "Piernas de pollo al horno",
-    "name_en": "Baked chicken drumsticks",
-    "image_url": "/dishes/piernas-de-pollo-al-horno.jpg",
-    "diet_tags": [
-      "carnivore_strict",
-      "carnivore_flexible"
-    ],
-    "calories": 610,
-    "protein_g": 54,
-    "carbs_g": 0,
-    "fat_g": 42,
-    "total_minutes": 35,
-    "prep_minutes": 10,
-    "cook_minutes": 25,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "300 g de piernas de pollo",
-      "sal al gusto"
-    ],
-    "ingredients_en": [
-      "300 g chicken drumsticks",
-      "salt to taste"
-    ],
-    "utensils_es": [
-      "Charola u horno",
-      "Pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Sheet pan or oven",
-      "Tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Precalienta el horno o air fryer si lo usarás.",
-      "Sazona la proteína o base principal y acomódala en una sola capa.",
-      "Hornea hasta que esté cocida, volteando a la mitad si hace falta.",
-      "Mientras se cocina, prepara guarnición, tupper y cubiertos.",
-      "Deja enfriar unos minutos antes de guardar."
-    ],
-    "steps_en": [
-      "Preheat oven or air fryer if using.",
-      "Season the main protein or base and arrange in one layer.",
-      "Bake until cooked, flipping halfway if needed.",
-      "While it cooks, prepare side items, container and utensils.",
-      "Let cool a few minutes before packing."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "piernas de pollo",
-        "amount": 300,
-        "unit": "g"
-      },
-      {
-        "name": "sal",
-        "amount": 1,
-        "unit": "al gusto"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "carnitas-simples",
-    "name_es": "Carnitas simples",
-    "name_en": "Simple carnitas",
-    "image_url": "/dishes/carnitas-simples.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "animal_based"
-    ],
-    "calories": 700,
-    "protein_g": 55,
-    "carbs_g": 2,
-    "fat_g": 52,
-    "total_minutes": 35,
-    "prep_minutes": 10,
-    "cook_minutes": 25,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "260 g de cerdo para carnitas",
-      "sal al gusto",
-      "0.5 taza caldo"
-    ],
-    "ingredients_en": [
-      "260 g pork for carnitas",
-      "salt to taste",
-      "0.5 taza broth"
-    ],
-    "utensils_es": [
-      "Olla",
-      "Cuchara",
-      "Tupper térmico"
-    ],
-    "utensils_en": [
-      "Pot",
-      "Spoon",
-      "Thermal container"
-    ],
-    "steps_es": [
-      "Coloca la olla a fuego medio y agrega los ingredientes que tardan más.",
-      "Agrega líquido si la receta lo necesita y deja hervir suave.",
-      "Mientras se cocina, prepara el tupper, cuchara y servilletas para el trabajo.",
-      "Cocina hasta que la proteína o legumbre esté lista y ajusta sal.",
-      "Deja reposar unos minutos antes de cerrar el tupper para evitar vapor."
-    ],
-    "steps_en": [
-      "Place pot over medium heat and add the ingredients that take longest.",
-      "Add liquid if needed and simmer gently.",
-      "While it cooks, prepare the container, spoon and napkins for work.",
-      "Cook until the protein or legume is ready and adjust salt.",
-      "Let it rest a few minutes before closing the container to avoid steam."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "cerdo para carnitas",
-        "amount": 260,
-        "unit": "g"
-      },
-      {
-        "name": "sal",
-        "amount": 1,
-        "unit": "al gusto"
-      },
-      {
-        "name": "caldo",
-        "amount": 0.5,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "barbacoa-rapida-de-res",
-    "name_es": "Barbacoa rápida de res",
-    "name_en": "Quick beef barbacoa",
-    "image_url": "/dishes/barbacoa-rapida-de-res.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "animal_based"
-    ],
-    "calories": 620,
-    "protein_g": 58,
-    "carbs_g": 3,
-    "fat_g": 40,
-    "total_minutes": 35,
-    "prep_minutes": 10,
-    "cook_minutes": 25,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "240 g de res deshebrada",
-      "0.5 taza caldo",
-      "sal al gusto"
-    ],
-    "ingredients_en": [
-      "240 g shredded beef",
-      "0.5 taza broth",
-      "salt to taste"
-    ],
-    "utensils_es": [
-      "Olla",
-      "Cuchara",
-      "Tupper térmico"
-    ],
-    "utensils_en": [
-      "Pot",
-      "Spoon",
-      "Thermal container"
-    ],
-    "steps_es": [
-      "Coloca la olla a fuego medio y agrega los ingredientes que tardan más.",
-      "Agrega líquido si la receta lo necesita y deja hervir suave.",
-      "Mientras se cocina, prepara el tupper, cuchara y servilletas para el trabajo.",
-      "Cocina hasta que la proteína o legumbre esté lista y ajusta sal.",
-      "Deja reposar unos minutos antes de cerrar el tupper para evitar vapor."
-    ],
-    "steps_en": [
-      "Place pot over medium heat and add the ingredients that take longest.",
-      "Add liquid if needed and simmer gently.",
-      "While it cooks, prepare the container, spoon and napkins for work.",
-      "Cook until the protein or legume is ready and adjust salt.",
-      "Let it rest a few minutes before closing the container to avoid steam."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "res deshebrada",
-        "amount": 240,
-        "unit": "g"
-      },
-      {
-        "name": "caldo",
-        "amount": 0.5,
-        "unit": "taza"
-      },
-      {
-        "name": "sal",
-        "amount": 1,
-        "unit": "al gusto"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "birria-bowl-sin-tortilla",
-    "name_es": "Birria bowl sin tortilla",
-    "name_en": "Tortilla-free birria bowl",
-    "image_url": "/dishes/birria-bowl-sin-tortilla.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "animal_based"
-    ],
-    "calories": 650,
-    "protein_g": 58,
-    "carbs_g": 4,
-    "fat_g": 43,
-    "total_minutes": 35,
-    "prep_minutes": 10,
-    "cook_minutes": 25,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "250 g de carne para birria",
-      "0.5 taza caldo",
-      "30 g de queso opcional"
-    ],
-    "ingredients_en": [
-      "250 g birria beef",
-      "0.5 taza broth",
-      "30 g optional cheese"
-    ],
-    "utensils_es": [
-      "Olla",
-      "Cuchara",
-      "Tupper térmico"
-    ],
-    "utensils_en": [
-      "Pot",
-      "Spoon",
-      "Thermal container"
-    ],
-    "steps_es": [
-      "Coloca la olla a fuego medio y agrega los ingredientes que tardan más.",
-      "Agrega líquido si la receta lo necesita y deja hervir suave.",
-      "Mientras se cocina, prepara el tupper, cuchara y servilletas para el trabajo.",
-      "Cocina hasta que la proteína o legumbre esté lista y ajusta sal.",
-      "Deja reposar unos minutos antes de cerrar el tupper para evitar vapor."
-    ],
-    "steps_en": [
-      "Place pot over medium heat and add the ingredients that take longest.",
-      "Add liquid if needed and simmer gently.",
-      "While it cooks, prepare the container, spoon and napkins for work.",
-      "Cook until the protein or legume is ready and adjust salt.",
-      "Let it rest a few minutes before closing the container to avoid steam."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "carne para birria",
-        "amount": 250,
-        "unit": "g"
-      },
-      {
-        "name": "caldo",
-        "amount": 0.5,
-        "unit": "taza"
-      },
-      {
-        "name": "queso opcional",
-        "amount": 30,
-        "unit": "g"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "chilorio-con-huevo",
-    "name_es": "Chilorio con huevo",
-    "name_en": "Chilorio with egg",
-    "image_url": "/dishes/chilorio-con-huevo.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "animal_based"
-    ],
-    "calories": 630,
-    "protein_g": 46,
-    "carbs_g": 3,
-    "fat_g": 48,
-    "total_minutes": 18,
-    "prep_minutes": 6,
-    "cook_minutes": 12,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "180 g de chilorio",
-      "2 piezas huevos"
-    ],
-    "ingredients_en": [
-      "180 g chilorio",
-      "2 piezas eggs"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "chilorio",
-        "amount": 180,
-        "unit": "g"
-      },
-      {
-        "name": "huevos",
-        "amount": 2,
-        "unit": "piezas"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "pollo-estilo-tinga-sin-tortilla",
-    "name_es": "Pollo estilo tinga sin tortilla",
-    "name_en": "Tinga-style chicken without tortilla",
-    "image_url": "/dishes/pollo-estilo-tinga-sin-tortilla.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "animal_based"
-    ],
-    "calories": 520,
-    "protein_g": 58,
-    "carbs_g": 4,
-    "fat_g": 28,
-    "total_minutes": 22,
-    "prep_minutes": 7,
-    "cook_minutes": 15,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "230 g de pollo deshebrado",
-      "30 g de queso opcional",
-      "0.5 taza caldo"
-    ],
-    "ingredients_en": [
-      "230 g shredded chicken",
-      "30 g optional cheese",
-      "0.5 taza broth"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "pollo deshebrado",
-        "amount": 230,
-        "unit": "g"
-      },
-      {
-        "name": "queso opcional",
-        "amount": 30,
-        "unit": "g"
-      },
-      {
-        "name": "caldo",
-        "amount": 0.5,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "carne-con-chile-baja-en-carbohidratos",
-    "name_es": "Carne con chile baja en carbohidratos",
-    "name_en": "Low-carb carne con chile",
-    "image_url": "/dishes/carne-con-chile-baja-en-carbohidratos.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "animal_based"
-    ],
-    "calories": 580,
-    "protein_g": 54,
-    "carbs_g": 5,
-    "fat_g": 36,
-    "total_minutes": 25,
-    "prep_minutes": 8,
-    "cook_minutes": 17,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "230 g de carne de res",
-      "1 porción chile o salsa permitida",
-      "sal al gusto"
-    ],
-    "ingredients_en": [
-      "230 g beef",
-      "1 porción allowed chile or sauce",
-      "salt to taste"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "carne de res",
-        "amount": 230,
-        "unit": "g"
-      },
-      {
-        "name": "chile o salsa permitida",
-        "amount": 1,
-        "unit": "porción"
-      },
-      {
-        "name": "sal",
-        "amount": 1,
-        "unit": "al gusto"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "panza-de-cerdo-con-huevos",
-    "name_es": "Panza de cerdo con huevos",
-    "name_en": "Pork belly with eggs",
-    "image_url": "/dishes/panza-de-cerdo-con-huevos.jpg",
-    "diet_tags": [
-      "carnivore_strict",
-      "carnivore_flexible",
-      "keto_carnivore"
-    ],
-    "calories": 780,
-    "protein_g": 42,
-    "carbs_g": 1,
-    "fat_g": 66,
-    "total_minutes": 20,
-    "prep_minutes": 6,
-    "cook_minutes": 14,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "180 g de panceta de cerdo",
-      "2 piezas huevos"
-    ],
-    "ingredients_en": [
-      "180 g pork belly",
-      "2 piezas eggs"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "panceta de cerdo",
-        "amount": 180,
-        "unit": "g"
-      },
-      {
-        "name": "huevos",
-        "amount": 2,
-        "unit": "piezas"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "tocino-con-huevos",
-    "name_es": "Tocino con huevos",
-    "name_en": "Bacon and eggs",
-    "image_url": "/dishes/tocino-con-huevos.jpg",
-    "diet_tags": [
-      "carnivore_strict",
-      "carnivore_flexible",
-      "keto_carnivore"
-    ],
-    "calories": 620,
-    "protein_g": 34,
-    "carbs_g": 1,
-    "fat_g": 52,
-    "total_minutes": 14,
-    "prep_minutes": 4,
-    "cook_minutes": 10,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "80 g de tocino",
-      "3 piezas huevos"
-    ],
-    "ingredients_en": [
-      "80 g bacon",
-      "3 piezas eggs"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "tocino",
-        "amount": 80,
-        "unit": "g"
-      },
-      {
-        "name": "huevos",
-        "amount": 3,
-        "unit": "piezas"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "salchicha-con-huevos",
-    "name_es": "Salchicha con huevos",
-    "name_en": "Sausage and eggs",
-    "image_url": "/dishes/salchicha-con-huevos.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "keto_carnivore"
-    ],
-    "calories": 620,
-    "protein_g": 38,
-    "carbs_g": 4,
-    "fat_g": 49,
-    "total_minutes": 14,
-    "prep_minutes": 4,
-    "cook_minutes": 10,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "120 g de salchicha",
-      "3 piezas huevos"
-    ],
-    "ingredients_en": [
-      "120 g sausage",
-      "3 piezas eggs"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "salchicha",
-        "amount": 120,
-        "unit": "g"
-      },
-      {
-        "name": "huevos",
-        "amount": 3,
-        "unit": "piezas"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "sardinas-con-huevo-cocido",
-    "name_es": "Sardinas con huevo cocido",
-    "name_en": "Sardines with boiled egg",
-    "image_url": "/dishes/sardinas-con-huevo-cocido.jpg",
-    "diet_tags": [
-      "carnivore_strict",
-      "carnivore_flexible"
-    ],
-    "calories": 460,
-    "protein_g": 43,
-    "carbs_g": 1,
-    "fat_g": 30,
-    "total_minutes": 10,
-    "prep_minutes": 3,
-    "cook_minutes": 7,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "1 lata sardinas",
-      "2 piezas huevos"
-    ],
-    "ingredients_en": [
-      "1 lata sardines",
-      "2 piezas eggs"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "sardinas",
-        "amount": 1,
-        "unit": "lata"
-      },
-      {
-        "name": "huevos",
-        "amount": 2,
-        "unit": "piezas"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "caballa-con-huevos",
-    "name_es": "Caballa con huevos",
-    "name_en": "Mackerel with eggs",
-    "image_url": "/dishes/caballa-con-huevos.jpg",
-    "diet_tags": [
-      "carnivore_strict",
-      "carnivore_flexible"
-    ],
-    "calories": 520,
-    "protein_g": 48,
-    "carbs_g": 1,
-    "fat_g": 35,
-    "total_minutes": 10,
-    "prep_minutes": 3,
-    "cook_minutes": 7,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "1 lata caballa",
-      "2 piezas huevos"
-    ],
-    "ingredients_en": [
-      "1 lata mackerel",
-      "2 piezas eggs"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "caballa",
-        "amount": 1,
-        "unit": "lata"
-      },
-      {
-        "name": "huevos",
-        "amount": 2,
-        "unit": "piezas"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "tilapia-con-mantequilla",
-    "name_es": "Tilapia con mantequilla",
-    "name_en": "Butter tilapia",
-    "image_url": "/dishes/tilapia-con-mantequilla.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "keto_carnivore"
-    ],
-    "calories": 430,
-    "protein_g": 50,
-    "carbs_g": 1,
-    "fat_g": 23,
-    "total_minutes": 14,
-    "prep_minutes": 4,
-    "cook_minutes": 10,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "220 g de tilapia",
-      "1 cucharada mantequilla"
-    ],
-    "ingredients_en": [
-      "220 g tilapia",
-      "1 cucharada butter"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "tilapia",
-        "amount": 220,
-        "unit": "g"
-      },
-      {
-        "name": "mantequilla",
-        "amount": 1,
-        "unit": "cucharada"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "bacalao-con-huevos",
-    "name_es": "Bacalao con huevos",
-    "name_en": "Cod with eggs",
-    "image_url": "/dishes/bacalao-con-huevos.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "keto_carnivore"
-    ],
-    "calories": 480,
-    "protein_g": 58,
-    "carbs_g": 1,
-    "fat_g": 24,
-    "total_minutes": 16,
-    "prep_minutes": 5,
-    "cook_minutes": 11,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "220 g de bacalao",
-      "2 piezas huevos"
-    ],
-    "ingredients_en": [
-      "220 g cod",
-      "2 piezas eggs"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "bacalao",
-        "amount": 220,
-        "unit": "g"
-      },
-      {
-        "name": "huevos",
-        "amount": 2,
-        "unit": "piezas"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "tazon-de-roast-beef-y-queso",
-    "name_es": "Tazón de roast beef y queso",
-    "name_en": "Roast beef cheese bowl",
-    "image_url": "/dishes/tazon-de-roast-beef-y-queso.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "keto_carnivore"
-    ],
-    "calories": 520,
-    "protein_g": 48,
-    "carbs_g": 2,
-    "fat_g": 34,
-    "total_minutes": 7,
-    "prep_minutes": 3,
-    "cook_minutes": 4,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "180 g de roast beef",
-      "50 g de queso"
-    ],
-    "ingredients_en": [
-      "180 g roast beef",
-      "50 g cheese"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "roast beef",
-        "amount": 180,
-        "unit": "g"
-      },
-      {
-        "name": "queso",
-        "amount": 50,
-        "unit": "g"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "rollitos-de-pavo-y-queso",
-    "name_es": "Rollitos de pavo y queso",
-    "name_en": "Turkey cheese roll-ups",
-    "image_url": "/dishes/rollitos-de-pavo-y-queso.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "keto_carnivore"
-    ],
-    "calories": 420,
-    "protein_g": 46,
-    "carbs_g": 3,
-    "fat_g": 24,
-    "total_minutes": 5,
-    "prep_minutes": 3,
-    "cook_minutes": 2,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "180 g de pavo en rebanadas",
-      "40 g de queso"
-    ],
-    "ingredients_en": [
-      "180 g turkey slices",
-      "40 g cheese"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "pavo en rebanadas",
-        "amount": 180,
-        "unit": "g"
-      },
-      {
-        "name": "queso",
-        "amount": 40,
-        "unit": "g"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "albondigas-con-higado-escondido",
-    "name_es": "Albóndigas con hígado escondido",
-    "name_en": "Hidden liver meatballs",
-    "image_url": "/dishes/albondigas-con-higado-escondido.jpg",
-    "diet_tags": [
-      "carnivore_strict",
-      "carnivore_flexible"
-    ],
-    "calories": 620,
-    "protein_g": 60,
-    "carbs_g": 2,
-    "fat_g": 40,
-    "total_minutes": 25,
-    "prep_minutes": 8,
-    "cook_minutes": 17,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "220 g de carne molida",
-      "40 g de hígado molido",
-      "1 pieza huevo"
-    ],
-    "ingredients_en": [
-      "220 g ground beef",
-      "40 g ground liver",
-      "1 pieza egg"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "carne molida",
-        "amount": 220,
-        "unit": "g"
-      },
-      {
-        "name": "hígado molido",
-        "amount": 40,
-        "unit": "g"
-      },
-      {
-        "name": "huevo",
-        "amount": 1,
-        "unit": "pieza"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "corazon-de-res-en-tiras",
-    "name_es": "Corazón de res en tiras",
-    "name_en": "Beef heart strips",
-    "image_url": "/dishes/corazon-de-res-en-tiras.jpg",
-    "diet_tags": [
-      "carnivore_strict",
-      "carnivore_flexible"
-    ],
-    "calories": 500,
-    "protein_g": 60,
-    "carbs_g": 1,
-    "fat_g": 26,
-    "total_minutes": 18,
-    "prep_minutes": 6,
-    "cook_minutes": 12,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "220 g de corazón de res",
-      "1 cucharada mantequilla"
-    ],
-    "ingredients_en": [
-      "220 g beef heart",
-      "1 cucharada butter"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "corazón de res",
-        "amount": 220,
-        "unit": "g"
-      },
-      {
-        "name": "mantequilla",
-        "amount": 1,
-        "unit": "cucharada"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "costillas-de-res-simples",
-    "name_es": "Costillas de res simples",
-    "name_en": "Simple beef ribs",
-    "image_url": "/dishes/costillas-de-res-simples.jpg",
-    "diet_tags": [
-      "carnivore_strict",
-      "carnivore_flexible"
-    ],
-    "calories": 820,
-    "protein_g": 58,
-    "carbs_g": 1,
-    "fat_g": 65,
-    "total_minutes": 40,
-    "prep_minutes": 10,
-    "cook_minutes": 30,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "320 g de costillas de res",
-      "sal al gusto"
-    ],
-    "ingredients_en": [
-      "320 g beef ribs",
-      "salt to taste"
-    ],
-    "utensils_es": [
-      "Charola u horno",
-      "Pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Sheet pan or oven",
-      "Tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Precalienta el horno o air fryer si lo usarás.",
-      "Sazona la proteína o base principal y acomódala en una sola capa.",
-      "Hornea hasta que esté cocida, volteando a la mitad si hace falta.",
-      "Mientras se cocina, prepara guarnición, tupper y cubiertos.",
-      "Deja enfriar unos minutos antes de guardar."
-    ],
-    "steps_en": [
-      "Preheat oven or air fryer if using.",
-      "Season the main protein or base and arrange in one layer.",
-      "Bake until cooked, flipping halfway if needed.",
-      "While it cooks, prepare side items, container and utensils.",
-      "Let cool a few minutes before packing."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "costillas de res",
-        "amount": 320,
-        "unit": "g"
-      },
-      {
-        "name": "sal",
-        "amount": 1,
-        "unit": "al gusto"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "chuletas-de-cordero",
-    "name_es": "Chuletas de cordero",
-    "name_en": "Lamb chops",
-    "image_url": "/dishes/chuletas-de-cordero.jpg",
-    "diet_tags": [
-      "carnivore_strict",
-      "carnivore_flexible"
-    ],
-    "calories": 700,
-    "protein_g": 54,
-    "carbs_g": 1,
-    "fat_g": 52,
-    "total_minutes": 22,
-    "prep_minutes": 7,
-    "cook_minutes": 15,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "260 g de chuletas de cordero",
-      "sal al gusto"
-    ],
-    "ingredients_en": [
-      "260 g lamb chops",
-      "salt to taste"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "chuletas de cordero",
-        "amount": 260,
-        "unit": "g"
-      },
-      {
-        "name": "sal",
-        "amount": 1,
-        "unit": "al gusto"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "pavo-molido-con-huevos",
-    "name_es": "Pavo molido con huevos",
-    "name_en": "Ground turkey with eggs",
-    "image_url": "/dishes/pavo-molido-con-huevos.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "keto_carnivore"
-    ],
-    "calories": 500,
-    "protein_g": 58,
-    "carbs_g": 2,
-    "fat_g": 28,
-    "total_minutes": 18,
-    "prep_minutes": 6,
-    "cook_minutes": 12,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "220 g de pavo molido",
-      "2 piezas huevos"
-    ],
-    "ingredients_en": [
-      "220 g ground turkey",
-      "2 piezas eggs"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "pavo molido",
-        "amount": 220,
-        "unit": "g"
-      },
-      {
-        "name": "huevos",
-        "amount": 2,
-        "unit": "piezas"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "pastel-de-carne-carnivoro",
-    "name_es": "Pastel de carne carnívoro",
-    "name_en": "Carnivore meatloaf",
-    "image_url": "/dishes/pastel-de-carne-carnivoro.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "keto_carnivore"
-    ],
-    "calories": 680,
-    "protein_g": 62,
-    "carbs_g": 3,
-    "fat_g": 45,
-    "total_minutes": 35,
-    "prep_minutes": 10,
-    "cook_minutes": 25,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "260 g de carne molida",
-      "1 pieza huevo",
-      "30 g de queso"
-    ],
-    "ingredients_en": [
-      "260 g ground beef",
-      "1 pieza egg",
-      "30 g cheese"
-    ],
-    "utensils_es": [
-      "Charola u horno",
-      "Pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Sheet pan or oven",
-      "Tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Precalienta el horno o air fryer si lo usarás.",
-      "Sazona la proteína o base principal y acomódala en una sola capa.",
-      "Hornea hasta que esté cocida, volteando a la mitad si hace falta.",
-      "Mientras se cocina, prepara guarnición, tupper y cubiertos.",
-      "Deja enfriar unos minutos antes de guardar."
-    ],
-    "steps_en": [
-      "Preheat oven or air fryer if using.",
-      "Season the main protein or base and arrange in one layer.",
-      "Bake until cooked, flipping halfway if needed.",
-      "While it cooks, prepare side items, container and utensils.",
-      "Let cool a few minutes before packing."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "carne molida",
-        "amount": 260,
-        "unit": "g"
-      },
-      {
-        "name": "huevo",
-        "amount": 1,
-        "unit": "pieza"
-      },
-      {
-        "name": "queso",
-        "amount": 30,
-        "unit": "g"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "muffins-de-huevo-y-tocino",
-    "name_es": "Muffins de huevo y tocino",
-    "name_en": "Bacon egg muffins",
-    "image_url": "/dishes/muffins-de-huevo-y-tocino.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "keto_carnivore"
-    ],
-    "calories": 460,
-    "protein_g": 34,
-    "carbs_g": 2,
-    "fat_g": 34,
-    "total_minutes": 22,
-    "prep_minutes": 7,
-    "cook_minutes": 15,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "3 piezas huevos",
-      "50 g de tocino",
-      "30 g de queso"
-    ],
-    "ingredients_en": [
-      "3 piezas eggs",
-      "50 g bacon",
-      "30 g cheese"
-    ],
-    "utensils_es": [
-      "Charola u horno",
-      "Pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Sheet pan or oven",
-      "Tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Precalienta el horno o air fryer si lo usarás.",
-      "Sazona la proteína o base principal y acomódala en una sola capa.",
-      "Hornea hasta que esté cocida, volteando a la mitad si hace falta.",
-      "Mientras se cocina, prepara guarnición, tupper y cubiertos.",
-      "Deja enfriar unos minutos antes de guardar."
-    ],
-    "steps_en": [
-      "Preheat oven or air fryer if using.",
-      "Season the main protein or base and arrange in one layer.",
-      "Bake until cooked, flipping halfway if needed.",
-      "While it cooks, prepare side items, container and utensils.",
-      "Let cool a few minutes before packing."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "huevos",
-        "amount": 3,
-        "unit": "piezas"
-      },
-      {
-        "name": "tocino",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "name": "queso",
-        "amount": 30,
-        "unit": "g"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "cazuela-de-huevo-y-carne",
-    "name_es": "Cazuela de huevo y carne",
-    "name_en": "Egg beef casserole",
-    "image_url": "/dishes/cazuela-de-huevo-y-carne.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "keto_carnivore"
-    ],
-    "calories": 620,
-    "protein_g": 56,
-    "carbs_g": 3,
-    "fat_g": 40,
-    "total_minutes": 28,
-    "prep_minutes": 9,
-    "cook_minutes": 19,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "3 piezas huevos",
-      "180 g de carne molida",
-      "30 g de queso"
-    ],
-    "ingredients_en": [
-      "3 piezas eggs",
-      "180 g ground beef",
-      "30 g cheese"
-    ],
-    "utensils_es": [
-      "Charola u horno",
-      "Pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Sheet pan or oven",
-      "Tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Precalienta el horno o air fryer si lo usarás.",
-      "Sazona la proteína o base principal y acomódala en una sola capa.",
-      "Hornea hasta que esté cocida, volteando a la mitad si hace falta.",
-      "Mientras se cocina, prepara guarnición, tupper y cubiertos.",
-      "Deja enfriar unos minutos antes de guardar."
-    ],
-    "steps_en": [
-      "Preheat oven or air fryer if using.",
-      "Season the main protein or base and arrange in one layer.",
-      "Bake until cooked, flipping halfway if needed.",
-      "While it cooks, prepare side items, container and utensils.",
-      "Let cool a few minutes before packing."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "huevos",
-        "amount": 3,
-        "unit": "piezas"
-      },
-      {
-        "name": "carne molida",
-        "amount": 180,
-        "unit": "g"
-      },
-      {
-        "name": "queso",
-        "amount": 30,
-        "unit": "g"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "tacos-de-queso-con-carne",
-    "name_es": "Tacos de queso con carne",
-    "name_en": "Cheese shell beef tacos",
-    "image_url": "/dishes/tacos-de-queso-con-carne.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "keto_carnivore"
-    ],
-    "calories": 650,
-    "protein_g": 52,
-    "carbs_g": 4,
-    "fat_g": 46,
-    "total_minutes": 20,
-    "prep_minutes": 6,
-    "cook_minutes": 14,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "80 g de queso",
-      "200 g de carne molida"
-    ],
-    "ingredients_en": [
-      "80 g cheese",
-      "200 g ground beef"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "queso",
-        "amount": 80,
-        "unit": "g"
-      },
-      {
-        "name": "carne molida",
-        "amount": 200,
-        "unit": "g"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "pollo-rostizado-con-huevos",
-    "name_es": "Pollo rostizado con huevos",
-    "name_en": "Rotisserie chicken with eggs",
-    "image_url": "/dishes/pollo-rostizado-con-huevos.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "keto_carnivore"
-    ],
-    "calories": 560,
-    "protein_g": 62,
-    "carbs_g": 2,
-    "fat_g": 30,
-    "total_minutes": 8,
-    "prep_minutes": 3,
-    "cook_minutes": 5,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "220 g de pollo rostizado",
-      "2 piezas huevos cocidos"
-    ],
-    "ingredients_en": [
-      "220 g rotisserie chicken",
-      "2 piezas boiled eggs"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "pollo rostizado",
-        "amount": 220,
-        "unit": "g"
-      },
-      {
-        "name": "huevos cocidos",
-        "amount": 2,
-        "unit": "piezas"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "ensalada-de-huevo-con-tocino",
-    "name_es": "Ensalada de huevo con tocino",
-    "name_en": "Egg salad with bacon",
-    "image_url": "/dishes/ensalada-de-huevo-con-tocino.jpg",
-    "diet_tags": [
-      "carnivore_flexible",
-      "keto_carnivore"
-    ],
-    "calories": 590,
-    "protein_g": 36,
-    "carbs_g": 3,
-    "fat_g": 47,
-    "total_minutes": 12,
-    "prep_minutes": 4,
-    "cook_minutes": 8,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "3 piezas huevos",
-      "50 g de tocino",
-      "1 cucharada mayonesa opcional"
-    ],
-    "ingredients_en": [
-      "3 piezas eggs",
-      "50 g bacon",
-      "1 cucharada optional mayo"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "huevos",
-        "amount": 3,
-        "unit": "piezas"
-      },
-      {
-        "name": "tocino",
-        "amount": 50,
-        "unit": "g"
-      },
-      {
-        "name": "mayonesa opcional",
-        "amount": 1,
-        "unit": "cucharada"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "queso-cottage-animal-based",
-    "name_es": "Queso cottage animal-based",
-    "name_en": "Animal-based cottage bowl",
-    "image_url": "/dishes/queso-cottage-animal-based.jpg",
-    "diet_tags": [
-      "animal_based",
-      "lacto_vegetarian"
-    ],
-    "calories": 360,
-    "protein_g": 34,
-    "carbs_g": 12,
-    "fat_g": 16,
-    "total_minutes": 5,
-    "prep_minutes": 3,
-    "cook_minutes": 2,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "1 taza queso cottage",
-      "1 cucharadita miel opcional"
-    ],
-    "ingredients_en": [
-      "1 taza cottage cheese",
-      "1 cucharadita optional honey"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "queso cottage",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "miel opcional",
-        "amount": 1,
-        "unit": "cucharadita"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "yogurt-griego-animal-based",
-    "name_es": "Yogurt griego animal-based",
-    "name_en": "Animal-based Greek yogurt",
-    "image_url": "/dishes/yogurt-griego-animal-based.jpg",
-    "diet_tags": [
-      "animal_based",
-      "lacto_vegetarian"
-    ],
-    "calories": 350,
-    "protein_g": 32,
-    "carbs_g": 18,
-    "fat_g": 14,
-    "total_minutes": 5,
-    "prep_minutes": 3,
-    "cook_minutes": 2,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "1 taza yogurt griego",
-      "1 porción berries opcionales"
-    ],
-    "ingredients_en": [
-      "1 taza Greek yogurt",
-      "1 porción optional berries"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "yogurt griego",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "berries opcionales",
-        "amount": 1,
-        "unit": "porción"
-      }
-    ],
-    "replacements_es": [
-      "Bistec",
-      "Carne molida",
-      "Pollo",
-      "Huevos"
-    ],
-    "replacements_en": [
-      "Steak",
-      "Ground beef",
-      "Chicken",
-      "Eggs"
-    ]
-  },
-  {
-    "id": "yogurt-griego-con-nueces",
-    "name_es": "Yogurt griego con nueces",
-    "name_en": "Greek yogurt with nuts",
-    "image_url": "/dishes/yogurt-griego-con-nueces.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian",
-      "lacto_vegetarian"
-    ],
-    "calories": 360,
-    "protein_g": 28,
-    "carbs_g": 22,
-    "fat_g": 18,
-    "total_minutes": 5,
-    "prep_minutes": 3,
-    "cook_minutes": 2,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "1 taza yogurt griego natural",
-      "20 g de nueces",
-      "canela al gusto"
-    ],
-    "ingredients_en": [
-      "1 taza plain Greek yogurt",
-      "20 g nuts",
-      "cinnamon to taste"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "yogurt griego natural",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "nueces",
-        "amount": 20,
-        "unit": "g"
-      },
-      {
-        "name": "canela",
-        "amount": 1,
-        "unit": "al gusto"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "bowl-de-lentejas-con-huevo",
-    "name_es": "Bowl de lentejas con huevo",
-    "name_en": "Lentil egg bowl",
-    "image_url": "/dishes/bowl-de-lentejas-con-huevo.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian"
-    ],
-    "calories": 520,
-    "protein_g": 32,
-    "carbs_g": 62,
-    "fat_g": 18,
-    "total_minutes": 25,
-    "prep_minutes": 8,
-    "cook_minutes": 17,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "1 taza lentejas cocidas",
-      "2 piezas huevos",
-      "1 taza espinaca",
-      "30 g de queso opcional"
-    ],
-    "ingredients_en": [
-      "1 taza cooked lentils",
-      "2 piezas eggs",
-      "1 taza spinach",
-      "30 g optional cheese"
-    ],
-    "utensils_es": [
-      "Olla",
-      "Cuchara",
-      "Tupper térmico"
-    ],
-    "utensils_en": [
-      "Pot",
-      "Spoon",
-      "Thermal container"
-    ],
-    "steps_es": [
-      "Coloca la olla a fuego medio y agrega los ingredientes que tardan más.",
-      "Agrega líquido si la receta lo necesita y deja hervir suave.",
-      "Mientras se cocina, prepara el tupper, cuchara y servilletas para el trabajo.",
-      "Cocina hasta que la proteína o legumbre esté lista y ajusta sal.",
-      "Deja reposar unos minutos antes de cerrar el tupper para evitar vapor."
-    ],
-    "steps_en": [
-      "Place pot over medium heat and add the ingredients that take longest.",
-      "Add liquid if needed and simmer gently.",
-      "While it cooks, prepare the container, spoon and napkins for work.",
-      "Cook until the protein or legume is ready and adjust salt.",
-      "Let it rest a few minutes before closing the container to avoid steam."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "lentejas cocidas",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "huevos",
-        "amount": 2,
-        "unit": "piezas"
-      },
-      {
-        "name": "espinaca",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "queso opcional",
-        "amount": 30,
-        "unit": "g"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "quesadilla-vegetariana-alta-proteina",
-    "name_es": "Quesadilla vegetariana alta proteína",
-    "name_en": "High-protein vegetarian quesadilla",
-    "image_url": "/dishes/quesadilla-vegetariana-alta-proteina.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian",
-      "lacto_vegetarian"
-    ],
-    "calories": 500,
-    "protein_g": 28,
-    "carbs_g": 42,
-    "fat_g": 24,
-    "total_minutes": 12,
-    "prep_minutes": 4,
-    "cook_minutes": 8,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "1 pieza tortilla grande",
-      "60 g de queso",
-      "0.5 taza frijoles",
-      "1 taza espinaca"
-    ],
-    "ingredients_en": [
-      "1 pieza large tortilla",
-      "60 g cheese",
-      "0.5 taza beans",
-      "1 taza spinach"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "tortilla grande",
-        "amount": 1,
-        "unit": "pieza"
-      },
-      {
-        "name": "queso",
-        "amount": 60,
-        "unit": "g"
-      },
-      {
-        "name": "frijoles",
-        "amount": 0.5,
-        "unit": "taza"
-      },
-      {
-        "name": "espinaca",
-        "amount": 1,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "cottage-con-fruta-y-nueces",
-    "name_es": "Cottage con fruta y nueces",
-    "name_en": "Cottage cheese with fruit and nuts",
-    "image_url": "/dishes/cottage-con-fruta-y-nueces.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian",
-      "lacto_vegetarian"
-    ],
-    "calories": 390,
-    "protein_g": 34,
-    "carbs_g": 28,
-    "fat_g": 16,
-    "total_minutes": 6,
-    "prep_minutes": 3,
-    "cook_minutes": 3,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "1 taza queso cottage",
-      "0.5 taza fruta",
-      "15 g de nueces"
-    ],
-    "ingredients_en": [
-      "1 taza cottage cheese",
-      "0.5 taza fruit",
-      "15 g nuts"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "queso cottage",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "fruta",
-        "amount": 0.5,
-        "unit": "taza"
-      },
-      {
-        "name": "nueces",
-        "amount": 15,
-        "unit": "g"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "avena-con-proteina",
-    "name_es": "Avena con proteína",
-    "name_en": "Protein oatmeal",
-    "image_url": "/dishes/avena-con-proteina.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian",
-      "lacto_vegetarian"
-    ],
-    "calories": 450,
-    "protein_g": 32,
-    "carbs_g": 58,
-    "fat_g": 10,
-    "total_minutes": 10,
-    "prep_minutes": 3,
-    "cook_minutes": 7,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "0.5 taza avena",
-      "1 porción proteína en polvo",
-      "1 taza leche o agua"
-    ],
-    "ingredients_en": [
-      "0.5 taza oats",
-      "1 porción protein powder",
-      "1 taza milk or water"
-    ],
-    "utensils_es": [
-      "Olla",
-      "Cuchara",
-      "Tupper térmico"
-    ],
-    "utensils_en": [
-      "Pot",
-      "Spoon",
-      "Thermal container"
-    ],
-    "steps_es": [
-      "Coloca la olla a fuego medio y agrega los ingredientes que tardan más.",
-      "Agrega líquido si la receta lo necesita y deja hervir suave.",
-      "Mientras se cocina, prepara el tupper, cuchara y servilletas para el trabajo.",
-      "Cocina hasta que la proteína o legumbre esté lista y ajusta sal.",
-      "Deja reposar unos minutos antes de cerrar el tupper para evitar vapor."
-    ],
-    "steps_en": [
-      "Place pot over medium heat and add the ingredients that take longest.",
-      "Add liquid if needed and simmer gently.",
-      "While it cooks, prepare the container, spoon and napkins for work.",
-      "Cook until the protein or legume is ready and adjust salt.",
-      "Let it rest a few minutes before closing the container to avoid steam."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "avena",
-        "amount": 0.5,
-        "unit": "taza"
-      },
-      {
-        "name": "proteína en polvo",
-        "amount": 1,
-        "unit": "porción"
-      },
-      {
-        "name": "leche o agua",
-        "amount": 1,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "omelet-de-espinaca-y-queso",
-    "name_es": "Omelet de espinaca y queso",
-    "name_en": "Spinach and cheese omelet",
-    "image_url": "/dishes/omelet-de-espinaca-y-queso.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian"
-    ],
-    "calories": 420,
-    "protein_g": 31,
-    "carbs_g": 6,
-    "fat_g": 30,
-    "total_minutes": 13,
-    "prep_minutes": 4,
-    "cook_minutes": 9,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "3 piezas huevos",
-      "1 taza espinaca",
-      "30 g de queso"
-    ],
-    "ingredients_en": [
-      "3 piezas eggs",
-      "1 taza spinach",
-      "30 g cheese"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "huevos",
-        "amount": 3,
-        "unit": "piezas"
-      },
-      {
-        "name": "espinaca",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "queso",
-        "amount": 30,
-        "unit": "g"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "burrito-de-frijol-y-huevo",
-    "name_es": "Burrito de frijol y huevo",
-    "name_en": "Bean and egg burrito",
-    "image_url": "/dishes/burrito-de-frijol-y-huevo.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian"
-    ],
-    "calories": 520,
-    "protein_g": 30,
-    "carbs_g": 55,
-    "fat_g": 20,
-    "total_minutes": 15,
-    "prep_minutes": 5,
-    "cook_minutes": 10,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "1 pieza tortilla grande",
-      "2 piezas huevos",
-      "0.5 taza frijoles",
-      "30 g de queso"
-    ],
-    "ingredients_en": [
-      "1 pieza large tortilla",
-      "2 piezas eggs",
-      "0.5 taza beans",
-      "30 g cheese"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "tortilla grande",
-        "amount": 1,
-        "unit": "pieza"
-      },
-      {
-        "name": "huevos",
-        "amount": 2,
-        "unit": "piezas"
-      },
-      {
-        "name": "frijoles",
-        "amount": 0.5,
-        "unit": "taza"
-      },
-      {
-        "name": "queso",
-        "amount": 30,
-        "unit": "g"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "ensalada-de-huevo-con-aguacate",
-    "name_es": "Ensalada de huevo con aguacate",
-    "name_en": "Egg avocado salad",
-    "image_url": "/dishes/ensalada-de-huevo-con-aguacate.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian",
-      "keto_carnivore"
-    ],
-    "calories": 480,
-    "protein_g": 26,
-    "carbs_g": 14,
-    "fat_g": 36,
-    "total_minutes": 15,
-    "prep_minutes": 5,
-    "cook_minutes": 10,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "3 piezas huevos",
-      "0.5 pieza aguacate",
-      "1 porción lechuga opcional"
-    ],
-    "ingredients_en": [
-      "3 piezas eggs",
-      "0.5 pieza avocado",
-      "1 porción optional lettuce"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "huevos",
-        "amount": 3,
-        "unit": "piezas"
-      },
-      {
-        "name": "aguacate",
-        "amount": 0.5,
-        "unit": "pieza"
-      },
-      {
-        "name": "lechuga opcional",
-        "amount": 1,
-        "unit": "porción"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "huevos-a-la-mexicana",
-    "name_es": "Huevos a la mexicana",
-    "name_en": "Mexican-style eggs",
-    "image_url": "/dishes/huevos-a-la-mexicana.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian"
-    ],
-    "calories": 390,
-    "protein_g": 25,
-    "carbs_g": 10,
-    "fat_g": 28,
-    "total_minutes": 12,
-    "prep_minutes": 4,
-    "cook_minutes": 8,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "3 piezas huevos",
-      "0.5 pieza jitomate",
-      "1 porción cebolla opcional",
-      "20 g de queso opcional"
-    ],
-    "ingredients_en": [
-      "3 piezas eggs",
-      "0.5 pieza tomato",
-      "1 porción optional onion",
-      "20 g optional cheese"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "huevos",
-        "amount": 3,
-        "unit": "piezas"
-      },
-      {
-        "name": "jitomate",
-        "amount": 0.5,
-        "unit": "pieza"
-      },
-      {
-        "name": "cebolla opcional",
-        "amount": 1,
-        "unit": "porción"
-      },
-      {
-        "name": "queso opcional",
-        "amount": 20,
-        "unit": "g"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "chilaquiles-ligeros-con-huevo",
-    "name_es": "Chilaquiles ligeros con huevo",
-    "name_en": "Light chilaquiles with egg",
-    "image_url": "/dishes/chilaquiles-ligeros-con-huevo.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian"
-    ],
-    "calories": 520,
-    "protein_g": 26,
-    "carbs_g": 55,
-    "fat_g": 22,
-    "total_minutes": 18,
-    "prep_minutes": 6,
-    "cook_minutes": 12,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "1 taza totopos horneados",
-      "2 piezas huevos",
-      "0.5 taza salsa",
-      "30 g de queso"
-    ],
-    "ingredients_en": [
-      "1 taza baked tortilla chips",
-      "2 piezas eggs",
-      "0.5 taza salsa",
-      "30 g cheese"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "totopos horneados",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "huevos",
-        "amount": 2,
-        "unit": "piezas"
-      },
-      {
-        "name": "salsa",
-        "amount": 0.5,
-        "unit": "taza"
-      },
-      {
-        "name": "queso",
-        "amount": 30,
-        "unit": "g"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "frittata-de-verduras",
-    "name_es": "Frittata de verduras",
-    "name_en": "Vegetable frittata",
-    "image_url": "/dishes/frittata-de-verduras.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian"
-    ],
-    "calories": 430,
-    "protein_g": 30,
-    "carbs_g": 12,
-    "fat_g": 28,
-    "total_minutes": 25,
-    "prep_minutes": 8,
-    "cook_minutes": 17,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "4 piezas huevos",
-      "1 taza verduras",
-      "30 g de queso"
-    ],
-    "ingredients_en": [
-      "4 piezas eggs",
-      "1 taza vegetables",
-      "30 g cheese"
-    ],
-    "utensils_es": [
-      "Charola u horno",
-      "Pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Sheet pan or oven",
-      "Tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Precalienta el horno o air fryer si lo usarás.",
-      "Sazona la proteína o base principal y acomódala en una sola capa.",
-      "Hornea hasta que esté cocida, volteando a la mitad si hace falta.",
-      "Mientras se cocina, prepara guarnición, tupper y cubiertos.",
-      "Deja enfriar unos minutos antes de guardar."
-    ],
-    "steps_en": [
-      "Preheat oven or air fryer if using.",
-      "Season the main protein or base and arrange in one layer.",
-      "Bake until cooked, flipping halfway if needed.",
-      "While it cooks, prepare side items, container and utensils.",
-      "Let cool a few minutes before packing."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "huevos",
-        "amount": 4,
-        "unit": "piezas"
-      },
-      {
-        "name": "verduras",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "queso",
-        "amount": 30,
-        "unit": "g"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "muffins-de-huevo-vegetarianos",
-    "name_es": "Muffins de huevo vegetarianos",
-    "name_en": "Vegetarian egg muffins",
-    "image_url": "/dishes/muffins-de-huevo-vegetarianos.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian"
-    ],
-    "calories": 400,
-    "protein_g": 28,
-    "carbs_g": 10,
-    "fat_g": 27,
-    "total_minutes": 25,
-    "prep_minutes": 8,
-    "cook_minutes": 17,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "4 piezas huevos",
-      "1 taza espinaca",
-      "30 g de queso"
-    ],
-    "ingredients_en": [
-      "4 piezas eggs",
-      "1 taza spinach",
-      "30 g cheese"
-    ],
-    "utensils_es": [
-      "Charola u horno",
-      "Pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Sheet pan or oven",
-      "Tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Precalienta el horno o air fryer si lo usarás.",
-      "Sazona la proteína o base principal y acomódala en una sola capa.",
-      "Hornea hasta que esté cocida, volteando a la mitad si hace falta.",
-      "Mientras se cocina, prepara guarnición, tupper y cubiertos.",
-      "Deja enfriar unos minutos antes de guardar."
-    ],
-    "steps_en": [
-      "Preheat oven or air fryer if using.",
-      "Season the main protein or base and arrange in one layer.",
-      "Bake until cooked, flipping halfway if needed.",
-      "While it cooks, prepare side items, container and utensils.",
-      "Let cool a few minutes before packing."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "huevos",
-        "amount": 4,
-        "unit": "piezas"
-      },
-      {
-        "name": "espinaca",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "queso",
-        "amount": 30,
-        "unit": "g"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "tostada-de-frijol-con-huevo",
-    "name_es": "Tostada de frijol con huevo",
-    "name_en": "Bean tostada with egg",
-    "image_url": "/dishes/tostada-de-frijol-con-huevo.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian"
-    ],
-    "calories": 450,
-    "protein_g": 25,
-    "carbs_g": 48,
-    "fat_g": 18,
-    "total_minutes": 14,
-    "prep_minutes": 4,
-    "cook_minutes": 10,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "2 piezas tostadas",
-      "0.5 taza frijoles",
-      "2 piezas huevos",
-      "20 g de queso"
-    ],
-    "ingredients_en": [
-      "2 piezas tostadas",
-      "0.5 taza beans",
-      "2 piezas eggs",
-      "20 g cheese"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "tostadas",
-        "amount": 2,
-        "unit": "piezas"
-      },
-      {
-        "name": "frijoles",
-        "amount": 0.5,
-        "unit": "taza"
-      },
-      {
-        "name": "huevos",
-        "amount": 2,
-        "unit": "piezas"
-      },
-      {
-        "name": "queso",
-        "amount": 20,
-        "unit": "g"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "ensalada-de-lentejas-con-feta",
-    "name_es": "Ensalada de lentejas con feta",
-    "name_en": "Lentil feta salad",
-    "image_url": "/dishes/ensalada-de-lentejas-con-feta.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian",
-      "lacto_vegetarian"
-    ],
-    "calories": 470,
-    "protein_g": 25,
-    "carbs_g": 54,
-    "fat_g": 18,
-    "total_minutes": 12,
-    "prep_minutes": 4,
-    "cook_minutes": 8,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "1 taza lentejas cocidas",
-      "40 g de queso feta",
-      "0.5 pieza pepino",
-      "1 pieza jitomate"
-    ],
-    "ingredients_en": [
-      "1 taza cooked lentils",
-      "40 g feta",
-      "0.5 pieza cucumber",
-      "1 pieza tomato"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "lentejas cocidas",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "queso feta",
-        "amount": 40,
-        "unit": "g"
-      },
-      {
-        "name": "pepino",
-        "amount": 0.5,
-        "unit": "pieza"
-      },
-      {
-        "name": "jitomate",
-        "amount": 1,
-        "unit": "pieza"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "sopa-de-frijol-con-queso",
-    "name_es": "Sopa de frijol con queso",
-    "name_en": "Bean soup with cheese",
-    "image_url": "/dishes/sopa-de-frijol-con-queso.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian",
-      "lacto_vegetarian"
-    ],
-    "calories": 460,
-    "protein_g": 26,
-    "carbs_g": 58,
-    "fat_g": 14,
-    "total_minutes": 22,
-    "prep_minutes": 7,
-    "cook_minutes": 15,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "1 taza frijoles",
-      "1 taza caldo vegetal",
-      "30 g de queso"
-    ],
-    "ingredients_en": [
-      "1 taza beans",
-      "1 taza vegetable broth",
-      "30 g cheese"
-    ],
-    "utensils_es": [
-      "Olla",
-      "Cuchara",
-      "Tupper térmico"
-    ],
-    "utensils_en": [
-      "Pot",
-      "Spoon",
-      "Thermal container"
-    ],
-    "steps_es": [
-      "Coloca la olla a fuego medio y agrega los ingredientes que tardan más.",
-      "Agrega líquido si la receta lo necesita y deja hervir suave.",
-      "Mientras se cocina, prepara el tupper, cuchara y servilletas para el trabajo.",
-      "Cocina hasta que la proteína o legumbre esté lista y ajusta sal.",
-      "Deja reposar unos minutos antes de cerrar el tupper para evitar vapor."
-    ],
-    "steps_en": [
-      "Place pot over medium heat and add the ingredients that take longest.",
-      "Add liquid if needed and simmer gently.",
-      "While it cooks, prepare the container, spoon and napkins for work.",
-      "Cook until the protein or legume is ready and adjust salt.",
-      "Let it rest a few minutes before closing the container to avoid steam."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "frijoles",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "caldo vegetal",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "queso",
-        "amount": 30,
-        "unit": "g"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "tacos-de-huevo-con-queso",
-    "name_es": "Tacos de huevo con queso",
-    "name_en": "Egg and cheese tacos",
-    "image_url": "/dishes/tacos-de-huevo-con-queso.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian"
-    ],
-    "calories": 480,
-    "protein_g": 28,
-    "carbs_g": 42,
-    "fat_g": 24,
-    "total_minutes": 12,
-    "prep_minutes": 4,
-    "cook_minutes": 8,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "3 piezas tortillas",
-      "3 piezas huevos",
-      "30 g de queso"
-    ],
-    "ingredients_en": [
-      "3 piezas tortillas",
-      "3 piezas eggs",
-      "30 g cheese"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "tortillas",
-        "amount": 3,
-        "unit": "piezas"
-      },
-      {
-        "name": "huevos",
-        "amount": 3,
-        "unit": "piezas"
-      },
-      {
-        "name": "queso",
-        "amount": 30,
-        "unit": "g"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "bowl-de-arroz-con-huevo-y-frijol",
-    "name_es": "Bowl de arroz con huevo y frijol",
-    "name_en": "Rice egg bean bowl",
-    "image_url": "/dishes/bowl-de-arroz-con-huevo-y-frijol.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian"
-    ],
-    "calories": 560,
-    "protein_g": 28,
-    "carbs_g": 78,
-    "fat_g": 16,
-    "total_minutes": 18,
-    "prep_minutes": 6,
-    "cook_minutes": 12,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "1 taza arroz cocido",
-      "0.5 taza frijoles",
-      "2 piezas huevos"
-    ],
-    "ingredients_en": [
-      "1 taza cooked rice",
-      "0.5 taza beans",
-      "2 piezas eggs"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "arroz cocido",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "frijoles",
-        "amount": 0.5,
-        "unit": "taza"
-      },
-      {
-        "name": "huevos",
-        "amount": 2,
-        "unit": "piezas"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "pasta-de-garbanzo-con-queso",
-    "name_es": "Pasta de garbanzo con queso",
-    "name_en": "Chickpea pasta with cheese",
-    "image_url": "/dishes/pasta-de-garbanzo-con-queso.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian",
-      "lacto_vegetarian"
-    ],
-    "calories": 560,
-    "protein_g": 35,
-    "carbs_g": 65,
-    "fat_g": 18,
-    "total_minutes": 18,
-    "prep_minutes": 6,
-    "cook_minutes": 12,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "1 taza pasta de garbanzo",
-      "40 g de queso",
-      "0.5 taza salsa de tomate"
-    ],
-    "ingredients_en": [
-      "1 taza chickpea pasta",
-      "40 g cheese",
-      "0.5 taza tomato sauce"
-    ],
-    "utensils_es": [
-      "Olla",
-      "Cuchara",
-      "Tupper térmico"
-    ],
-    "utensils_en": [
-      "Pot",
-      "Spoon",
-      "Thermal container"
-    ],
-    "steps_es": [
-      "Coloca la olla a fuego medio y agrega los ingredientes que tardan más.",
-      "Agrega líquido si la receta lo necesita y deja hervir suave.",
-      "Mientras se cocina, prepara el tupper, cuchara y servilletas para el trabajo.",
-      "Cocina hasta que la proteína o legumbre esté lista y ajusta sal.",
-      "Deja reposar unos minutos antes de cerrar el tupper para evitar vapor."
-    ],
-    "steps_en": [
-      "Place pot over medium heat and add the ingredients that take longest.",
-      "Add liquid if needed and simmer gently.",
-      "While it cooks, prepare the container, spoon and napkins for work.",
-      "Cook until the protein or legume is ready and adjust salt.",
-      "Let it rest a few minutes before closing the container to avoid steam."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "pasta de garbanzo",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "queso",
-        "amount": 40,
-        "unit": "g"
-      },
-      {
-        "name": "salsa de tomate",
-        "amount": 0.5,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "pan-pita-con-cottage",
-    "name_es": "Pan pita con cottage",
-    "name_en": "Pita with cottage cheese",
-    "image_url": "/dishes/pan-pita-con-cottage.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian",
-      "lacto_vegetarian"
-    ],
-    "calories": 430,
-    "protein_g": 30,
-    "carbs_g": 48,
-    "fat_g": 14,
-    "total_minutes": 8,
-    "prep_minutes": 3,
-    "cook_minutes": 5,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "1 pieza pan pita",
-      "1 taza queso cottage",
-      "0.5 pieza pepino"
-    ],
-    "ingredients_en": [
-      "1 pieza pita",
-      "1 taza cottage cheese",
-      "0.5 pieza cucumber"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "pan pita",
-        "amount": 1,
-        "unit": "pieza"
-      },
-      {
-        "name": "queso cottage",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "pepino",
-        "amount": 0.5,
-        "unit": "pieza"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "parfait-de-yogurt-alto-proteina",
-    "name_es": "Parfait de yogurt alto proteína",
-    "name_en": "High-protein yogurt parfait",
-    "image_url": "/dishes/parfait-de-yogurt-alto-proteina.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian",
-      "lacto_vegetarian"
-    ],
-    "calories": 430,
-    "protein_g": 35,
-    "carbs_g": 45,
-    "fat_g": 12,
-    "total_minutes": 6,
-    "prep_minutes": 3,
-    "cook_minutes": 3,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "1 taza yogurt griego",
-      "0.25 taza granola",
-      "0.5 taza berries",
-      "0.5 porción proteína opcional"
-    ],
-    "ingredients_en": [
-      "1 taza Greek yogurt",
-      "0.25 taza granola",
-      "0.5 taza berries",
-      "0.5 porción optional protein"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "yogurt griego",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "granola",
-        "amount": 0.25,
-        "unit": "taza"
-      },
-      {
-        "name": "berries",
-        "amount": 0.5,
-        "unit": "taza"
-      },
-      {
-        "name": "proteína opcional",
-        "amount": 0.5,
-        "unit": "porción"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "queso-panela-con-nopales",
-    "name_es": "Queso panela con nopales",
-    "name_en": "Panela cheese with cactus",
-    "image_url": "/dishes/queso-panela-con-nopales.jpg",
-    "diet_tags": [
-      "lacto_vegetarian",
-      "lacto_ovo_vegetarian"
-    ],
-    "calories": 430,
-    "protein_g": 30,
-    "carbs_g": 18,
-    "fat_g": 26,
-    "total_minutes": 15,
-    "prep_minutes": 5,
-    "cook_minutes": 10,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "150 g de queso panela",
-      "1 taza nopales",
-      "1 porción salsa"
-    ],
-    "ingredients_en": [
-      "150 g panela cheese",
-      "1 taza cactus",
-      "1 porción salsa"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "queso panela",
-        "amount": 150,
-        "unit": "g"
-      },
-      {
-        "name": "nopales",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "salsa",
-        "amount": 1,
-        "unit": "porción"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "chile-relleno-horneado-vegetariano",
-    "name_es": "Chile relleno horneado vegetariano",
-    "name_en": "Baked vegetarian chile relleno",
-    "image_url": "/dishes/chile-relleno-horneado-vegetariano.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian"
-    ],
-    "calories": 520,
-    "protein_g": 28,
-    "carbs_g": 28,
-    "fat_g": 34,
-    "total_minutes": 35,
-    "prep_minutes": 10,
-    "cook_minutes": 25,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "1 pieza chile poblano",
-      "80 g de queso",
-      "1 pieza huevo"
-    ],
-    "ingredients_en": [
-      "1 pieza poblano pepper",
-      "80 g cheese",
-      "1 pieza egg"
-    ],
-    "utensils_es": [
-      "Charola u horno",
-      "Pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Sheet pan or oven",
-      "Tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Precalienta el horno o air fryer si lo usarás.",
-      "Sazona la proteína o base principal y acomódala en una sola capa.",
-      "Hornea hasta que esté cocida, volteando a la mitad si hace falta.",
-      "Mientras se cocina, prepara guarnición, tupper y cubiertos.",
-      "Deja enfriar unos minutos antes de guardar."
-    ],
-    "steps_en": [
-      "Preheat oven or air fryer if using.",
-      "Season the main protein or base and arrange in one layer.",
-      "Bake until cooked, flipping halfway if needed.",
-      "While it cooks, prepare side items, container and utensils.",
-      "Let cool a few minutes before packing."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "chile poblano",
-        "amount": 1,
-        "unit": "pieza"
-      },
-      {
-        "name": "queso",
-        "amount": 80,
-        "unit": "g"
-      },
-      {
-        "name": "huevo",
-        "amount": 1,
-        "unit": "pieza"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "bowl-de-edamame-y-arroz",
-    "name_es": "Bowl de edamame y arroz",
-    "name_en": "Edamame rice bowl",
-    "image_url": "/dishes/bowl-de-edamame-y-arroz.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian",
-      "vegan"
-    ],
-    "calories": 500,
-    "protein_g": 26,
-    "carbs_g": 64,
-    "fat_g": 16,
-    "total_minutes": 15,
-    "prep_minutes": 5,
-    "cook_minutes": 10,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "1 taza edamame",
-      "1 taza arroz cocido",
-      "1 taza verduras"
-    ],
-    "ingredients_en": [
-      "1 taza edamame",
-      "1 taza cooked rice",
-      "1 taza vegetables"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "edamame",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "arroz cocido",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "verduras",
-        "amount": 1,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "sandwich-de-huevo-y-cottage",
-    "name_es": "Sándwich de huevo y cottage",
-    "name_en": "Egg cottage sandwich",
-    "image_url": "/dishes/sandwich-de-huevo-y-cottage.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian"
-    ],
-    "calories": 480,
-    "protein_g": 35,
-    "carbs_g": 42,
-    "fat_g": 20,
-    "total_minutes": 12,
-    "prep_minutes": 4,
-    "cook_minutes": 8,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "2 piezas pan integral",
-      "2 piezas huevos",
-      "0.5 taza queso cottage"
-    ],
-    "ingredients_en": [
-      "2 piezas whole-grain bread",
-      "2 piezas eggs",
-      "0.5 taza cottage cheese"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "pan integral",
-        "amount": 2,
-        "unit": "piezas"
-      },
-      {
-        "name": "huevos",
-        "amount": 2,
-        "unit": "piezas"
-      },
-      {
-        "name": "queso cottage",
-        "amount": 0.5,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "enchiladas-de-frijol-y-queso",
-    "name_es": "Enchiladas de frijol y queso",
-    "name_en": "Bean and cheese enchiladas",
-    "image_url": "/dishes/enchiladas-de-frijol-y-queso.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian",
-      "lacto_vegetarian"
-    ],
-    "calories": 560,
-    "protein_g": 28,
-    "carbs_g": 62,
-    "fat_g": 24,
-    "total_minutes": 25,
-    "prep_minutes": 8,
-    "cook_minutes": 17,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "3 piezas tortillas",
-      "0.75 taza frijoles",
-      "60 g de queso",
-      "0.5 taza salsa"
-    ],
-    "ingredients_en": [
-      "3 piezas tortillas",
-      "0.75 taza beans",
-      "60 g cheese",
-      "0.5 taza salsa"
-    ],
-    "utensils_es": [
-      "Charola u horno",
-      "Pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Sheet pan or oven",
-      "Tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Precalienta el horno o air fryer si lo usarás.",
-      "Sazona la proteína o base principal y acomódala en una sola capa.",
-      "Hornea hasta que esté cocida, volteando a la mitad si hace falta.",
-      "Mientras se cocina, prepara guarnición, tupper y cubiertos.",
-      "Deja enfriar unos minutos antes de guardar."
-    ],
-    "steps_en": [
-      "Preheat oven or air fryer if using.",
-      "Season the main protein or base and arrange in one layer.",
-      "Bake until cooked, flipping halfway if needed.",
-      "While it cooks, prepare side items, container and utensils.",
-      "Let cool a few minutes before packing."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "tortillas",
-        "amount": 3,
-        "unit": "piezas"
-      },
-      {
-        "name": "frijoles",
-        "amount": 0.75,
-        "unit": "taza"
-      },
-      {
-        "name": "queso",
-        "amount": 60,
-        "unit": "g"
-      },
-      {
-        "name": "salsa",
-        "amount": 0.5,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "bowl-de-camote-con-huevo",
-    "name_es": "Bowl de camote con huevo",
-    "name_en": "Sweet potato egg bowl",
-    "image_url": "/dishes/bowl-de-camote-con-huevo.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian"
-    ],
-    "calories": 520,
-    "protein_g": 24,
-    "carbs_g": 62,
-    "fat_g": 22,
-    "total_minutes": 25,
-    "prep_minutes": 8,
-    "cook_minutes": 17,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "200 g de camote",
-      "2 piezas huevos",
-      "30 g de queso opcional"
-    ],
-    "ingredients_en": [
-      "200 g sweet potato",
-      "2 piezas eggs",
-      "30 g optional cheese"
-    ],
-    "utensils_es": [
-      "Charola u horno",
-      "Pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Sheet pan or oven",
-      "Tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Precalienta el horno o air fryer si lo usarás.",
-      "Sazona la proteína o base principal y acomódala en una sola capa.",
-      "Hornea hasta que esté cocida, volteando a la mitad si hace falta.",
-      "Mientras se cocina, prepara guarnición, tupper y cubiertos.",
-      "Deja enfriar unos minutos antes de guardar."
-    ],
-    "steps_en": [
-      "Preheat oven or air fryer if using.",
-      "Season the main protein or base and arrange in one layer.",
-      "Bake until cooked, flipping halfway if needed.",
-      "While it cooks, prepare side items, container and utensils.",
-      "Let cool a few minutes before packing."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "camote",
-        "amount": 200,
-        "unit": "g"
-      },
-      {
-        "name": "huevos",
-        "amount": 2,
-        "unit": "piezas"
-      },
-      {
-        "name": "queso opcional",
-        "amount": 30,
-        "unit": "g"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "wrap-de-huevo-y-espinaca",
-    "name_es": "Wrap de huevo y espinaca",
-    "name_en": "Egg spinach wrap",
-    "image_url": "/dishes/wrap-de-huevo-y-espinaca.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian"
-    ],
-    "calories": 470,
-    "protein_g": 30,
-    "carbs_g": 38,
-    "fat_g": 22,
-    "total_minutes": 12,
-    "prep_minutes": 4,
-    "cook_minutes": 8,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "1 pieza tortilla grande",
-      "3 piezas huevos",
-      "1 taza espinaca",
-      "20 g de queso"
-    ],
-    "ingredients_en": [
-      "1 pieza large tortilla",
-      "3 piezas eggs",
-      "1 taza spinach",
-      "20 g cheese"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "tortilla grande",
-        "amount": 1,
-        "unit": "pieza"
-      },
-      {
-        "name": "huevos",
-        "amount": 3,
-        "unit": "piezas"
-      },
-      {
-        "name": "espinaca",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "queso",
-        "amount": 20,
-        "unit": "g"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "sopa-de-lentejas-con-cottage",
-    "name_es": "Sopa de lentejas con cottage",
-    "name_en": "Lentil soup with cottage",
-    "image_url": "/dishes/sopa-de-lentejas-con-cottage.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian",
-      "lacto_vegetarian"
-    ],
-    "calories": 520,
-    "protein_g": 34,
-    "carbs_g": 62,
-    "fat_g": 16,
-    "total_minutes": 22,
-    "prep_minutes": 7,
-    "cook_minutes": 15,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "1 taza lentejas cocidas",
-      "1 taza caldo vegetal",
-      "0.5 taza queso cottage"
-    ],
-    "ingredients_en": [
-      "1 taza cooked lentils",
-      "1 taza vegetable broth",
-      "0.5 taza cottage cheese"
-    ],
-    "utensils_es": [
-      "Olla",
-      "Cuchara",
-      "Tupper térmico"
-    ],
-    "utensils_en": [
-      "Pot",
-      "Spoon",
-      "Thermal container"
-    ],
-    "steps_es": [
-      "Coloca la olla a fuego medio y agrega los ingredientes que tardan más.",
-      "Agrega líquido si la receta lo necesita y deja hervir suave.",
-      "Mientras se cocina, prepara el tupper, cuchara y servilletas para el trabajo.",
-      "Cocina hasta que la proteína o legumbre esté lista y ajusta sal.",
-      "Deja reposar unos minutos antes de cerrar el tupper para evitar vapor."
-    ],
-    "steps_en": [
-      "Place pot over medium heat and add the ingredients that take longest.",
-      "Add liquid if needed and simmer gently.",
-      "While it cooks, prepare the container, spoon and napkins for work.",
-      "Cook until the protein or legume is ready and adjust salt.",
-      "Let it rest a few minutes before closing the container to avoid steam."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "lentejas cocidas",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "caldo vegetal",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "queso cottage",
-        "amount": 0.5,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "bowl-de-quinoa-con-huevo",
-    "name_es": "Bowl de quinoa con huevo",
-    "name_en": "Quinoa egg bowl",
-    "image_url": "/dishes/bowl-de-quinoa-con-huevo.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian"
-    ],
-    "calories": 540,
-    "protein_g": 30,
-    "carbs_g": 62,
-    "fat_g": 20,
-    "total_minutes": 18,
-    "prep_minutes": 6,
-    "cook_minutes": 12,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "1 taza quinoa cocida",
-      "2 piezas huevos",
-      "1 taza verduras"
-    ],
-    "ingredients_en": [
-      "1 taza cooked quinoa",
-      "2 piezas eggs",
-      "1 taza vegetables"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "quinoa cocida",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "huevos",
-        "amount": 2,
-        "unit": "piezas"
-      },
-      {
-        "name": "verduras",
-        "amount": 1,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "tacos-de-papa-con-queso-y-yogurt",
-    "name_es": "Tacos de papa con queso y yogurt",
-    "name_en": "Potato cheese tacos with yogurt",
-    "image_url": "/dishes/tacos-de-papa-con-queso-y-yogurt.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian",
-      "lacto_vegetarian"
-    ],
-    "calories": 540,
-    "protein_g": 24,
-    "carbs_g": 65,
-    "fat_g": 20,
-    "total_minutes": 22,
-    "prep_minutes": 7,
-    "cook_minutes": 15,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "3 piezas tortillas",
-      "150 g de papa cocida",
-      "40 g de queso",
-      "0.5 taza yogurt griego"
-    ],
-    "ingredients_en": [
-      "3 piezas tortillas",
-      "150 g cooked potato",
-      "40 g cheese",
-      "0.5 taza Greek yogurt"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "tortillas",
-        "amount": 3,
-        "unit": "piezas"
-      },
-      {
-        "name": "papa cocida",
-        "amount": 150,
-        "unit": "g"
-      },
-      {
-        "name": "queso",
-        "amount": 40,
-        "unit": "g"
-      },
-      {
-        "name": "yogurt griego",
-        "amount": 0.5,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "bowl-de-requeson-salado",
-    "name_es": "Bowl de requesón salado",
-    "name_en": "Savory ricotta bowl",
-    "image_url": "/dishes/bowl-de-requeson-salado.jpg",
-    "diet_tags": [
-      "lacto_vegetarian",
-      "lacto_ovo_vegetarian"
-    ],
-    "calories": 430,
-    "protein_g": 32,
-    "carbs_g": 24,
-    "fat_g": 22,
-    "total_minutes": 7,
-    "prep_minutes": 3,
-    "cook_minutes": 4,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "1 taza requesón",
-      "0.5 pieza pepino",
-      "15 g de nueces"
-    ],
-    "ingredients_en": [
-      "1 taza ricotta",
-      "0.5 pieza cucumber",
-      "15 g nuts"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "requesón",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "pepino",
-        "amount": 0.5,
-        "unit": "pieza"
-      },
-      {
-        "name": "nueces",
-        "amount": 15,
-        "unit": "g"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "sandwich-de-queso-panela",
-    "name_es": "Sándwich de queso panela",
-    "name_en": "Panela cheese sandwich",
-    "image_url": "/dishes/sandwich-de-queso-panela.jpg",
-    "diet_tags": [
-      "lacto_vegetarian",
-      "lacto_ovo_vegetarian"
-    ],
-    "calories": 480,
-    "protein_g": 28,
-    "carbs_g": 52,
-    "fat_g": 18,
-    "total_minutes": 8,
-    "prep_minutes": 3,
-    "cook_minutes": 5,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "2 piezas pan integral",
-      "120 g de queso panela",
-      "0.25 pieza aguacate"
-    ],
-    "ingredients_en": [
-      "2 piezas whole-grain bread",
-      "120 g panela cheese",
-      "0.25 pieza avocado"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "pan integral",
-        "amount": 2,
-        "unit": "piezas"
-      },
-      {
-        "name": "queso panela",
-        "amount": 120,
-        "unit": "g"
-      },
-      {
-        "name": "aguacate",
-        "amount": 0.25,
-        "unit": "pieza"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "huevos-con-frijoles-negros",
-    "name_es": "Huevos con frijoles negros",
-    "name_en": "Eggs with black beans",
-    "image_url": "/dishes/huevos-con-frijoles-negros.jpg",
-    "diet_tags": [
-      "lacto_ovo_vegetarian"
-    ],
-    "calories": 500,
-    "protein_g": 30,
-    "carbs_g": 42,
-    "fat_g": 24,
-    "total_minutes": 14,
-    "prep_minutes": 4,
-    "cook_minutes": 10,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "3 piezas huevos",
-      "0.5 taza frijoles negros",
-      "30 g de queso opcional"
-    ],
-    "ingredients_en": [
-      "3 piezas eggs",
-      "0.5 taza black beans",
-      "30 g optional cheese"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "huevos",
-        "amount": 3,
-        "unit": "piezas"
-      },
-      {
-        "name": "frijoles negros",
-        "amount": 0.5,
-        "unit": "taza"
-      },
-      {
-        "name": "queso opcional",
-        "amount": 30,
-        "unit": "g"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "bowl-de-yogur-con-chia",
-    "name_es": "Bowl de yogur con chía",
-    "name_en": "Greek yogurt chia bowl",
-    "image_url": "/dishes/bowl-de-yogur-con-chia.jpg",
-    "diet_tags": [
-      "lacto_vegetarian",
-      "lacto_ovo_vegetarian"
-    ],
-    "calories": 420,
-    "protein_g": 32,
-    "carbs_g": 32,
-    "fat_g": 18,
-    "total_minutes": 6,
-    "prep_minutes": 3,
-    "cook_minutes": 3,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "1 taza yogurt griego",
-      "1 cucharada chía",
-      "0.5 taza berries",
-      "15 g de nueces"
-    ],
-    "ingredients_en": [
-      "1 taza Greek yogurt",
-      "1 cucharada chia",
-      "0.5 taza berries",
-      "15 g nuts"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "yogurt griego",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "chía",
-        "amount": 1,
-        "unit": "cucharada"
-      },
-      {
-        "name": "berries",
-        "amount": 0.5,
-        "unit": "taza"
-      },
-      {
-        "name": "nueces",
-        "amount": 15,
-        "unit": "g"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "quesadilla-de-champinones",
-    "name_es": "Quesadilla de champiñones",
-    "name_en": "Mushroom quesadilla",
-    "image_url": "/dishes/quesadilla-de-champinones.jpg",
-    "diet_tags": [
-      "lacto_vegetarian",
-      "lacto_ovo_vegetarian"
-    ],
-    "calories": 480,
-    "protein_g": 26,
-    "carbs_g": 40,
-    "fat_g": 26,
-    "total_minutes": 15,
-    "prep_minutes": 5,
-    "cook_minutes": 10,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "1 pieza tortilla grande",
-      "60 g de queso",
-      "1 taza champiñones"
-    ],
-    "ingredients_en": [
-      "1 pieza large tortilla",
-      "60 g cheese",
-      "1 taza mushrooms"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "tortilla grande",
-        "amount": 1,
-        "unit": "pieza"
-      },
-      {
-        "name": "queso",
-        "amount": 60,
-        "unit": "g"
-      },
-      {
-        "name": "champiñones",
-        "amount": 1,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Yogurt griego",
-      "Cottage",
-      "Omelet",
-      "Lentejas"
-    ],
-    "replacements_en": [
-      "Greek yogurt",
-      "Cottage cheese",
-      "Omelet",
-      "Lentils"
-    ]
-  },
-  {
-    "id": "bowl-de-tofu-con-arroz",
-    "name_es": "Bowl de tofu con arroz",
-    "name_en": "Tofu rice bowl",
-    "image_url": "/dishes/bowl-de-tofu-con-arroz.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 540,
-    "protein_g": 28,
-    "carbs_g": 72,
-    "fat_g": 16,
-    "total_minutes": 25,
-    "prep_minutes": 8,
-    "cook_minutes": 17,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "180 g de tofu firme",
-      "1 taza arroz cocido",
-      "1 taza verduras",
-      "1 cucharadita aceite"
-    ],
-    "ingredients_en": [
-      "180 g firm tofu",
-      "1 taza cooked rice",
-      "1 taza vegetables",
-      "1 cucharadita oil"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "tofu firme",
-        "amount": 180,
-        "unit": "g"
-      },
-      {
-        "name": "arroz cocido",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "verduras",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "aceite",
-        "amount": 1,
-        "unit": "cucharadita"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "ensalada-de-garbanzos",
-    "name_es": "Ensalada de garbanzos",
-    "name_en": "Chickpea salad",
-    "image_url": "/dishes/ensalada-de-garbanzos.jpg",
-    "diet_tags": [
-      "vegan",
-      "lacto_ovo_vegetarian"
-    ],
-    "calories": 460,
-    "protein_g": 20,
-    "carbs_g": 60,
-    "fat_g": 16,
-    "total_minutes": 12,
-    "prep_minutes": 4,
-    "cook_minutes": 8,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "1 taza garbanzos cocidos",
-      "0.5 pieza pepino",
-      "1 pieza jitomate",
-      "1 cucharadita aceite"
-    ],
-    "ingredients_en": [
-      "1 taza cooked chickpeas",
-      "0.5 pieza cucumber",
-      "1 pieza tomato",
-      "1 cucharadita oil"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "garbanzos cocidos",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "pepino",
-        "amount": 0.5,
-        "unit": "pieza"
-      },
-      {
-        "name": "jitomate",
-        "amount": 1,
-        "unit": "pieza"
-      },
-      {
-        "name": "aceite",
-        "amount": 1,
-        "unit": "cucharadita"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "sopa-rapida-de-lentejas",
-    "name_es": "Sopa rápida de lentejas",
-    "name_en": "Quick lentil soup",
-    "image_url": "/dishes/sopa-rapida-de-lentejas.jpg",
-    "diet_tags": [
-      "vegan",
-      "lacto_ovo_vegetarian"
-    ],
-    "calories": 430,
-    "protein_g": 24,
-    "carbs_g": 68,
-    "fat_g": 8,
-    "total_minutes": 25,
-    "prep_minutes": 8,
-    "cook_minutes": 17,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "1 taza lentejas cocidas",
-      "2 taza caldo vegetal",
-      "1 taza verduras"
-    ],
-    "ingredients_en": [
-      "1 taza cooked lentils",
-      "2 taza vegetable broth",
-      "1 taza vegetables"
-    ],
-    "utensils_es": [
-      "Olla",
-      "Cuchara",
-      "Tupper térmico"
-    ],
-    "utensils_en": [
-      "Pot",
-      "Spoon",
-      "Thermal container"
-    ],
-    "steps_es": [
-      "Coloca la olla a fuego medio y agrega los ingredientes que tardan más.",
-      "Agrega líquido si la receta lo necesita y deja hervir suave.",
-      "Mientras se cocina, prepara el tupper, cuchara y servilletas para el trabajo.",
-      "Cocina hasta que la proteína o legumbre esté lista y ajusta sal.",
-      "Deja reposar unos minutos antes de cerrar el tupper para evitar vapor."
-    ],
-    "steps_en": [
-      "Place pot over medium heat and add the ingredients that take longest.",
-      "Add liquid if needed and simmer gently.",
-      "While it cooks, prepare the container, spoon and napkins for work.",
-      "Cook until the protein or legume is ready and adjust salt.",
-      "Let it rest a few minutes before closing the container to avoid steam."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "lentejas cocidas",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "caldo vegetal",
-        "amount": 2,
-        "unit": "taza"
-      },
-      {
-        "name": "verduras",
-        "amount": 1,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "bowl-de-quinoa-y-frijol",
-    "name_es": "Bowl de quinoa y frijol",
-    "name_en": "Quinoa bean bowl",
-    "image_url": "/dishes/bowl-de-quinoa-y-frijol.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 520,
-    "protein_g": 24,
-    "carbs_g": 78,
-    "fat_g": 13,
-    "total_minutes": 18,
-    "prep_minutes": 6,
-    "cook_minutes": 12,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "1 taza quinoa cocida",
-      "0.5 taza frijoles",
-      "1 taza verduras",
-      "1 cucharadita aceite"
-    ],
-    "ingredients_en": [
-      "1 taza cooked quinoa",
-      "0.5 taza beans",
-      "1 taza vegetables",
-      "1 cucharadita oil"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "quinoa cocida",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "frijoles",
-        "amount": 0.5,
-        "unit": "taza"
-      },
-      {
-        "name": "verduras",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "aceite",
-        "amount": 1,
-        "unit": "cucharadita"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "tempeh-con-verduras",
-    "name_es": "Tempeh con verduras",
-    "name_en": "Tempeh with vegetables",
-    "image_url": "/dishes/tempeh-con-verduras.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 500,
-    "protein_g": 34,
-    "carbs_g": 42,
-    "fat_g": 24,
-    "total_minutes": 20,
-    "prep_minutes": 6,
-    "cook_minutes": 14,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "180 g de tempeh",
-      "1 taza verduras",
-      "1 cucharadita aceite"
-    ],
-    "ingredients_en": [
-      "180 g tempeh",
-      "1 taza vegetables",
-      "1 cucharadita oil"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "tempeh",
-        "amount": 180,
-        "unit": "g"
-      },
-      {
-        "name": "verduras",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "aceite",
-        "amount": 1,
-        "unit": "cucharadita"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "tacos-de-frijol-con-aguacate",
-    "name_es": "Tacos de frijol con aguacate",
-    "name_en": "Bean avocado tacos",
-    "image_url": "/dishes/tacos-de-frijol-con-aguacate.jpg",
-    "diet_tags": [
-      "vegan",
-      "lacto_ovo_vegetarian"
-    ],
-    "calories": 510,
-    "protein_g": 18,
-    "carbs_g": 68,
-    "fat_g": 20,
-    "total_minutes": 12,
-    "prep_minutes": 4,
-    "cook_minutes": 8,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "3 piezas tortillas",
-      "0.75 taza frijoles",
-      "0.5 pieza aguacate"
-    ],
-    "ingredients_en": [
-      "3 piezas tortillas",
-      "0.75 taza beans",
-      "0.5 pieza avocado"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "tortillas",
-        "amount": 3,
-        "unit": "piezas"
-      },
-      {
-        "name": "frijoles",
-        "amount": 0.75,
-        "unit": "taza"
-      },
-      {
-        "name": "aguacate",
-        "amount": 0.5,
-        "unit": "pieza"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "smoothie-vegetal-de-proteina",
-    "name_es": "Smoothie vegetal de proteína",
-    "name_en": "Plant protein smoothie",
-    "image_url": "/dishes/smoothie-vegetal-de-proteina.jpg",
-    "diet_tags": [
-      "vegan",
-      "lacto_vegetarian"
-    ],
-    "calories": 380,
-    "protein_g": 30,
-    "carbs_g": 42,
-    "fat_g": 10,
-    "total_minutes": 5,
-    "prep_minutes": 3,
-    "cook_minutes": 2,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "1 porción proteína vegetal",
-      "1 taza leche vegetal",
-      "0.5 pieza plátano",
-      "1 cucharada crema de cacahuate"
-    ],
-    "ingredients_en": [
-      "1 porción plant protein",
-      "1 taza plant milk",
-      "0.5 pieza banana",
-      "1 cucharada peanut butter"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "proteína vegetal",
-        "amount": 1,
-        "unit": "porción"
-      },
-      {
-        "name": "leche vegetal",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "plátano",
-        "amount": 0.5,
-        "unit": "pieza"
-      },
-      {
-        "name": "crema de cacahuate",
-        "amount": 1,
-        "unit": "cucharada"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "tofu-a-la-mexicana",
-    "name_es": "Tofu a la mexicana",
-    "name_en": "Mexican-style tofu",
-    "image_url": "/dishes/tofu-a-la-mexicana.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 440,
-    "protein_g": 30,
-    "carbs_g": 24,
-    "fat_g": 26,
-    "total_minutes": 18,
-    "prep_minutes": 6,
-    "cook_minutes": 12,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "200 g de tofu firme",
-      "0.5 pieza jitomate",
-      "1 taza verduras"
-    ],
-    "ingredients_en": [
-      "200 g firm tofu",
-      "0.5 pieza tomato",
-      "1 taza vegetables"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "tofu firme",
-        "amount": 200,
-        "unit": "g"
-      },
-      {
-        "name": "jitomate",
-        "amount": 0.5,
-        "unit": "pieza"
-      },
-      {
-        "name": "verduras",
-        "amount": 1,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "fajitas-de-tofu",
-    "name_es": "Fajitas de tofu",
-    "name_en": "Tofu fajitas",
-    "image_url": "/dishes/fajitas-de-tofu.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 520,
-    "protein_g": 32,
-    "carbs_g": 58,
-    "fat_g": 20,
-    "total_minutes": 20,
-    "prep_minutes": 6,
-    "cook_minutes": 14,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "200 g de tofu firme",
-      "2 piezas tortillas",
-      "1 taza verduras fajita"
-    ],
-    "ingredients_en": [
-      "200 g firm tofu",
-      "2 piezas tortillas",
-      "1 taza fajita vegetables"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "tofu firme",
-        "amount": 200,
-        "unit": "g"
-      },
-      {
-        "name": "tortillas",
-        "amount": 2,
-        "unit": "piezas"
-      },
-      {
-        "name": "verduras fajita",
-        "amount": 1,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "tacos-de-tempeh",
-    "name_es": "Tacos de tempeh",
-    "name_en": "Tempeh tacos",
-    "image_url": "/dishes/tacos-de-tempeh.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 560,
-    "protein_g": 34,
-    "carbs_g": 60,
-    "fat_g": 22,
-    "total_minutes": 20,
-    "prep_minutes": 6,
-    "cook_minutes": 14,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "180 g de tempeh",
-      "3 piezas tortillas",
-      "1 porción salsa"
-    ],
-    "ingredients_en": [
-      "180 g tempeh",
-      "3 piezas tortillas",
-      "1 porción salsa"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "tempeh",
-        "amount": 180,
-        "unit": "g"
-      },
-      {
-        "name": "tortillas",
-        "amount": 3,
-        "unit": "piezas"
-      },
-      {
-        "name": "salsa",
-        "amount": 1,
-        "unit": "porción"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "seitan-estilo-carne-asada",
-    "name_es": "Seitan estilo carne asada",
-    "name_en": "Seitan carne asada style",
-    "image_url": "/dishes/seitan-estilo-carne-asada.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 480,
-    "protein_g": 45,
-    "carbs_g": 35,
-    "fat_g": 16,
-    "total_minutes": 18,
-    "prep_minutes": 6,
-    "cook_minutes": 12,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "180 g de seitan",
-      "2 piezas tortillas opcionales",
-      "1 porción salsa"
-    ],
-    "ingredients_en": [
-      "180 g seitan",
-      "2 piezas optional tortillas",
-      "1 porción salsa"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "seitan",
-        "amount": 180,
-        "unit": "g"
-      },
-      {
-        "name": "tortillas opcionales",
-        "amount": 2,
-        "unit": "piezas"
-      },
-      {
-        "name": "salsa",
-        "amount": 1,
-        "unit": "porción"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "bowl-de-seitan-con-arroz",
-    "name_es": "Bowl de seitan con arroz",
-    "name_en": "Seitan rice bowl",
-    "image_url": "/dishes/bowl-de-seitan-con-arroz.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 540,
-    "protein_g": 48,
-    "carbs_g": 62,
-    "fat_g": 12,
-    "total_minutes": 18,
-    "prep_minutes": 6,
-    "cook_minutes": 12,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "180 g de seitan",
-      "1 taza arroz cocido",
-      "1 taza verduras"
-    ],
-    "ingredients_en": [
-      "180 g seitan",
-      "1 taza cooked rice",
-      "1 taza vegetables"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "seitan",
-        "amount": 180,
-        "unit": "g"
-      },
-      {
-        "name": "arroz cocido",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "verduras",
-        "amount": 1,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "chickpea-tuna-vegano",
-    "name_es": "Chickpea tuna vegano",
-    "name_en": "Vegan chickpea tuna",
-    "image_url": "/dishes/chickpea-tuna-vegano.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 440,
-    "protein_g": 20,
-    "carbs_g": 58,
-    "fat_g": 16,
-    "total_minutes": 10,
-    "prep_minutes": 3,
-    "cook_minutes": 7,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "1 taza garbanzos cocidos",
-      "0.25 pieza aguacate",
-      "0.5 pieza limón"
-    ],
-    "ingredients_en": [
-      "1 taza cooked chickpeas",
-      "0.25 pieza avocado",
-      "0.5 pieza lemon"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "garbanzos cocidos",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "aguacate",
-        "amount": 0.25,
-        "unit": "pieza"
-      },
-      {
-        "name": "limón",
-        "amount": 0.5,
-        "unit": "pieza"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "burrito-vegano-de-frijol",
-    "name_es": "Burrito vegano de frijol",
-    "name_en": "Vegan bean burrito",
-    "image_url": "/dishes/burrito-vegano-de-frijol.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 560,
-    "protein_g": 22,
-    "carbs_g": 78,
-    "fat_g": 18,
-    "total_minutes": 14,
-    "prep_minutes": 4,
-    "cook_minutes": 10,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "1 pieza tortilla grande",
-      "1 taza frijoles",
-      "0.5 taza arroz cocido",
-      "1 porción salsa"
-    ],
-    "ingredients_en": [
-      "1 pieza large tortilla",
-      "1 taza beans",
-      "0.5 taza cooked rice",
-      "1 porción salsa"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "tortilla grande",
-        "amount": 1,
-        "unit": "pieza"
-      },
-      {
-        "name": "frijoles",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "arroz cocido",
-        "amount": 0.5,
-        "unit": "taza"
-      },
-      {
-        "name": "salsa",
-        "amount": 1,
-        "unit": "porción"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "ensalada-de-lentejas-y-pepino",
-    "name_es": "Ensalada de lentejas y pepino",
-    "name_en": "Lentil cucumber salad",
-    "image_url": "/dishes/ensalada-de-lentejas-y-pepino.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 430,
-    "protein_g": 24,
-    "carbs_g": 58,
-    "fat_g": 12,
-    "total_minutes": 12,
-    "prep_minutes": 4,
-    "cook_minutes": 8,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "1 taza lentejas cocidas",
-      "0.5 pieza pepino",
-      "1 pieza jitomate",
-      "1 cucharadita aceite"
-    ],
-    "ingredients_en": [
-      "1 taza cooked lentils",
-      "0.5 pieza cucumber",
-      "1 pieza tomato",
-      "1 cucharadita oil"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "lentejas cocidas",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "pepino",
-        "amount": 0.5,
-        "unit": "pieza"
-      },
-      {
-        "name": "jitomate",
-        "amount": 1,
-        "unit": "pieza"
-      },
-      {
-        "name": "aceite",
-        "amount": 1,
-        "unit": "cucharadita"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "curry-de-garbanzo-rapido",
-    "name_es": "Curry de garbanzo rápido",
-    "name_en": "Quick chickpea curry",
-    "image_url": "/dishes/curry-de-garbanzo-rapido.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 560,
-    "protein_g": 22,
-    "carbs_g": 72,
-    "fat_g": 22,
-    "total_minutes": 22,
-    "prep_minutes": 7,
-    "cook_minutes": 15,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "1 taza garbanzos cocidos",
-      "0.5 taza leche de coco ligera",
-      "0.75 taza arroz cocido"
-    ],
-    "ingredients_en": [
-      "1 taza cooked chickpeas",
-      "0.5 taza light coconut milk",
-      "0.75 taza cooked rice"
-    ],
-    "utensils_es": [
-      "Olla",
-      "Cuchara",
-      "Tupper térmico"
-    ],
-    "utensils_en": [
-      "Pot",
-      "Spoon",
-      "Thermal container"
-    ],
-    "steps_es": [
-      "Coloca la olla a fuego medio y agrega los ingredientes que tardan más.",
-      "Agrega líquido si la receta lo necesita y deja hervir suave.",
-      "Mientras se cocina, prepara el tupper, cuchara y servilletas para el trabajo.",
-      "Cocina hasta que la proteína o legumbre esté lista y ajusta sal.",
-      "Deja reposar unos minutos antes de cerrar el tupper para evitar vapor."
-    ],
-    "steps_en": [
-      "Place pot over medium heat and add the ingredients that take longest.",
-      "Add liquid if needed and simmer gently.",
-      "While it cooks, prepare the container, spoon and napkins for work.",
-      "Cook until the protein or legume is ready and adjust salt.",
-      "Let it rest a few minutes before closing the container to avoid steam."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "garbanzos cocidos",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "leche de coco ligera",
-        "amount": 0.5,
-        "unit": "taza"
-      },
-      {
-        "name": "arroz cocido",
-        "amount": 0.75,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "lentejas-tipo-bolognesa",
-    "name_es": "Lentejas tipo bolognesa",
-    "name_en": "Lentil bolognese",
-    "image_url": "/dishes/lentejas-tipo-bolognesa.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 520,
-    "protein_g": 26,
-    "carbs_g": 78,
-    "fat_g": 10,
-    "total_minutes": 25,
-    "prep_minutes": 8,
-    "cook_minutes": 17,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "1 taza lentejas cocidas",
-      "1 taza pasta",
-      "0.5 taza salsa de tomate"
-    ],
-    "ingredients_en": [
-      "1 taza cooked lentils",
-      "1 taza pasta",
-      "0.5 taza tomato sauce"
-    ],
-    "utensils_es": [
-      "Olla",
-      "Cuchara",
-      "Tupper térmico"
-    ],
-    "utensils_en": [
-      "Pot",
-      "Spoon",
-      "Thermal container"
-    ],
-    "steps_es": [
-      "Coloca la olla a fuego medio y agrega los ingredientes que tardan más.",
-      "Agrega líquido si la receta lo necesita y deja hervir suave.",
-      "Mientras se cocina, prepara el tupper, cuchara y servilletas para el trabajo.",
-      "Cocina hasta que la proteína o legumbre esté lista y ajusta sal.",
-      "Deja reposar unos minutos antes de cerrar el tupper para evitar vapor."
-    ],
-    "steps_en": [
-      "Place pot over medium heat and add the ingredients that take longest.",
-      "Add liquid if needed and simmer gently.",
-      "While it cooks, prepare the container, spoon and napkins for work.",
-      "Cook until the protein or legume is ready and adjust salt.",
-      "Let it rest a few minutes before closing the container to avoid steam."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "lentejas cocidas",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "pasta",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "salsa de tomate",
-        "amount": 0.5,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "pasta-de-garbanzo-vegana",
-    "name_es": "Pasta de garbanzo vegana",
-    "name_en": "Vegan chickpea pasta",
-    "image_url": "/dishes/pasta-de-garbanzo-vegana.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 540,
-    "protein_g": 32,
-    "carbs_g": 65,
-    "fat_g": 16,
-    "total_minutes": 18,
-    "prep_minutes": 6,
-    "cook_minutes": 12,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "1 taza pasta de garbanzo",
-      "0.5 taza salsa de tomate",
-      "1 taza verduras"
-    ],
-    "ingredients_en": [
-      "1 taza chickpea pasta",
-      "0.5 taza tomato sauce",
-      "1 taza vegetables"
-    ],
-    "utensils_es": [
-      "Olla",
-      "Cuchara",
-      "Tupper térmico"
-    ],
-    "utensils_en": [
-      "Pot",
-      "Spoon",
-      "Thermal container"
-    ],
-    "steps_es": [
-      "Coloca la olla a fuego medio y agrega los ingredientes que tardan más.",
-      "Agrega líquido si la receta lo necesita y deja hervir suave.",
-      "Mientras se cocina, prepara el tupper, cuchara y servilletas para el trabajo.",
-      "Cocina hasta que la proteína o legumbre esté lista y ajusta sal.",
-      "Deja reposar unos minutos antes de cerrar el tupper para evitar vapor."
-    ],
-    "steps_en": [
-      "Place pot over medium heat and add the ingredients that take longest.",
-      "Add liquid if needed and simmer gently.",
-      "While it cooks, prepare the container, spoon and napkins for work.",
-      "Cook until the protein or legume is ready and adjust salt.",
-      "Let it rest a few minutes before closing the container to avoid steam."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "pasta de garbanzo",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "salsa de tomate",
-        "amount": 0.5,
-        "unit": "taza"
-      },
-      {
-        "name": "verduras",
-        "amount": 1,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "edamame-con-arroz",
-    "name_es": "Edamame con arroz",
-    "name_en": "Edamame rice bowl vegan",
-    "image_url": "/dishes/edamame-con-arroz.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 500,
-    "protein_g": 26,
-    "carbs_g": 64,
-    "fat_g": 16,
-    "total_minutes": 15,
-    "prep_minutes": 5,
-    "cook_minutes": 10,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "1 taza edamame",
-      "1 taza arroz cocido",
-      "1 taza verduras"
-    ],
-    "ingredients_en": [
-      "1 taza edamame",
-      "1 taza cooked rice",
-      "1 taza vegetables"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "edamame",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "arroz cocido",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "verduras",
-        "amount": 1,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "hummus-wrap-alto-proteina",
-    "name_es": "Hummus wrap alto proteína",
-    "name_en": "High-protein hummus wrap",
-    "image_url": "/dishes/hummus-wrap-alto-proteina.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 480,
-    "protein_g": 20,
-    "carbs_g": 60,
-    "fat_g": 18,
-    "total_minutes": 8,
-    "prep_minutes": 3,
-    "cook_minutes": 5,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "1 pieza tortilla grande",
-      "0.5 taza hummus",
-      "0.5 taza garbanzos",
-      "1 taza verduras"
-    ],
-    "ingredients_en": [
-      "1 pieza large tortilla",
-      "0.5 taza hummus",
-      "0.5 taza chickpeas",
-      "1 taza vegetables"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "tortilla grande",
-        "amount": 1,
-        "unit": "pieza"
-      },
-      {
-        "name": "hummus",
-        "amount": 0.5,
-        "unit": "taza"
-      },
-      {
-        "name": "garbanzos",
-        "amount": 0.5,
-        "unit": "taza"
-      },
-      {
-        "name": "verduras",
-        "amount": 1,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "tostadas-de-frijol-veganas",
-    "name_es": "Tostadas de frijol veganas",
-    "name_en": "Vegan bean tostadas",
-    "image_url": "/dishes/tostadas-de-frijol-veganas.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 480,
-    "protein_g": 20,
-    "carbs_g": 62,
-    "fat_g": 16,
-    "total_minutes": 10,
-    "prep_minutes": 3,
-    "cook_minutes": 7,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "2 piezas tostadas",
-      "0.75 taza frijoles",
-      "0.25 pieza aguacate"
-    ],
-    "ingredients_en": [
-      "2 piezas tostadas",
-      "0.75 taza beans",
-      "0.25 pieza avocado"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "tostadas",
-        "amount": 2,
-        "unit": "piezas"
-      },
-      {
-        "name": "frijoles",
-        "amount": 0.75,
-        "unit": "taza"
-      },
-      {
-        "name": "aguacate",
-        "amount": 0.25,
-        "unit": "pieza"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "bowl-de-camote-y-frijol",
-    "name_es": "Bowl de camote y frijol",
-    "name_en": "Sweet potato bean bowl",
-    "image_url": "/dishes/bowl-de-camote-y-frijol.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 540,
-    "protein_g": 20,
-    "carbs_g": 82,
-    "fat_g": 16,
-    "total_minutes": 25,
-    "prep_minutes": 8,
-    "cook_minutes": 17,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "220 g de camote",
-      "0.75 taza frijoles",
-      "1 porción salsa"
-    ],
-    "ingredients_en": [
-      "220 g sweet potato",
-      "0.75 taza beans",
-      "1 porción salsa"
-    ],
-    "utensils_es": [
-      "Charola u horno",
-      "Pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Sheet pan or oven",
-      "Tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Precalienta el horno o air fryer si lo usarás.",
-      "Sazona la proteína o base principal y acomódala en una sola capa.",
-      "Hornea hasta que esté cocida, volteando a la mitad si hace falta.",
-      "Mientras se cocina, prepara guarnición, tupper y cubiertos.",
-      "Deja enfriar unos minutos antes de guardar."
-    ],
-    "steps_en": [
-      "Preheat oven or air fryer if using.",
-      "Season the main protein or base and arrange in one layer.",
-      "Bake until cooked, flipping halfway if needed.",
-      "While it cooks, prepare side items, container and utensils.",
-      "Let cool a few minutes before packing."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "camote",
-        "amount": 220,
-        "unit": "g"
-      },
-      {
-        "name": "frijoles",
-        "amount": 0.75,
-        "unit": "taza"
-      },
-      {
-        "name": "salsa",
-        "amount": 1,
-        "unit": "porción"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "ensalada-de-quinoa-y-garbanzo",
-    "name_es": "Ensalada de quinoa y garbanzo",
-    "name_en": "Quinoa chickpea salad",
-    "image_url": "/dishes/ensalada-de-quinoa-y-garbanzo.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 520,
-    "protein_g": 22,
-    "carbs_g": 72,
-    "fat_g": 17,
-    "total_minutes": 12,
-    "prep_minutes": 4,
-    "cook_minutes": 8,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "1 taza quinoa cocida",
-      "0.75 taza garbanzos",
-      "0.5 pieza pepino"
-    ],
-    "ingredients_en": [
-      "1 taza cooked quinoa",
-      "0.75 taza chickpeas",
-      "0.5 pieza cucumber"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "quinoa cocida",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "garbanzos",
-        "amount": 0.75,
-        "unit": "taza"
-      },
-      {
-        "name": "pepino",
-        "amount": 0.5,
-        "unit": "pieza"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "sopa-de-frijol-vegana",
-    "name_es": "Sopa de frijol vegana",
-    "name_en": "Vegan bean soup",
-    "image_url": "/dishes/sopa-de-frijol-vegana.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 460,
-    "protein_g": 24,
-    "carbs_g": 68,
-    "fat_g": 9,
-    "total_minutes": 22,
-    "prep_minutes": 7,
-    "cook_minutes": 15,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "1 taza frijoles",
-      "2 taza caldo vegetal",
-      "1 taza verduras"
-    ],
-    "ingredients_en": [
-      "1 taza beans",
-      "2 taza vegetable broth",
-      "1 taza vegetables"
-    ],
-    "utensils_es": [
-      "Olla",
-      "Cuchara",
-      "Tupper térmico"
-    ],
-    "utensils_en": [
-      "Pot",
-      "Spoon",
-      "Thermal container"
-    ],
-    "steps_es": [
-      "Coloca la olla a fuego medio y agrega los ingredientes que tardan más.",
-      "Agrega líquido si la receta lo necesita y deja hervir suave.",
-      "Mientras se cocina, prepara el tupper, cuchara y servilletas para el trabajo.",
-      "Cocina hasta que la proteína o legumbre esté lista y ajusta sal.",
-      "Deja reposar unos minutos antes de cerrar el tupper para evitar vapor."
-    ],
-    "steps_en": [
-      "Place pot over medium heat and add the ingredients that take longest.",
-      "Add liquid if needed and simmer gently.",
-      "While it cooks, prepare the container, spoon and napkins for work.",
-      "Cook until the protein or legume is ready and adjust salt.",
-      "Let it rest a few minutes before closing the container to avoid steam."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "frijoles",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "caldo vegetal",
-        "amount": 2,
-        "unit": "taza"
-      },
-      {
-        "name": "verduras",
-        "amount": 1,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "tofu-scramble-vegano",
-    "name_es": "Tofu scramble vegano",
-    "name_en": "Vegan tofu scramble",
-    "image_url": "/dishes/tofu-scramble-vegano.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 420,
-    "protein_g": 30,
-    "carbs_g": 20,
-    "fat_g": 24,
-    "total_minutes": 15,
-    "prep_minutes": 5,
-    "cook_minutes": 10,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "220 g de tofu firme",
-      "1 taza verduras",
-      "1 cucharadita aceite"
-    ],
-    "ingredients_en": [
-      "220 g firm tofu",
-      "1 taza vegetables",
-      "1 cucharadita oil"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "tofu firme",
-        "amount": 220,
-        "unit": "g"
-      },
-      {
-        "name": "verduras",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "aceite",
-        "amount": 1,
-        "unit": "cucharadita"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "tacos-de-lenteja-y-nuez",
-    "name_es": "Tacos de lenteja y nuez",
-    "name_en": "Lentil walnut tacos",
-    "image_url": "/dishes/tacos-de-lenteja-y-nuez.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 540,
-    "protein_g": 22,
-    "carbs_g": 62,
-    "fat_g": 24,
-    "total_minutes": 18,
-    "prep_minutes": 6,
-    "cook_minutes": 12,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "1 taza lentejas cocidas",
-      "20 g de nueces",
-      "3 piezas tortillas"
-    ],
-    "ingredients_en": [
-      "1 taza cooked lentils",
-      "20 g walnuts",
-      "3 piezas tortillas"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "lentejas cocidas",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "nueces",
-        "amount": 20,
-        "unit": "g"
-      },
-      {
-        "name": "tortillas",
-        "amount": 3,
-        "unit": "piezas"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "bowl-de-soyrizo-y-frijol",
-    "name_es": "Bowl de soyrizo y frijol",
-    "name_en": "Soyrizo bean bowl",
-    "image_url": "/dishes/bowl-de-soyrizo-y-frijol.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 580,
-    "protein_g": 28,
-    "carbs_g": 60,
-    "fat_g": 28,
-    "total_minutes": 15,
-    "prep_minutes": 5,
-    "cook_minutes": 10,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "120 g de soyrizo",
-      "0.75 taza frijoles",
-      "0.5 taza arroz cocido"
-    ],
-    "ingredients_en": [
-      "120 g soyrizo",
-      "0.75 taza beans",
-      "0.5 taza cooked rice"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "soyrizo",
-        "amount": 120,
-        "unit": "g"
-      },
-      {
-        "name": "frijoles",
-        "amount": 0.75,
-        "unit": "taza"
-      },
-      {
-        "name": "arroz cocido",
-        "amount": 0.5,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "wrap-de-tofu-frio",
-    "name_es": "Wrap de tofu frío",
-    "name_en": "Cold tofu wrap",
-    "image_url": "/dishes/wrap-de-tofu-frio.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 470,
-    "protein_g": 28,
-    "carbs_g": 50,
-    "fat_g": 18,
-    "total_minutes": 10,
-    "prep_minutes": 3,
-    "cook_minutes": 7,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "1 pieza tortilla grande",
-      "160 g de tofu firme",
-      "0.25 taza hummus",
-      "1 taza verduras"
-    ],
-    "ingredients_en": [
-      "1 pieza large tortilla",
-      "160 g firm tofu",
-      "0.25 taza hummus",
-      "1 taza vegetables"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "tortilla grande",
-        "amount": 1,
-        "unit": "pieza"
-      },
-      {
-        "name": "tofu firme",
-        "amount": 160,
-        "unit": "g"
-      },
-      {
-        "name": "hummus",
-        "amount": 0.25,
-        "unit": "taza"
-      },
-      {
-        "name": "verduras",
-        "amount": 1,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "bowl-de-garbanzo-rostizado",
-    "name_es": "Bowl de garbanzo rostizado",
-    "name_en": "Roasted chickpea bowl",
-    "image_url": "/dishes/bowl-de-garbanzo-rostizado.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 510,
-    "protein_g": 22,
-    "carbs_g": 68,
-    "fat_g": 18,
-    "total_minutes": 25,
-    "prep_minutes": 8,
-    "cook_minutes": 17,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "1 taza garbanzos cocidos",
-      "0.75 taza arroz cocido",
-      "1 taza verduras"
-    ],
-    "ingredients_en": [
-      "1 taza cooked chickpeas",
-      "0.75 taza cooked rice",
-      "1 taza vegetables"
-    ],
-    "utensils_es": [
-      "Charola u horno",
-      "Pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Sheet pan or oven",
-      "Tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Precalienta el horno o air fryer si lo usarás.",
-      "Sazona la proteína o base principal y acomódala en una sola capa.",
-      "Hornea hasta que esté cocida, volteando a la mitad si hace falta.",
-      "Mientras se cocina, prepara guarnición, tupper y cubiertos.",
-      "Deja enfriar unos minutos antes de guardar."
-    ],
-    "steps_en": [
-      "Preheat oven or air fryer if using.",
-      "Season the main protein or base and arrange in one layer.",
-      "Bake until cooked, flipping halfway if needed.",
-      "While it cooks, prepare side items, container and utensils.",
-      "Let cool a few minutes before packing."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "garbanzos cocidos",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "arroz cocido",
-        "amount": 0.75,
-        "unit": "taza"
-      },
-      {
-        "name": "verduras",
-        "amount": 1,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "ensalada-de-edamame",
-    "name_es": "Ensalada de edamame",
-    "name_en": "Edamame salad",
-    "image_url": "/dishes/ensalada-de-edamame.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 420,
-    "protein_g": 28,
-    "carbs_g": 32,
-    "fat_g": 20,
-    "total_minutes": 10,
-    "prep_minutes": 3,
-    "cook_minutes": 7,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "1 taza edamame",
-      "0.5 pieza pepino",
-      "0.25 pieza aguacate"
-    ],
-    "ingredients_en": [
-      "1 taza edamame",
-      "0.5 pieza cucumber",
-      "0.25 pieza avocado"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "edamame",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "pepino",
-        "amount": 0.5,
-        "unit": "pieza"
-      },
-      {
-        "name": "aguacate",
-        "amount": 0.25,
-        "unit": "pieza"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "tofu-con-nopales",
-    "name_es": "Tofu con nopales",
-    "name_en": "Tofu with cactus",
-    "image_url": "/dishes/tofu-con-nopales.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 390,
-    "protein_g": 28,
-    "carbs_g": 22,
-    "fat_g": 22,
-    "total_minutes": 18,
-    "prep_minutes": 6,
-    "cook_minutes": 12,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "200 g de tofu firme",
-      "1 taza nopales",
-      "1 porción salsa"
-    ],
-    "ingredients_en": [
-      "200 g firm tofu",
-      "1 taza cactus",
-      "1 porción salsa"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "tofu firme",
-        "amount": 200,
-        "unit": "g"
-      },
-      {
-        "name": "nopales",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "salsa",
-        "amount": 1,
-        "unit": "porción"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "tazon-de-arroz-con-tofu-y-aguacate",
-    "name_es": "Tazón de arroz con tofu y aguacate",
-    "name_en": "Tofu avocado rice bowl",
-    "image_url": "/dishes/tazon-de-arroz-con-tofu-y-aguacate.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 560,
-    "protein_g": 28,
-    "carbs_g": 70,
-    "fat_g": 22,
-    "total_minutes": 18,
-    "prep_minutes": 6,
-    "cook_minutes": 12,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "180 g de tofu firme",
-      "1 taza arroz cocido",
-      "0.25 pieza aguacate"
-    ],
-    "ingredients_en": [
-      "180 g firm tofu",
-      "1 taza cooked rice",
-      "0.25 pieza avocado"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "tofu firme",
-        "amount": 180,
-        "unit": "g"
-      },
-      {
-        "name": "arroz cocido",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "aguacate",
-        "amount": 0.25,
-        "unit": "pieza"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "sandwich-de-hummus-y-tempeh",
-    "name_es": "Sándwich de hummus y tempeh",
-    "name_en": "Hummus tempeh sandwich",
-    "image_url": "/dishes/sandwich-de-hummus-y-tempeh.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 540,
-    "protein_g": 32,
-    "carbs_g": 56,
-    "fat_g": 22,
-    "total_minutes": 12,
-    "prep_minutes": 4,
-    "cook_minutes": 8,
-    "portable": true,
-    "needs_microwave": false,
-    "good_cold": true,
-    "ingredients_es": [
-      "2 piezas pan integral",
-      "120 g de tempeh",
-      "0.25 taza hummus"
-    ],
-    "ingredients_en": [
-      "2 piezas whole-grain bread",
-      "120 g tempeh",
-      "0.25 taza hummus"
-    ],
-    "utensils_es": [
-      "Bowl",
-      "Cuchara",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Bowl",
-      "Spoon",
-      "Container"
-    ],
-    "steps_es": [
-      "Prepara todos los ingredientes y coloca el tupper o bowl en la mesa.",
-      "Agrega la base principal al bowl.",
-      "Añade el resto de ingredientes en capas para que mantengan textura.",
-      "Mezcla justo antes de comer para que no se aguade.",
-      "Si lo llevarás al trabajo, guarda salsas o toppings aparte."
-    ],
-    "steps_en": [
-      "Prepare all ingredients and set out a bowl or container.",
-      "Add the main base to the bowl.",
-      "Layer the remaining ingredients to keep texture.",
-      "Mix right before eating so it does not get soggy.",
-      "If taking to work, pack sauces or toppings separately."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "pan integral",
-        "amount": 2,
-        "unit": "piezas"
-      },
-      {
-        "name": "tempeh",
-        "amount": 120,
-        "unit": "g"
-      },
-      {
-        "name": "hummus",
-        "amount": 0.25,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "bowl-de-frijol-negro-y-maiz",
-    "name_es": "Bowl de frijol negro y maíz",
-    "name_en": "Black bean corn bowl",
-    "image_url": "/dishes/bowl-de-frijol-negro-y-maiz.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 520,
-    "protein_g": 22,
-    "carbs_g": 78,
-    "fat_g": 14,
-    "total_minutes": 12,
-    "prep_minutes": 4,
-    "cook_minutes": 8,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "1 taza frijoles negros",
-      "0.5 taza maíz",
-      "0.5 taza arroz cocido"
-    ],
-    "ingredients_en": [
-      "1 taza black beans",
-      "0.5 taza corn",
-      "0.5 taza cooked rice"
-    ],
-    "utensils_es": [
-      "Sartén",
-      "Espátula o pinzas",
-      "Tupper"
-    ],
-    "utensils_en": [
-      "Pan",
-      "Spatula or tongs",
-      "Container"
-    ],
-    "steps_es": [
-      "Calienta el sartén a fuego medio y prepara todos los ingredientes.",
-      "Empieza cocinando la proteína o base que tarda más.",
-      "Mientras se cocina, prepara el tupper, servilletas y cubiertos si lo llevarás al trabajo.",
-      "Agrega el resto de ingredientes y cocina hasta que todo esté listo.",
-      "Prueba sal, sirve y deja enfriar un poco antes de cerrar el tupper."
-    ],
-    "steps_en": [
-      "Heat pan over medium heat and prepare all ingredients.",
-      "Start with the protein or base that takes longest.",
-      "While it cooks, prepare the container, napkins and utensils if taking to work.",
-      "Add remaining ingredients and cook until ready.",
-      "Adjust salt, serve and let cool slightly before closing the container."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "frijoles negros",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "maíz",
-        "amount": 0.5,
-        "unit": "taza"
-      },
-      {
-        "name": "arroz cocido",
-        "amount": 0.5,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
-  },
-  {
-    "id": "sopa-de-garbanzo-con-espinaca",
-    "name_es": "Sopa de garbanzo con espinaca",
-    "name_en": "Chickpea spinach soup",
-    "image_url": "/dishes/sopa-de-garbanzo-con-espinaca.jpg",
-    "diet_tags": [
-      "vegan"
-    ],
-    "calories": 470,
-    "protein_g": 23,
-    "carbs_g": 64,
-    "fat_g": 14,
-    "total_minutes": 22,
-    "prep_minutes": 7,
-    "cook_minutes": 15,
-    "portable": true,
-    "needs_microwave": true,
-    "good_cold": false,
-    "ingredients_es": [
-      "1 taza garbanzos",
-      "1 taza espinaca",
-      "2 taza caldo vegetal"
-    ],
-    "ingredients_en": [
-      "1 taza chickpeas",
-      "1 taza spinach",
-      "2 taza vegetable broth"
-    ],
-    "utensils_es": [
-      "Olla",
-      "Cuchara",
-      "Tupper térmico"
-    ],
-    "utensils_en": [
-      "Pot",
-      "Spoon",
-      "Thermal container"
-    ],
-    "steps_es": [
-      "Coloca la olla a fuego medio y agrega los ingredientes que tardan más.",
-      "Agrega líquido si la receta lo necesita y deja hervir suave.",
-      "Mientras se cocina, prepara el tupper, cuchara y servilletas para el trabajo.",
-      "Cocina hasta que la proteína o legumbre esté lista y ajusta sal.",
-      "Deja reposar unos minutos antes de cerrar el tupper para evitar vapor."
-    ],
-    "steps_en": [
-      "Place pot over medium heat and add the ingredients that take longest.",
-      "Add liquid if needed and simmer gently.",
-      "While it cooks, prepare the container, spoon and napkins for work.",
-      "Cook until the protein or legume is ready and adjust salt.",
-      "Let it rest a few minutes before closing the container to avoid steam."
-    ],
-    "tips_es": [
-      "Si trabajas fuera, deja el tupper abierto 5 a 8 minutos antes de cerrarlo para que no junte vapor.",
-      "Prepara doble porción cuando uses el mismo sartén para ahorrar tiempo otro día.",
-      "Guarda salsas, limón o toppings aparte para que la comida no se aguade."
-    ],
-    "tips_en": [
-      "If taking it to work, leave the container open 5 to 8 minutes before closing so steam does not build up.",
-      "Cook a double portion when using the same pan to save time another day.",
-      "Pack sauces, lemon or toppings separately so the meal does not get soggy."
-    ],
-    "shopping_items": [
-      {
-        "name": "garbanzos",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "espinaca",
-        "amount": 1,
-        "unit": "taza"
-      },
-      {
-        "name": "caldo vegetal",
-        "amount": 2,
-        "unit": "taza"
-      }
-    ],
-    "replacements_es": [
-      "Tofu",
-      "Garbanzos",
-      "Lentejas",
-      "Tempeh"
-    ],
-    "replacements_en": [
-      "Tofu",
-      "Chickpeas",
-      "Lentils",
-      "Tempeh"
-    ]
+'use client';
+
+import { useEffect, useMemo, useState } from 'react';
+import { supabase } from '@/lib/supabase';
+import { DISHES } from '@/data/dishes';
+import {
+  Bell,
+  CalendarDays,
+  Check,
+  ChevronDown,
+  ChevronUp,
+  Droplets,
+  Eye,
+  Languages,
+  Plus,
+  RefreshCw,
+  ShoppingCart,
+  Trash2,
+  Undo2,
+  UserPlus,
+  X,
+} from 'lucide-react';
+
+type Lang = 'es' | 'en';
+type UnitMode = 'kg' | 'lb';
+type Profile = any;
+type Plan = any;
+type Meal = any;
+
+type MarketItem = {
+  key: string;
+  name: string;
+  amount: number;
+  unit: string;
+  display: string;
+  found: boolean;
+  missing: boolean;
+  replacement: string;
+  suggestions: string[];
+  usedSummary: string[];
+};
+
+const DAYS_ES = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
+const DAYS_EN = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+const UI = {
+  es: {
+    loading: 'Cargando DietApp...',
+    by: 'by: Roberto Figueroa',
+    home: 'Hoy',
+    week: 'Semana',
+    market: 'Super',
+    settings: 'Config.',
+    history: 'Historial',
+    todayMeals: 'Tu comida de hoy',
+    viewWeek: 'Ver semana',
+    generateWeek: 'Generar semana',
+    generateNormal: 'Generar lunes a domingo',
+    generateFromDate: 'Generar desde fecha',
+    startDate: 'Fecha de inicio',
+    duration: 'Duración',
+    days: 'días',
+    planExistsTitle: 'Ya tienes un plan generado',
+    planExistsBody: 'Puedes cambiar plato por plato si algo no te gusta. ¿Quieres reemplazar todo el plan?',
+    noPlan: 'Aún no hay plan',
+    noPlanDesc: 'Genera una semana para ver comidas, recetas y mandado.',
+    todayDone: 'Comidas ya realizadas',
+    markEaten: 'Ya comí',
+    eaten: 'Comido',
+    undo: 'Deshacer',
+    recipe: 'Ver receta',
+    changeDish: 'Cambiar plato',
+    confirmDishChange: '¿Seguro que quieres cambiar este plato?',
+    workDay: 'Día de trabajo',
+    offDay: 'Descanso',
+    workMeal: 'Comida de trabajo',
+    profile: 'Perfil',
+    diet: 'Dieta',
+    portable: 'Para llevar',
+    waterToday: 'Hidratación de hoy',
+    waterGoal: 'Meta',
+    addWater: 'Agregar agua',
+    undoWater: 'Deshacer agua',
+    weeklyPlan: 'Plan semanal',
+    weekRange: 'Semana',
+    allProfiles: 'Todos',
+    selectedProfiles: 'Perfiles seleccionados',
+    shoppingDesc: 'Selecciona perfiles y DietApp suma ingredientes de la semana.',
+    updateShopping: 'Actualizar mandado',
+    sendWhats: 'Enviar WhatsApp',
+    addManual: 'Agregar manual',
+    list: 'Lista',
+    markReady: 'Marcar listo',
+    ready: 'Listo',
+    notFound: 'No encontrado',
+    replace: 'Reemplazar',
+    chosenReplacement: 'Reemplazo elegido',
+    replacementNote: 'Esto actualiza tu mandado. Si quieres cambiar la receta, usa Cambiar plato en el plan.',
+    relatedRecipes: 'Ver recetas relacionadas',
+    foundItems: 'Productos listos',
+    showFound: 'Mostrar listos',
+    hideFound: 'Ocultar listos',
+    shoppingEmpty: 'Selecciona uno o más perfiles y toca “Actualizar mandado”.',
+    analyze: 'Analizar producto',
+    analyzeDesc: 'Toma foto del frente, Nutrition Facts e ingredientes.',
+    analyzeBtn: 'Analizar producto',
+    configuration: 'Configuración',
+    configDesc: 'Administra perfiles, rutinas, recordatorios, hidratación y preferencias.',
+    profiles: 'Perfiles',
+    profilesDesc: 'Los detalles quedan ocultos hasta que quieras editarlos.',
+    addProfile: 'Agregar perfil',
+    edit: 'Editar',
+    close: 'Cerrar',
+    save: 'Guardar',
+    delete: 'Eliminar',
+    name: 'Nombre',
+    currentWeight: 'Peso actual',
+    goalWeight: 'Peso meta',
+    goalType: 'Meta',
+    lose: 'Bajar',
+    maintain: 'Mantener',
+    gain: 'Subir',
+    goalDate: 'Quiero lograrlo para',
+    height: 'Estatura',
+    age: 'Edad',
+    sex: 'Sexo',
+    male: 'Hombre',
+    female: 'Mujer',
+    other: 'Otro',
+    activity: 'Actividad',
+    activityLow: 'Baja',
+    activityNormal: 'Normal',
+    activityHigh: 'Alta',
+    routine: 'Rutina',
+    worksNow: '¿Actualmente trabaja?',
+    wakeWork: 'Despierto trabajo',
+    startWork: 'Entrada',
+    breakWork: 'Break',
+    endWork: 'Salida',
+    wakeOff: 'Despierto descanso',
+    sleepOff: 'Dormir descanso',
+    workDays: 'Días de trabajo',
+    mealsWork: 'Comidas en día de trabajo',
+    mealsOff: 'Comidas en día libre',
+    dietInfo: 'Ver en qué consiste esta dieta',
+    restrictions: 'Preferencias y restricciones',
+    omitFoods: 'Omitir alimentos',
+    preferFoods: 'Preferir alimentos',
+    addFood: 'Agregar',
+    hydrationReminder: 'Recordatorios e hidratación',
+    waterEnabled: 'Recordatorios de agua',
+    mealEnabled: 'Recordatorios de comida',
+    mealBefore: 'Avisar antes de comida',
+    waterEvery: 'Agua cada',
+    hydrationGoal: 'Meta diaria de agua',
+    workPrep: 'Recordar preparar comida para trabajo',
+    groceryReminder: 'Recordar hacer mandado',
+    weightReminder: 'Recordar registrar peso',
+    minutes: 'min',
+    hours: 'horas',
+    historyTitle: 'Historial',
+    historyDesc: 'Calorías, agua, IMC y avance hacia tu meta.',
+    logException: 'Registrar excepción',
+    addReminder: 'Agregar recordatorio',
+    newReminder: 'Nuevo recordatorio',
+    newException: 'Registrar excepción',
+    title: 'Título',
+    date: 'Fecha',
+    time: 'Hora',
+    note: 'Nota',
+    caloriesOptional: 'Calorías aproximadas',
+    cancel: 'Cancelar',
+    caloriesToday: 'Calorías de hoy',
+    proteinToday: 'Proteína de hoy',
+    bmi: 'IMC',
+    bmr: 'BMR',
+    tdee: 'TDEE',
+    target: 'Objetivo',
+    bmrExplain: 'BMR: calorías que tu cuerpo usa en reposo.',
+    tdeeExplain: 'TDEE: gasto aproximado diario incluyendo actividad.',
+    targetExplain: 'Objetivo: calorías sugeridas para acercarte a tu meta. Es una referencia, no diagnóstico médico.',
+    chart: 'Gráfica simple',
+    daily: 'Día',
+    weekly: 'Semana',
+    monthly: 'Mes',
+    footer: 'dietAPP by: Roberto Figueroa',
+    welcome: 'Bienvenido a DietApp',
+    welcomeDesc: 'Crea un perfil, define tu meta, genera tu plan y usa el mandado.',
+    createFirstProfile: 'Crear primer perfil',
+    saved: 'Guardado ✅',
+    created: 'Creado ✅',
+    deleted: 'Eliminado ✅',
+    updated: 'Actualizado ✅',
+    generated: 'Plan generado ✅',
+    mealLogged: 'Comida marcada ✅',
+    waterLogged: 'Agua agregada ✅',
+    reminderSaved: 'Recordatorio guardado ✅',
+    exceptionSaved: 'Excepción registrada ✅',
+    productAdded: 'Producto agregado ✅',
+    noCompatible: 'No hay platillos compatibles con este perfil.',
+    noItems: 'Sin datos todavía.',
+    closeRecipe: 'Cerrar',
+    ingredients: 'Ingredientes',
+    utensils: 'Utensilios',
+    stepByStep: 'Paso a paso',
+    tips: 'Tips para ahorrar tiempo',
+    recipeImageNote: 'Imagen referencial del platillo',
+  },
+  en: {
+    loading: 'Loading DietApp...',
+    by: 'by: Roberto Figueroa',
+    home: 'Today',
+    week: 'Week',
+    market: 'Groceries',
+    settings: 'Settings',
+    history: 'History',
+    todayMeals: 'Your food today',
+    viewWeek: 'View week',
+    generateWeek: 'Generate week',
+    generateNormal: 'Generate Monday to Sunday',
+    generateFromDate: 'Generate from date',
+    startDate: 'Start date',
+    duration: 'Duration',
+    days: 'days',
+    planExistsTitle: 'You already have a plan',
+    planExistsBody: 'You can change meals one by one if you dislike something. Replace the whole plan?',
+    noPlan: 'No plan yet',
+    noPlanDesc: 'Generate a week to see meals, recipes and groceries.',
+    todayDone: 'Meals already eaten',
+    markEaten: 'I ate this',
+    eaten: 'Eaten',
+    undo: 'Undo',
+    recipe: 'View recipe',
+    changeDish: 'Change meal',
+    confirmDishChange: 'Are you sure you want to change this meal?',
+    workDay: 'Work day',
+    offDay: 'Off day',
+    workMeal: 'Work meal',
+    profile: 'Profile',
+    diet: 'Diet',
+    portable: 'Portable',
+    waterToday: 'Hydration today',
+    waterGoal: 'Goal',
+    addWater: 'Add water',
+    undoWater: 'Undo water',
+    weeklyPlan: 'Weekly plan',
+    weekRange: 'Week',
+    allProfiles: 'All',
+    selectedProfiles: 'Selected profiles',
+    shoppingDesc: 'Select profiles and DietApp adds all ingredients for the week.',
+    updateShopping: 'Update groceries',
+    sendWhats: 'Send WhatsApp',
+    addManual: 'Add manual',
+    list: 'List',
+    markReady: 'Mark ready',
+    ready: 'Ready',
+    notFound: 'Not found',
+    replace: 'Replace',
+    chosenReplacement: 'Chosen replacement',
+    replacementNote: 'This updates your grocery list. To change the recipe, use Change meal in the plan.',
+    relatedRecipes: 'See related recipes',
+    foundItems: 'Ready items',
+    showFound: 'Show ready',
+    hideFound: 'Hide ready',
+    shoppingEmpty: 'Select one or more profiles and tap “Update groceries”.',
+    analyze: 'Analyze product',
+    analyzeDesc: 'Take photos of front, Nutrition Facts and ingredients.',
+    analyzeBtn: 'Analyze product',
+    configuration: 'Settings',
+    configDesc: 'Manage profiles, routines, reminders, hydration and preferences.',
+    profiles: 'Profiles',
+    profilesDesc: 'Details stay hidden until you want to edit them.',
+    addProfile: 'Add profile',
+    edit: 'Edit',
+    close: 'Close',
+    save: 'Save',
+    delete: 'Delete',
+    name: 'Name',
+    currentWeight: 'Current weight',
+    goalWeight: 'Goal weight',
+    goalType: 'Goal',
+    lose: 'Lose',
+    maintain: 'Maintain',
+    gain: 'Gain',
+    goalDate: 'Goal date',
+    height: 'Height',
+    age: 'Age',
+    sex: 'Sex',
+    male: 'Male',
+    female: 'Female',
+    other: 'Other',
+    activity: 'Activity',
+    activityLow: 'Low',
+    activityNormal: 'Normal',
+    activityHigh: 'High',
+    routine: 'Routine',
+    worksNow: 'Currently working?',
+    wakeWork: 'Wake up work day',
+    startWork: 'Start work',
+    breakWork: 'Break',
+    endWork: 'End work',
+    wakeOff: 'Wake up day off',
+    sleepOff: 'Sleep day off',
+    workDays: 'Work days',
+    mealsWork: 'Meals on work day',
+    mealsOff: 'Meals on day off',
+    dietInfo: 'See what this diet means',
+    restrictions: 'Preferences and restrictions',
+    omitFoods: 'Avoid foods',
+    preferFoods: 'Prefer foods',
+    addFood: 'Add',
+    hydrationReminder: 'Reminders and hydration',
+    waterEnabled: 'Water reminders',
+    mealEnabled: 'Meal reminders',
+    mealBefore: 'Remind before meal',
+    waterEvery: 'Water every',
+    hydrationGoal: 'Daily water goal',
+    workPrep: 'Remind to prep work meals',
+    groceryReminder: 'Remind groceries',
+    weightReminder: 'Remind weigh-in',
+    minutes: 'min',
+    hours: 'hours',
+    historyTitle: 'History',
+    historyDesc: 'Calories, water, BMI and progress toward your goal.',
+    logException: 'Log exception',
+    addReminder: 'Add reminder',
+    newReminder: 'New reminder',
+    newException: 'Log exception',
+    title: 'Title',
+    date: 'Date',
+    time: 'Time',
+    note: 'Note',
+    caloriesOptional: 'Approx calories',
+    cancel: 'Cancel',
+    caloriesToday: 'Calories today',
+    proteinToday: 'Protein today',
+    bmi: 'BMI',
+    bmr: 'BMR',
+    tdee: 'TDEE',
+    target: 'Target',
+    bmrExplain: 'BMR: calories your body uses at rest.',
+    tdeeExplain: 'TDEE: estimated daily burn including activity.',
+    targetExplain: 'Target: suggested calories to move toward your goal. It is a reference, not medical advice.',
+    chart: 'Simple chart',
+    daily: 'Day',
+    weekly: 'Week',
+    monthly: 'Month',
+    footer: 'dietAPP by: Roberto Figueroa',
+    welcome: 'Welcome to DietApp',
+    welcomeDesc: 'Create a profile, define your goal, generate your plan and use groceries.',
+    createFirstProfile: 'Create first profile',
+    saved: 'Saved ✅',
+    created: 'Created ✅',
+    deleted: 'Deleted ✅',
+    updated: 'Updated ✅',
+    generated: 'Plan generated ✅',
+    mealLogged: 'Meal logged ✅',
+    waterLogged: 'Water added ✅',
+    reminderSaved: 'Reminder saved ✅',
+    exceptionSaved: 'Exception saved ✅',
+    productAdded: 'Product added ✅',
+    noCompatible: 'No compatible meals for this profile.',
+    noItems: 'No data yet.',
+    closeRecipe: 'Close',
+    ingredients: 'Ingredients',
+    utensils: 'Utensils',
+    stepByStep: 'Step by step',
+    tips: 'Time-saving tips',
+    recipeImageNote: 'Reference meal image',
+  },
+};
+
+const defaultRoutine = {
+  worksNow: true,
+  workDays: ['Lunes', 'Martes', 'Miércoles', 'Jueves'],
+  wakeWork: '15:00',
+  startWork: '18:00',
+  breakWork: '22:00',
+  endWork: '04:30',
+  wakeOff: '09:00',
+  sleepOff: '23:00',
+  mealsWork: 3,
+  mealsOff: 3,
+  reminders: {
+    enabledMeal: true,
+    mealReminderMinutes: 15,
+    enabledWater: true,
+    waterEveryHours: 2,
+    prepWorkMeal: true,
+    groceryReminder: false,
+    weightReminder: false,
+    dailyWaterMl: 3000,
+  },
+  avoidedFoods: [],
+  preferredFoods: [],
+  goalType: 'lose',
+  goalDate: '',
+  activityLevel: 'normal',
+};
+
+function todayISO() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function datePlus(dateISO: string, days: number) {
+  const d = new Date(`${dateISO}T12:00:00`);
+  d.setDate(d.getDate() + days);
+  return d.toISOString().slice(0, 10);
+}
+
+function mondayISO(d = new Date()) {
+  const date = new Date(d);
+  const day = date.getDay();
+  date.setDate(date.getDate() - day + (day === 0 ? -6 : 1));
+  return date.toISOString().slice(0, 10);
+}
+
+function formatLong(dateISO: string, lang: Lang) {
+  const d = new Date(`${dateISO}T12:00:00`);
+  const locale = lang === 'es' ? 'es-US' : 'en-US';
+  const weekday = new Intl.DateTimeFormat(locale, { weekday: 'long' }).format(d);
+  const rest = new Intl.DateTimeFormat(locale, { day: '2-digit', month: 'long', year: 'numeric' }).format(d);
+  return `${weekday.charAt(0).toUpperCase()}${weekday.slice(1)} ${rest}`;
+}
+
+function formatShortRange(startISO: string, days: number, lang: Lang) {
+  const endISO = datePlus(startISO, days - 1);
+  const locale = lang === 'es' ? 'es-US' : 'en-US';
+  const a = new Intl.DateTimeFormat(locale, { day: '2-digit', month: 'long' }).format(new Date(`${startISO}T12:00:00`));
+  const b = new Intl.DateTimeFormat(locale, { day: '2-digit', month: 'long', year: 'numeric' }).format(new Date(`${endISO}T12:00:00`));
+  return `${a} — ${b}`;
+}
+
+function formatTime12(time: string) {
+  if (!time) return '';
+  const [h, m] = time.split(':').map(Number);
+  const date = new Date();
+  date.setHours(h || 0, m || 0, 0, 0);
+  return new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit', hour12: true }).format(date);
+}
+
+function dayNameFromDate(dateISO: string, lang: Lang) {
+  const idx = (new Date(`${dateISO}T12:00:00`).getDay() + 6) % 7;
+  return lang === 'es' ? DAYS_ES[idx] : DAYS_EN[idx];
+}
+
+function normalizeDay(day: string) {
+  const x = String(day || '').toLowerCase();
+  const map: Record<string, string> = {
+    lunes: 'Lunes', monday: 'Lunes',
+    martes: 'Martes', tuesday: 'Martes',
+    miércoles: 'Miércoles', miercoles: 'Miércoles', wednesday: 'Miércoles',
+    jueves: 'Jueves', thursday: 'Jueves',
+    viernes: 'Viernes', friday: 'Viernes',
+    sábado: 'Sábado', sabado: 'Sábado', saturday: 'Sábado',
+    domingo: 'Domingo', sunday: 'Domingo',
+  };
+  return map[x] || day;
+}
+
+function kgToLb(kg: number) {
+  return kg * 2.2046226218;
+}
+
+function lbToKg(lb: number) {
+  return lb / 2.2046226218;
+}
+
+function clean(n: number) {
+  if (Number.isNaN(n)) return '0';
+  return Number.isInteger(n) ? String(n) : n.toFixed(1).replace(/\.0$/, '');
+}
+
+function unitLabel(mode: UnitMode) {
+  return mode === 'kg' ? 'kg' : 'lb';
+}
+
+function formatWeight(kg: number, mode: UnitMode) {
+  return mode === 'kg' ? `${clean(kg)} kg` : `${clean(kgToLb(kg))} lb`;
+}
+
+function formatSolid(amountG: number, mode: UnitMode) {
+  if (mode === 'kg') {
+    if (amountG >= 1000) return `${clean(amountG / 1000)} kg`;
+    return `${clean(amountG)} g`;
   }
-] as const;
+  const lb = amountG / 453.592;
+  if (lb >= 0.25) return `${clean(lb)} lb`;
+  return `${clean(amountG / 28.3495)} oz`;
+}
+
+function formatIngredientAmount(amount: number, unit: string, mode: UnitMode, lang: Lang) {
+  if (unit === 'g') return formatSolid(amount, mode);
+  if (unit === 'cucharadita') return mode === 'kg' ? `${clean(amount)} cdta` : `${clean(amount)} tsp`;
+  if (unit === 'cucharada') return mode === 'kg' ? `${clean(amount)} cda` : `${clean(amount)} tbsp`;
+  if (unit === 'taza') return mode === 'kg' ? `${clean(amount)} taza${amount === 1 ? '' : 's'}` : `${clean(amount)} cup${amount === 1 ? '' : 's'}`;
+  if (unit === 'pieza' || unit === 'piezas') return `${clean(amount)} ${amount === 1 ? (lang === 'es' ? 'pieza' : 'piece') : (lang === 'es' ? 'piezas' : 'pieces')}`;
+  if (unit === 'lata') return `${clean(amount)} ${amount === 1 ? (lang === 'es' ? 'lata' : 'can') : (lang === 'es' ? 'latas' : 'cans')}`;
+  if (unit === 'porción') return `${clean(amount)} ${lang === 'es' ? 'porción' : 'serving'}`;
+  if (unit === 'al gusto') return lang === 'es' ? 'al gusto' : 'to taste';
+  return `${clean(amount)} ${unit}`;
+}
+
+function dishName(d: any, lang: Lang) {
+  return lang === 'es' ? d?.name_es || d?.name_en : d?.name_en || d?.name_es;
+}
+
+function dietLabel(diet: string, lang: Lang) {
+  const es: Record<string, string> = {
+    carnivore_strict: 'Carnívora estricta',
+    carnivore_flexible: 'Carnívora flexible',
+    animal_based: 'Animal-based',
+    keto_carnivore: 'Keto carnívora',
+    lacto_ovo_vegetarian: 'Lacto-ovo vegetariana',
+    lacto_vegetarian: 'Lacto vegetariana',
+    ovo_vegetarian: 'Ovo vegetariana',
+    vegan: 'Vegana',
+  };
+  const en: Record<string, string> = {
+    carnivore_strict: 'Strict carnivore',
+    carnivore_flexible: 'Flexible carnivore',
+    animal_based: 'Animal-based',
+    keto_carnivore: 'Keto carnivore',
+    lacto_ovo_vegetarian: 'Lacto-ovo vegetarian',
+    lacto_vegetarian: 'Lacto vegetarian',
+    ovo_vegetarian: 'Ovo vegetarian',
+    vegan: 'Vegan',
+  };
+  return (lang === 'es' ? es : en)[diet] || diet;
+}
+
+function dietInfo(diet: string, lang: Lang) {
+  const info: Record<string, any> = {
+    carnivore_strict: ['Se enfoca casi por completo en carne, huevos, pescado y grasas animales.', 'Focuses mostly on meat, eggs, fish and animal fats.'],
+    carnivore_flexible: ['Base carnívora con un poco más de flexibilidad según tolerancia.', 'Carnivore-based with a little more flexibility.'],
+    animal_based: ['Prioriza alimentos animales y puede permitir frutas/miel simples.', 'Prioritizes animal foods and may allow simple fruit/honey.'],
+    keto_carnivore: ['Muy baja en carbohidratos, con enfoque carnívoro o casi carnívoro.', 'Very low carb with carnivore or near-carnivore focus.'],
+    lacto_ovo_vegetarian: ['Sin carne ni pescado. Permite lácteos y huevos.', 'No meat or fish. Allows dairy and eggs.'],
+    lacto_vegetarian: ['Sin carne, pescado ni huevo. Permite lácteos.', 'No meat, fish or eggs. Allows dairy.'],
+    ovo_vegetarian: ['Sin carne, pescado ni lácteos. Permite huevos.', 'No meat, fish or dairy. Allows eggs.'],
+    vegan: ['Sin alimentos de origen animal.', 'No animal foods.'],
+  };
+  return info[diet]?.[lang === 'es' ? 0 : 1] || '';
+}
+
+function bmi(profile: Profile) {
+  const kg = Number(profile?.current_weight_kg || 0);
+  const m = Number(profile?.height_cm || 0) / 100;
+  if (!kg || !m) return 0;
+  return kg / (m * m);
+}
+
+function bmr(profile: Profile) {
+  const kg = Number(profile?.current_weight_kg || 0);
+  const cm = Number(profile?.height_cm || 0);
+  const age = Number(profile?.age || 30);
+  const sex = profile?.sex || 'other';
+  if (!kg || !cm) return 0;
+  const base = 10 * kg + 6.25 * cm - 5 * age;
+  if (sex === 'female') return base - 161;
+  return base + 5;
+}
+
+function activityFactor(level: string) {
+  if (level === 'low') return 1.35;
+  if (level === 'high') return 1.75;
+  return 1.55;
+}
+
+function targetCalories(profile: Profile) {
+  const routine = profile?.routine || {};
+  const tdee = bmr(profile) * activityFactor(routine.activityLevel || 'normal');
+  const goalType = routine.goalType || 'lose';
+  if (goalType === 'gain') return Math.round(tdee + 300);
+  if (goalType === 'maintain') return Math.round(tdee);
+  return Math.max(1200, Math.round(tdee - 500));
+}
+
+function isSameDay(a: string, b: string) {
+  return String(a).slice(0, 10) === String(b).slice(0, 10);
+}
+
+function shiftDateByIndex(startISO: string, index: number) {
+  return datePlus(startISO, index);
+}
+
+
+function hasAny(text: string, words: string[]) {
+  const lower = text.toLowerCase();
+  return words.some((w) => lower.includes(w.toLowerCase()));
+}
+
+function dishAllText(dish: any) {
+  return [
+    dish?.name_es || '',
+    dish?.name_en || '',
+    ...((dish?.ingredients_es || []) as string[]),
+    ...((dish?.ingredients_en || []) as string[]),
+  ].join(' ').toLowerCase();
+}
+
+function buildRealRecipe(dish: any, lang: Lang) {
+  const text = dishAllText(dish);
+  const name = dishName(dish, lang);
+  const isCold = !!dish.good_cold;
+  const isOven = hasAny(text, ['horno', 'baked', 'muffins', 'cazuela', 'costillas', 'rostizado', 'camote']);
+  const isSoup = hasAny(text, ['sopa', 'caldo', 'broth', 'soup', 'lentejas tipo', 'curry']);
+  const hasEgg = hasAny(text, ['huevo', 'huevos', 'egg', 'eggs']);
+  const hasBeef = hasAny(text, ['res', 'bistec', 'carne molida', 'carne asada', 'beef', 'steak', 'ground beef']);
+  const hasChicken = hasAny(text, ['pollo', 'chicken', 'pavo', 'turkey']);
+  const hasPork = hasAny(text, ['cerdo', 'chuleta', 'tocino', 'chorizo', 'panceta', 'pork', 'bacon', 'sausage']);
+  const hasFish = hasAny(text, ['salmón', 'atun', 'atún', 'tilapia', 'bacalao', 'sardina', 'camarones', 'salmon', 'tuna', 'shrimp', 'cod', 'fish']);
+  const hasTofu = hasAny(text, ['tofu']);
+  const hasTempeh = hasAny(text, ['tempeh']);
+  const hasBeans = hasAny(text, ['frijol', 'frijoles', 'beans', 'garbanzos', 'chickpeas']);
+  const hasLentils = hasAny(text, ['lenteja', 'lentejas', 'lentil', 'lentils']);
+  const hasRice = hasAny(text, ['arroz', 'rice', 'quinoa', 'pasta', 'avena', 'oats']);
+  const hasCheese = hasAny(text, ['queso', 'cheese', 'cottage', 'yogurt', 'yogur']);
+  const hasTortilla = hasAny(text, ['tortilla', 'tortillas', 'wrap', 'burrito', 'taco', 'tacos', 'quesadilla']);
+  const hasVeg = hasAny(text, ['verduras', 'espinaca', 'pepino', 'jitomate', 'nopales', 'champiñones', 'vegetables', 'spinach', 'cucumber', 'tomato', 'mushroom']);
+
+  const es: string[] = [];
+  const en: string[] = [];
+  const tipsEs: string[] = [];
+  const tipsEn: string[] = [];
+
+  if (isCold) {
+    es.push(`Coloca todos los ingredientes de ${name} sobre la mesa antes de empezar.`);
+    en.push(`Place all ingredients for ${name} on the counter before starting.`);
+    es.push('Si lleva huevo cocido, pon primero los huevos en agua hirviendo durante 10 a 12 minutos; mientras se cuecen, prepara el resto.');
+    en.push('If it uses boiled eggs, boil them first for 10 to 12 minutes; while they cook, prepare the rest.');
+    if (hasBeans || hasLentils) {
+      es.push('Enjuaga y escurre los frijoles, garbanzos o lentejas para quitar exceso de líquido.');
+      en.push('Rinse and drain beans, chickpeas or lentils to remove extra liquid.');
+    }
+    if (hasCheese) {
+      es.push('Agrega yogurt, cottage o queso al bowl y mantenlo frío hasta el momento de comer.');
+      en.push('Add yogurt, cottage cheese or cheese to the bowl and keep it cold until eating.');
+    }
+    if (hasVeg) {
+      es.push('Pica las verduras en cubos pequeños para que sea más fácil comerlo en el trabajo.');
+      en.push('Chop vegetables into small pieces so it is easier to eat at work.');
+    }
+    es.push('Mezcla solo lo necesario. Si lleva limón, salsa o aderezo, guárdalo aparte y agrégalo al comer.');
+    en.push('Mix only what is needed. If it has lemon, salsa or dressing, pack it separately and add it when eating.');
+    es.push('Guarda en tupper frío. Si vas al trabajo, agrega una cuchara o tenedor desde antes.');
+    en.push('Pack cold in a container. If taking to work, add a spoon or fork ahead of time.');
+
+    tipsEs.push('Esta comida sirve cuando no tienes microondas.');
+    tipsEn.push('This meal works when you do not have a microwave.');
+    tipsEs.push('No cierres el tupper con ingredientes calientes; primero enfría huevos o proteínas.');
+    tipsEn.push('Do not close the container with hot ingredients; cool eggs or proteins first.');
+  } else if (isSoup) {
+    es.push(`Empieza ${name} poniendo una olla a fuego medio.`);
+    en.push(`Start ${name} by placing a pot over medium heat.`);
+    if (hasBeef || hasChicken || hasPork) {
+      es.push('Agrega la carne o pollo primero con sal y dórala 3 a 5 minutos para que tome sabor.');
+      en.push('Add the meat or chicken first with salt and brown it for 3 to 5 minutes for flavor.');
+    }
+    if (hasBeans || hasLentils) {
+      es.push('Agrega las lentejas, frijoles o garbanzos ya cocidos; si son de lata, enjuágalos antes.');
+      en.push('Add cooked lentils, beans or chickpeas; if canned, rinse them first.');
+    }
+    es.push('Agrega caldo o agua suficiente para cubrir los ingredientes y deja hervir suave.');
+    en.push('Add enough broth or water to cover the ingredients and let it simmer gently.');
+    if (hasVeg) {
+      es.push('Agrega verduras cuando el caldo ya esté caliente para que no se sobrecocinen.');
+      en.push('Add vegetables once the broth is hot so they do not overcook.');
+    }
+    es.push('Cocina 15 a 25 minutos, moviendo ocasionalmente, hasta que todo esté suave y caliente.');
+    en.push('Cook 15 to 25 minutes, stirring occasionally, until everything is tender and hot.');
+    es.push('Prueba sal al final. Deja reposar 5 minutos antes de cerrar el tupper o termo.');
+    en.push('Adjust salt at the end. Let it rest 5 minutes before closing the container or thermos.');
+
+    tipsEs.push('Mientras hierve, prepara el termo, cuchara y servilletas.');
+    tipsEn.push('While it simmers, prepare the thermos, spoon and napkins.');
+    tipsEs.push('Si lo llevarás al trabajo, usa termo para que no se derrame.');
+    tipsEn.push('If taking it to work, use a thermos to avoid spills.');
+  } else if (isOven) {
+    es.push(`Precalienta el horno o air fryer a 375°F / 190°C para preparar ${name}.`);
+    en.push(`Preheat oven or air fryer to 375°F / 190°C to make ${name}.`);
+    es.push('Seca la proteína o base principal con servilleta para que dore mejor.');
+    en.push('Pat the main protein or base dry with a paper towel so it browns better.');
+    es.push('Sazona con sal y acomoda todo en una sola capa; evita amontonar para que no se cueza con vapor.');
+    en.push('Season with salt and arrange everything in one layer; avoid crowding so it does not steam.');
+    if (hasEgg) {
+      es.push('Si lleva huevo mezclado, bátelo en un bowl aparte y agrégalo cuando el molde o mezcla esté listo.');
+      en.push('If it uses beaten eggs, beat them separately and add when the baking dish or mixture is ready.');
+    }
+    es.push('Hornea de 18 a 35 minutos según el grosor, volteando a la mitad si son piezas de carne o pollo.');
+    en.push('Bake 18 to 35 minutes depending on thickness, flipping halfway for meat or chicken pieces.');
+    es.push('Déjalo reposar 5 minutos antes de cortar para que no pierda jugo.');
+    en.push('Let it rest 5 minutes before cutting so it does not lose juices.');
+    es.push('Si es para meal prep, divide porciones antes de guardar.');
+    en.push('If meal prepping, divide portions before storing.');
+
+    tipsEs.push('Mientras está en el horno, lava tabla/cuchillo y prepara tu tupper.');
+    tipsEn.push('While it bakes, wash board/knife and prepare your container.');
+    tipsEs.push('No cierres el tupper hasta que deje de salir vapor fuerte.');
+    tipsEn.push('Do not close the container until strong steam is gone.');
+  } else {
+    es.push(`Para ${name}, empieza calentando un sartén a fuego medio durante 1 a 2 minutos.`);
+    en.push(`For ${name}, start by heating a pan over medium heat for 1 to 2 minutes.`);
+
+    if (hasEgg && !hasBeef && !hasChicken && !hasPork && !hasFish && !hasTofu && !hasTempeh) {
+      es.push('Rompe los huevos en un bowl, agrega sal y bátelos 20 a 30 segundos.');
+      en.push('Crack eggs into a bowl, add salt and beat for 20 to 30 seconds.');
+      es.push('Agrega mantequilla o aceite al sartén y baja un poco el fuego para que el huevo no se queme.');
+      en.push('Add butter or oil to the pan and lower the heat slightly so the eggs do not burn.');
+      if (hasVeg) {
+        es.push('Cocina primero las verduras 2 a 3 minutos; después agrega el huevo batido.');
+        en.push('Cook vegetables first for 2 to 3 minutes; then add beaten eggs.');
+      }
+      es.push('Cocina moviendo suavemente hasta que el huevo esté firme pero no seco.');
+      en.push('Cook while stirring gently until eggs are set but not dry.');
+      if (hasCheese) {
+        es.push('Agrega el queso al final y tapa 1 minuto para que se derrita.');
+        en.push('Add cheese at the end and cover 1 minute to melt.');
+      }
+    } else {
+      if (hasBeef) {
+        es.push('Seca la carne con servilleta y agrega sal antes de ponerla al sartén.');
+        en.push('Pat beef dry with a paper towel and salt it before placing it in the pan.');
+        es.push('Cocina la carne 3 a 5 minutos por lado si es bistec, o 8 a 10 minutos si es molida, moviendo cada 2 minutos.');
+        en.push('Cook beef 3 to 5 minutes per side if steak, or 8 to 10 minutes if ground, stirring every 2 minutes.');
+      }
+      if (hasChicken) {
+        es.push('Corta el pollo en tiras medianas para que se cocine parejo y agrega sal.');
+        en.push('Cut chicken into medium strips so it cooks evenly and add salt.');
+        es.push('Cocina el pollo 5 a 7 minutos por lado; si es grueso, tapa el sartén 3 minutos extra.');
+        en.push('Cook chicken 5 to 7 minutes per side; if thick, cover the pan for 3 extra minutes.');
+      }
+      if (hasPork) {
+        es.push('Coloca el cerdo, tocino o chorizo en sartén caliente y cocina hasta que suelte grasa y se dore.');
+        en.push('Place pork, bacon or chorizo in the hot pan and cook until it releases fat and browns.');
+        es.push('Si suelta demasiada grasa, retira un poco antes de agregar otros ingredientes.');
+        en.push('If it releases too much fat, remove some before adding other ingredients.');
+      }
+      if (hasFish) {
+        es.push('Seca el pescado o marisco con servilleta, agrega sal y cocínalo con mantequilla o aceite.');
+        en.push('Pat fish or seafood dry, add salt and cook it with butter or oil.');
+        es.push('Cocina pescado 3 a 5 minutos por lado; camarones 2 a 3 minutos por lado hasta que cambien de color.');
+        en.push('Cook fish 3 to 5 minutes per side; shrimp 2 to 3 minutes per side until color changes.');
+      }
+      if (hasTofu || hasTempeh) {
+        es.push('Presiona el tofu o tempeh con servilleta para quitar humedad y córtalo en cubos o tiras.');
+        en.push('Press tofu or tempeh with a paper towel to remove moisture and cut into cubes or strips.');
+        es.push('Dóralo 8 a 10 minutos, moviendo cada 2 minutos para que agarre textura.');
+        en.push('Brown it for 8 to 10 minutes, stirring every 2 minutes so it gets texture.');
+      }
+      if (hasBeans || hasLentils) {
+        es.push('Calienta frijoles, garbanzos o lentejas aparte o a un lado del sartén para que no se deshagan demasiado.');
+        en.push('Heat beans, chickpeas or lentils separately or on one side of the pan so they do not break down too much.');
+      }
+      if (hasRice) {
+        es.push('Si lleva arroz, quinoa, pasta o avena, úsala ya cocida y caliéntala al final para ahorrar tiempo.');
+        en.push('If it uses rice, quinoa, pasta or oats, use it cooked and heat it at the end to save time.');
+      }
+      if (hasVeg) {
+        es.push('Agrega verduras después de la proteína y cocina 3 a 5 minutos, solo hasta que se suavicen.');
+        en.push('Add vegetables after the protein and cook 3 to 5 minutes, just until softened.');
+      }
+      if (hasEgg) {
+        es.push('Si lleva huevo, cocínalo al final en el mismo sartén o hiérvelo aparte 10 a 12 minutos mientras se cocina la proteína.');
+        en.push('If it uses egg, cook it at the end in the same pan or boil it separately 10 to 12 minutes while the protein cooks.');
+      }
+      if (hasCheese) {
+        es.push('Agrega queso al final, baja el fuego y tapa 1 minuto para que se derrita sin quemarse.');
+        en.push('Add cheese at the end, lower the heat and cover 1 minute so it melts without burning.');
+      }
+      if (hasTortilla) {
+        es.push('Calienta tortillas o wrap al final 20 a 30 segundos por lado para que no se rompan al doblarlas.');
+        en.push('Warm tortillas or wrap at the end 20 to 30 seconds per side so they do not tear when folding.');
+      }
+    }
+
+    es.push('Prueba sal y ajusta antes de servir.');
+    en.push('Taste and adjust salt before serving.');
+    es.push('Si lo llevarás al trabajo, pasa la comida al tupper y déjala enfriar 5 a 8 minutos antes de cerrarla.');
+    en.push('If taking it to work, transfer to a container and let it cool 5 to 8 minutes before closing.');
+
+    tipsEs.push('Empieza siempre por lo que tarda más: carne, pollo, tofu, lentejas o arroz.');
+    tipsEn.push('Always start with what takes longest: beef, chicken, tofu, lentils or rice.');
+    tipsEs.push('Mientras se cocina la proteína, prepara el tupper, cubiertos y botella de agua.');
+    tipsEn.push('While the protein cooks, prepare your container, utensils and water bottle.');
+    tipsEs.push('Si vas a recalentar, deja salsas, limón o ingredientes frescos aparte.');
+    tipsEn.push('If reheating, keep sauces, lemon or fresh ingredients separate.');
+  }
+
+  const ingredients = (lang === 'es' ? dish.ingredients_es : dish.ingredients_en) || [];
+  const utensils = (lang === 'es' ? dish.utensils_es : dish.utensils_en) || [];
+  return {
+    ingredients,
+    utensils,
+    steps: lang === 'es' ? es : en,
+    tips: lang === 'es' ? tipsEs : tipsEn,
+  };
+}
+
+export default function Home() {
+  const [session, setSession] = useState<any>(null);
+  const [showSplash, setShowSplash] = useState(true);
+  const [lang, setLang] = useState<Lang>('es');
+  const [unitMode, setUnitMode] = useState<UnitMode>('kg');
+  const [tab, setTab] = useState('today');
+  const [todayMode, setTodayMode] = useState<'today' | 'week'>('today');
+  const [householdId, setHouseholdId] = useState('');
+  const [profiles, setProfiles] = useState<Profile[]>([]);
+  const [activeProfileId, setActiveProfileId] = useState('');
+  const [plans, setPlans] = useState<Plan[]>([]);
+  const [planStart, setPlanStart] = useState(mondayISO());
+  const [planDays, setPlanDays] = useState(7);
+  const [mealLogs, setMealLogs] = useState<any[]>([]);
+  const [waterLogs, setWaterLogs] = useState<any[]>([]);
+  const [reminders, setReminders] = useState<any[]>([]);
+  const [marketProfiles, setMarketProfiles] = useState<string[]>([]);
+  const [marketItems, setMarketItems] = useState<MarketItem[]>([]);
+  const [selectedDish, setSelectedDish] = useState<any>(null);
+  const [toast, setToast] = useState('');
+  const [lastSwap, setLastSwap] = useState<any>(null);
+  const [lastWaterId, setLastWaterId] = useState('');
+  const [editingProfiles, setEditingProfiles] = useState<Record<string, boolean>>({});
+  const [showReminderModal, setShowReminderModal] = useState(false);
+  const [showExceptionModal, setShowExceptionModal] = useState(false);
+  const [modalForm, setModalForm] = useState<any>({});
+  const [productPhotos, setProductPhotos] = useState<string[]>([]);
+  const [productResult, setProductResult] = useState('');
+
+  const L = UI[lang];
+
+  useEffect(() => {
+    const savedLang = (localStorage.getItem('dietapp_lang') as Lang) || 'es';
+    const savedUnit = (localStorage.getItem('dietapp_unit') as UnitMode) || 'kg';
+    setLang(savedLang);
+    setUnitMode(savedUnit);
+
+    const splashTimer = setTimeout(() => setShowSplash(false), 1900);
+
+    supabase.auth.getSession().then(({ data }) => {
+      if (!data.session) location.href = '/login';
+      else setSession(data.session);
+    });
+
+    const { data: sub } = supabase.auth.onAuthStateChange((_event, nextSession) => {
+      if (!nextSession) location.href = '/login';
+      else setSession(nextSession);
+    });
+
+    return () => {
+      clearTimeout(splashTimer);
+      sub.subscription.unsubscribe();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (session) boot();
+  }, [session, planStart]);
+
+  const activeProfile = profiles.find((p) => p.id === activeProfileId);
+  const activePlan = plans.find((p) => p.profile_id === activeProfileId && p.week_start === planStart);
+
+  const todayMealLogs = mealLogs.filter((m) => isSameDay(m.meal_date, todayISO()) && (!activeProfileId || m.profile_id === activeProfileId));
+  const todayWaterMl = waterLogs
+    .filter((w) => isSameDay(w.log_date, todayISO()) && (!activeProfileId || w.profile_id === activeProfileId))
+    .reduce((sum, w) => sum + Number(w.amount_ml || 0), 0);
+
+  function notify(message: string) {
+    setToast(message);
+    setTimeout(() => setToast(''), 2600);
+  }
+
+  async function boot() {
+    const { data: member, error } = await supabase
+      .from('household_members')
+      .select('household_id')
+      .eq('user_id', session.user.id)
+      .limit(1)
+      .single();
+
+    if (error || !member?.household_id) {
+      notify('No pude cargar tu hogar. Revisa Supabase.');
+      return;
+    }
+
+    setHouseholdId(member.household_id);
+    await loadAll(member.household_id);
+  }
+
+  async function loadAll(hid = householdId) {
+    if (!hid) return;
+
+    const [profilesRes, plansRes, mealsRes, waterRes, remindersRes] = await Promise.all([
+      supabase.from('profiles').select('*').eq('household_id', hid).order('created_at'),
+      supabase.from('weekly_plans').select('*').eq('household_id', hid).eq('week_start', planStart),
+      supabase.from('meal_logs').select('*').eq('household_id', hid).gte('meal_date', datePlus(todayISO(), -35)),
+      supabase.from('water_logs').select('*').eq('household_id', hid).gte('log_date', datePlus(todayISO(), -35)),
+      supabase.from('reminders').select('*').eq('household_id', hid).eq('done', false).order('remind_at'),
+    ]);
+
+    setProfiles(profilesRes.data || []);
+    setPlans(plansRes.data || []);
+    setMealLogs(mealsRes.data || []);
+    setWaterLogs(waterRes.data || []);
+    setReminders(remindersRes.data || []);
+
+    if ((profilesRes.data || []).length && !activeProfileId) {
+      setActiveProfileId((profilesRes.data || [])[0].id);
+    }
+  }
+
+  function dishById(id: string) {
+    return (DISHES as any).find((d: any) => d.id === id);
+  }
+
+  function compatibleDishes(profile: Profile) {
+    const diet = profile?.diet_type || 'carnivore_flexible';
+    const avoided = profile?.routine?.avoidedFoods || [];
+    const preferred = profile?.routine?.preferredFoods || [];
+
+    let list = (DISHES as any).filter((d: any) => {
+      const tags = d.diet_tags || [];
+      let ok = false;
+
+      if (diet === 'vegan') ok = tags.includes('vegan');
+      else if (diet.includes('carnivore') || diet === 'animal_based') {
+        ok = diet === 'carnivore_strict'
+          ? tags.includes('carnivore_strict')
+          : tags.some((x: string) => x.includes('carnivore') || x === 'animal_based' || x === 'keto_carnivore');
+      } else {
+        ok = tags.some((x: string) => ['lacto_ovo_vegetarian', 'lacto_vegetarian', 'ovo_vegetarian', 'vegan'].includes(x));
+      }
+
+      if (!ok) return false;
+
+      const text = [...(d.ingredients_es || []), ...(d.ingredients_en || []), d.name_es || '', d.name_en || ''].join(' ').toLowerCase();
+      return !avoided.some((a: string) => text.includes(String(a).toLowerCase()));
+    });
+
+    if (preferred.length) {
+      list = list.sort((a: any, b: any) => {
+        const at = [...(a.ingredients_es || []), ...(a.ingredients_en || []), a.name_es || '', a.name_en || ''].join(' ').toLowerCase();
+        const bt = [...(b.ingredients_es || []), ...(b.ingredients_en || []), b.name_es || '', b.name_en || ''].join(' ').toLowerCase();
+        const as = preferred.filter((p: string) => at.includes(String(p).toLowerCase())).length;
+        const bs = preferred.filter((p: string) => bt.includes(String(p).toLowerCase())).length;
+        return bs - as;
+      });
+    }
+
+    return list;
+  }
+
+  async function addProfile() {
+    const tempName = profiles.length ? `Perfil ${profiles.length + 1}` : 'ROB';
+    const { data, error } = await supabase
+      .from('profiles')
+      .insert({
+        household_id: householdId,
+        name: tempName,
+        sex: 'other',
+        age: 30,
+        height_cm: 170,
+        current_weight_kg: 90,
+        goal_weight_kg: 80,
+        pace_lb_per_week: 1,
+        diet_type: profiles.length === 0 ? 'carnivore_flexible' : 'lacto_ovo_vegetarian',
+        unit_prefs: { bodyWeight: unitMode, solid: unitMode },
+        routine: defaultRoutine,
+      })
+      .select()
+      .single();
+
+    if (error) return notify(`No se pudo crear: ${error.message}`);
+
+    setActiveProfileId(data.id);
+    setEditingProfiles((prev) => ({ ...prev, [data.id]: true }));
+    await loadAll();
+    notify(L.created);
+  }
+
+  async function saveProfile(profile: Profile) {
+    const { error } = await supabase.from('profiles').update(profile).eq('id', profile.id);
+    if (error) return notify(`No se pudo guardar: ${error.message}`);
+    setEditingProfiles((prev) => ({ ...prev, [profile.id]: false }));
+    await loadAll();
+    notify(L.saved);
+  }
+
+  async function deleteProfile(id: string) {
+    if (!confirm(lang === 'es' ? '¿Eliminar perfil?' : 'Delete profile?')) return;
+    const { error } = await supabase.from('profiles').delete().eq('id', id);
+    if (error) return notify(`No se pudo eliminar: ${error.message}`);
+    await loadAll();
+    notify(L.deleted);
+  }
+
+  async function toggleLanguage() {
+    const next = lang === 'es' ? 'en' : 'es';
+    setLang(next);
+    localStorage.setItem('dietapp_lang', next);
+  }
+
+  async function toggleUnitMode() {
+    const next = unitMode === 'kg' ? 'lb' : 'kg';
+    setUnitMode(next);
+    localStorage.setItem('dietapp_unit', next);
+    await Promise.all(
+      profiles.map((p) =>
+        supabase
+          .from('profiles')
+          .update({ unit_prefs: { ...(p.unit_prefs || {}), bodyWeight: next, solid: next } })
+          .eq('id', p.id)
+      )
+    );
+    await loadAll();
+    buildMarket(marketProfiles, true, next);
+  }
+
+  async function generatePlan(profile: Profile, startISO = planStart, duration = planDays) {
+    const existing = plans.find((p) => p.profile_id === profile.id && p.week_start === startISO);
+    if (existing) {
+      const ok = confirm(`${L.planExistsTitle}\n\n${L.planExistsBody}`);
+      if (!ok) return;
+    }
+
+    const choices = compatibleDishes(profile);
+    if (!choices.length) return notify(L.noCompatible);
+
+    const routine = { ...defaultRoutine, ...(profile.routine || {}) };
+    const workDays = (routine.workDays || []).map(normalizeDay);
+    const meals: Meal[] = [];
+    const recentByDay = new Map<string, Set<string>>();
+    let rolling = 0;
+
+    for (let i = 0; i < duration; i++) {
+      const dateISO = shiftDateByIndex(startISO, i);
+      const dayEs = normalizeDay(DAYS_ES[(new Date(`${dateISO}T12:00:00`).getDay() + 6) % 7]);
+      const works = !!routine.worksNow && workDays.includes(dayEs);
+      const count = Math.max(1, works ? Number(routine.mealsWork || 3) : Number(routine.mealsOff || 3));
+      const times = works
+        ? [routine.wakeWork || '15:00', routine.startWork || '18:00', routine.breakWork || '22:00', routine.endWork || '04:30', '01:00']
+        : [routine.wakeOff || '09:00', '13:00', '18:00', routine.sleepOff || '23:00', '21:00'];
+
+      recentByDay.set(dateISO, new Set());
+
+      for (let j = 0; j < count; j++) {
+        let selected = choices[(rolling + j) % choices.length];
+
+        for (let tries = 0; tries < choices.length; tries++) {
+          const candidate = choices[(rolling + j + tries) % choices.length];
+          if (!recentByDay.get(dateISO)!.has(candidate.id)) {
+            selected = candidate;
+            break;
+          }
+        }
+
+        recentByDay.get(dateISO)!.add(selected.id);
+
+        meals.push({
+          id: crypto.randomUUID(),
+          day: dayEs,
+          date: dateISO,
+          time: times[j] || times[0],
+          slot: `${lang === 'es' ? 'Comida' : 'Meal'} ${j + 1}`,
+          workMeal: works,
+          dishId: selected.id,
+        });
+
+        rolling += 1;
+      }
+    }
+
+    const payload = {
+      household_id: householdId,
+      profile_id: profile.id,
+      week_start: startISO,
+      data: { meals, duration },
+    };
+
+    const result = existing
+      ? await supabase.from('weekly_plans').update(payload).eq('id', existing.id)
+      : await supabase.from('weekly_plans').insert(payload);
+
+    if (result.error) return notify(`No se pudo generar: ${result.error.message}`);
+
+    setPlanStart(startISO);
+    await loadAll();
+    notify(L.generated);
+  }
+
+  async function markMealEaten(meal: Meal, profile: Profile, plan: Plan) {
+    const d = dishById(meal.dishId);
+    if (!d) return;
+
+    const { error } = await supabase.from('meal_logs').upsert({
+      household_id: householdId,
+      profile_id: profile.id,
+      weekly_plan_id: plan.id,
+      meal_id: meal.id,
+      dish_id: d.id,
+      dish_name: dishName(d, lang),
+      meal_date: meal.date || todayISO(),
+      calories: Number(d.calories || 0),
+      protein_g: Number(d.protein_g || 0),
+      carbs_g: Number(d.carbs_g || 0),
+      fat_g: Number(d.fat_g || 0),
+      helped_goal_note: Number(d.calories || 0) <= Math.round(targetCalories(profile) / 3) ? 'Dentro de meta' : 'Revisar porción',
+    });
+
+    if (error) return notify(`No se pudo marcar: ${error.message}`);
+    await loadAll();
+    notify(L.mealLogged);
+  }
+
+  async function undoMealLog(log: any) {
+    const { error } = await supabase.from('meal_logs').delete().eq('id', log.id);
+    if (error) return notify(`No se pudo deshacer: ${error.message}`);
+    await loadAll();
+    notify(L.updated);
+  }
+
+  async function addWater(amountMl: number) {
+    if (!activeProfile) return;
+    const { data, error } = await supabase
+      .from('water_logs')
+      .insert({ household_id: householdId, profile_id: activeProfile.id, amount_ml: amountMl, log_date: todayISO() })
+      .select()
+      .single();
+
+    if (error) return notify(`No se pudo guardar agua: ${error.message}`);
+    setLastWaterId(data.id);
+    await loadAll();
+    notify(L.waterLogged);
+  }
+
+  async function undoWater() {
+    if (!lastWaterId) return;
+    const { error } = await supabase.from('water_logs').delete().eq('id', lastWaterId);
+    if (error) return notify(`No se pudo deshacer: ${error.message}`);
+    setLastWaterId('');
+    await loadAll();
+    notify(L.updated);
+  }
+
+  async function changeDish(meal: Meal, profile: Profile) {
+    if (!confirm(L.confirmDishChange)) return;
+
+    const currentPlan = plans.find((p) => p.profile_id === profile.id && p.week_start === planStart);
+    if (!currentPlan) return;
+
+    const options = compatibleDishes(profile).filter((d: any) => d.id !== meal.dishId);
+    if (!options.length) return;
+
+    const newDish = options[Math.floor(Math.random() * options.length)];
+    const oldDishId = meal.dishId;
+
+    currentPlan.data.meals = currentPlan.data.meals.map((m: Meal) =>
+      m.id === meal.id ? { ...m, dishId: newDish.id } : m
+    );
+
+    const { error } = await supabase.from('weekly_plans').update({ data: currentPlan.data }).eq('id', currentPlan.id);
+    if (error) return notify(`No se pudo cambiar: ${error.message}`);
+
+    setLastSwap({ planId: currentPlan.id, mealId: meal.id, oldDishId });
+    await loadAll();
+    notify(`${L.updated} · ${L.undo}`);
+  }
+
+  async function undoDishChange() {
+    if (!lastSwap) return;
+    const plan = plans.find((p) => p.id === lastSwap.planId);
+    if (!plan) return;
+
+    plan.data.meals = plan.data.meals.map((m: Meal) =>
+      m.id === lastSwap.mealId ? { ...m, dishId: lastSwap.oldDishId } : m
+    );
+
+    const { error } = await supabase.from('weekly_plans').update({ data: plan.data }).eq('id', plan.id);
+    if (!error) {
+      setLastSwap(null);
+      await loadAll();
+      notify(L.updated);
+    }
+  }
+
+  function buildMarket(selectedIds: string[], keepChecks = false, mode = unitMode) {
+    const prev = new Map(marketItems.map((i) => [i.key, i]));
+    const map = new Map<string, MarketItem>();
+
+    plans
+      .filter((p) => selectedIds.includes(p.profile_id))
+      .forEach((plan) => {
+        const prof = profiles.find((p) => p.id === plan.profile_id);
+        (plan.data.meals || []).forEach((meal: Meal) => {
+          const d = dishById(meal.dishId);
+          if (!d) return;
+
+          (d.shopping_items || []).forEach((ing: any) => {
+            const key = `${String(ing.name).toLowerCase()}__${ing.unit}`;
+            const prevItem = prev.get(key);
+            const summaryKey = `${meal.date}|${meal.day}|${dishName(d, lang)}`;
+
+            if (!map.has(key)) {
+              map.set(key, {
+                key,
+                name: ing.name,
+                amount: Number(ing.amount || 1),
+                unit: ing.unit,
+                display: '',
+                found: keepChecks ? !!prevItem?.found : false,
+                missing: keepChecks ? !!prevItem?.missing : false,
+                replacement: keepChecks ? prevItem?.replacement || '' : '',
+                suggestions: lang === 'es' ? d.replacements_es || [] : d.replacements_en || [],
+                usedSummary: [`${prof?.name || ''} · ${formatLong(meal.date, lang)} · ${dishName(d, lang)}`],
+              });
+            } else {
+              const item = map.get(key)!;
+              item.amount += Number(ing.amount || 1);
+              const line = `${prof?.name || ''} · ${formatLong(meal.date, lang)} · ${dishName(d, lang)}`;
+              if (!item.usedSummary.includes(line)) item.usedSummary.push(line);
+            }
+          });
+        });
+      });
+
+    const next = Array.from(map.values()).map((item) => ({
+      ...item,
+      display: formatIngredientAmount(item.amount, item.unit, mode, lang),
+    }));
+
+    setMarketItems(next);
+    notify(L.updated);
+  }
+
+  function toggleFound(key: string) {
+    setMarketItems((items) =>
+      items.map((item) => item.key === key ? { ...item, found: !item.found, missing: false } : item)
+    );
+  }
+
+  function markMissing(key: string) {
+    setMarketItems((items) =>
+      items.map((item) => item.key === key ? { ...item, missing: !item.missing, found: false } : item)
+    );
+  }
+
+  function setReplacement(key: string, value: string) {
+    setMarketItems((items) =>
+      items.map((item) => item.key === key ? { ...item, replacement: value, missing: true } : item)
+    );
+    notify(L.updated);
+  }
+
+  function addManualMarketItem() {
+    const name = window.prompt(lang === 'es' ? 'Producto manual' : 'Manual item');
+    if (!name) return;
+    setMarketItems((items) => [...items, {
+      key: `manual_${Date.now()}`,
+      name,
+      amount: 1,
+      unit: 'item',
+      display: '1 item',
+      found: false,
+      missing: false,
+      replacement: '',
+      suggestions: [],
+      usedSummary: ['Manual'],
+    }]);
+    notify(L.productAdded);
+  }
+
+  function exportWhatsapp() {
+    const text = [
+      lang === 'es' ? 'DietApp — Mandado semanal' : 'DietApp — Weekly groceries',
+      '',
+      ...marketItems.map((i) => `${i.found ? '✅' : i.missing ? '❌' : '•'} ${i.name} — ${i.display}${i.replacement ? ` (${L.replace}: ${i.replacement})` : ''}`),
+    ].join('\n');
+
+    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+  }
+
+  async function saveReminder() {
+    if (!modalForm.title || !modalForm.date || !modalForm.time) return;
+    const { error } = await supabase.from('reminders').insert({
+      household_id: householdId,
+      profile_id: activeProfileId || null,
+      title: modalForm.title,
+      remind_at: `${modalForm.date}T${modalForm.time}:00`,
+    });
+    if (error) return notify(`No se pudo guardar: ${error.message}`);
+    setShowReminderModal(false);
+    setModalForm({});
+    await loadAll();
+    notify(L.reminderSaved);
+  }
+
+  async function saveException() {
+    if (!modalForm.item || !activeProfile) return;
+    const { error } = await supabase.from('exceptions').insert({
+      household_id: householdId,
+      profile_id: activeProfile.id,
+      item: modalForm.item,
+      estimated_calories: Number(modalForm.calories || 0),
+      note: modalForm.note || '',
+    });
+    if (error) return notify(`No se pudo guardar: ${error.message}`);
+    setShowExceptionModal(false);
+    setModalForm({});
+    notify(L.exceptionSaved);
+  }
+
+  async function analyzeProduct() {
+    if (!productPhotos.length) return;
+    setProductResult(lang === 'es' ? 'Analizando...' : 'Analyzing...');
+    try {
+      const res = await fetch('/api/ai/analyze-product', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ lang, profile: activeProfile, images: productPhotos }),
+      });
+      const data = await res.json();
+      setProductResult(data.result || data.error || 'Sin respuesta');
+    } catch {
+      setProductResult('No se pudo analizar. Revisa OPENAI_API_KEY en Vercel.');
+    }
+  }
+
+  function handlePhoto(e: any) {
+    const files = Array.from(e.target.files || []) as File[];
+    files.slice(0, 3).forEach((file) => {
+      const reader = new FileReader();
+      reader.onload = (ev) => setProductPhotos((prev) => [...prev, String(ev.target?.result)].slice(0, 3));
+      reader.readAsDataURL(file);
+    });
+  }
+
+  const foundItems = marketItems.filter((i) => i.found);
+  const pendingItems = marketItems.filter((i) => !i.found);
+
+  if (showSplash) {
+    return (
+      <div style={{ minHeight: '100vh', display: 'grid', placeItems: 'center', background: 'radial-gradient(circle at top, #fff0d5, #fff8ef)' }}>
+        <div style={{ textAlign: 'center' }}>
+          <div style={{ fontSize: 72, marginBottom: 12 }}>🥗</div>
+          <h1 style={{ fontSize: 48, color: '#145a38', margin: 0 }}>DietApp</h1>
+          <p style={{ marginTop: 8, color: '#746a5f', fontWeight: 800 }}>{L.by}</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!session) {
+    return (
+      <main className="shell">
+        <div className="card">{L.loading}</div>
+      </main>
+    );
+  }
+
+  return (
+    <>
+      {toast && <div className="toast">{toast}</div>}
+
+      <header className="header">
+        <div className="header-inner">
+          <div className="logo">DietApp</div>
+
+          <div className="quick-controls">
+            <select value={activeProfileId} onChange={(e) => setActiveProfileId(e.target.value)}>
+              {profiles.map((p) => <option key={p.id} value={p.id}>{p.name}</option>)}
+            </select>
+
+            <Switch labelLeft="ES" labelRight="EN" checked={lang === 'en'} onChange={toggleLanguage} />
+            <Switch labelLeft="kg" labelRight="lb" checked={unitMode === 'lb'} onChange={toggleUnitMode} />
+          </div>
+        </div>
+      </header>
+
+      <main className="shell">
+        {lastSwap && (
+          <div className="card success">
+            <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12 }}>
+              <b>{lang === 'es' ? 'Cambiaste un plato.' : 'You changed a meal.'}</b>
+              <button className="btn small" onClick={undoDishChange}><Undo2 size={15} />{L.undo}</button>
+            </div>
+          </div>
+        )}
+
+        {tab === 'today' && (
+          <TodayView
+            L={L}
+            lang={lang}
+            unitMode={unitMode}
+            activeProfile={activeProfile}
+            activePlan={activePlan}
+            mealLogs={mealLogs}
+            todayMealLogs={todayMealLogs}
+            todayWaterMl={todayWaterMl}
+            lastWaterId={lastWaterId}
+            dishById={dishById}
+            generatePlan={generatePlan}
+            changeDish={changeDish}
+            markMealEaten={markMealEaten}
+            undoMealLog={undoMealLog}
+            addWater={addWater}
+            undoWater={undoWater}
+            setSelectedDish={setSelectedDish}
+            todayMode={todayMode}
+            setTodayMode={setTodayMode}
+          />
+        )}
+
+        {tab === 'plan' && (
+          <PlanView
+            L={L}
+            lang={lang}
+            unitMode={unitMode}
+            profiles={profiles}
+            plans={plans}
+            planStart={planStart}
+            setPlanStart={setPlanStart}
+            planDays={planDays}
+            setPlanDays={setPlanDays}
+            dishById={dishById}
+            generatePlan={generatePlan}
+            changeDish={changeDish}
+            setSelectedDish={setSelectedDish}
+          />
+        )}
+
+        {tab === 'market' && (
+          <MarketView
+            L={L}
+            lang={lang}
+            profiles={profiles}
+            marketProfiles={marketProfiles}
+            setMarketProfiles={setMarketProfiles}
+            pendingItems={pendingItems}
+            foundItems={foundItems}
+            buildMarket={buildMarket}
+            toggleFound={toggleFound}
+            markMissing={markMissing}
+            setReplacement={setReplacement}
+            addManualMarketItem={addManualMarketItem}
+            exportWhatsapp={exportWhatsapp}
+            productPhotos={productPhotos}
+            productResult={productResult}
+            handlePhoto={handlePhoto}
+            analyzeProduct={analyzeProduct}
+          />
+        )}
+
+        {tab === 'settings' && (
+          <SettingsView
+            L={L}
+            lang={lang}
+            unitMode={unitMode}
+            profiles={profiles}
+            activeProfile={activeProfile}
+            editingProfiles={editingProfiles}
+            setEditingProfiles={setEditingProfiles}
+            addProfile={addProfile}
+            saveProfile={saveProfile}
+            deleteProfile={deleteProfile}
+          />
+        )}
+
+        {tab === 'history' && (
+          <HistoryView
+            L={L}
+            lang={lang}
+            unitMode={unitMode}
+            activeProfile={activeProfile}
+            mealLogs={mealLogs}
+            waterLogs={waterLogs}
+            reminders={reminders}
+            setShowReminderModal={setShowReminderModal}
+            setShowExceptionModal={setShowExceptionModal}
+          />
+        )}
+      </main>
+
+      {selectedDish && <RecipeModal L={L} lang={lang} dish={selectedDish} onClose={() => setSelectedDish(null)} />}
+
+      {showReminderModal && (
+        <FormModal title={L.newReminder} L={L} onClose={() => setShowReminderModal(false)} onSave={saveReminder}>
+          <label>{L.title}</label>
+          <input value={modalForm.title || ''} onChange={(e) => setModalForm({ ...modalForm, title: e.target.value })} />
+          <label>{L.date}</label>
+          <input type="date" value={modalForm.date || todayISO()} onChange={(e) => setModalForm({ ...modalForm, date: e.target.value })} />
+          <label>{L.time}</label>
+          <input type="time" value={modalForm.time || '18:00'} onChange={(e) => setModalForm({ ...modalForm, time: e.target.value })} />
+        </FormModal>
+      )}
+
+      {showExceptionModal && (
+        <FormModal title={L.newException} L={L} onClose={() => setShowExceptionModal(false)} onSave={saveException}>
+          <label>{lang === 'es' ? '¿Qué comiste?' : 'What did you eat?'}</label>
+          <input value={modalForm.item || ''} onChange={(e) => setModalForm({ ...modalForm, item: e.target.value })} />
+          <label>{L.caloriesOptional}</label>
+          <input type="number" value={modalForm.calories || ''} onChange={(e) => setModalForm({ ...modalForm, calories: e.target.value })} />
+          <label>{L.note}</label>
+          <textarea value={modalForm.note || ''} onChange={(e) => setModalForm({ ...modalForm, note: e.target.value })} />
+        </FormModal>
+      )}
+
+      <nav className="tabs">
+        <div className="tabs-inner">
+          {[
+            ['today', '🍽️', L.home],
+            ['plan', '📅', L.week],
+            ['market', '🛒', L.market],
+            ['settings', '⚙️', L.settings],
+            ['history', '📈', L.history],
+          ].map(([id, icon, label]) => (
+            <button key={id} className={`tab ${tab === id ? 'active' : ''}`} onClick={() => setTab(String(id))}>
+              <span>{icon}</span>
+              {label}
+            </button>
+          ))}
+        </div>
+      </nav>
+    </>
+  );
+}
+
+function Switch({ labelLeft, labelRight, checked, onChange }: any) {
+  return (
+    <button
+      onClick={onChange}
+      style={{
+        border: 0,
+        borderRadius: 999,
+        padding: 4,
+        display: 'flex',
+        alignItems: 'center',
+        gap: 4,
+        background: checked ? '#dff4e7' : '#f4eadc',
+        fontWeight: 900,
+        color: '#145a38',
+        minHeight: 42,
+      }}
+    >
+      <span style={{ padding: '0 7px', opacity: checked ? 0.45 : 1 }}>{labelLeft}</span>
+      <span
+        style={{
+          width: 42,
+          height: 32,
+          borderRadius: 999,
+          background: checked ? '#1f7a4d' : '#cdbfae',
+          display: 'grid',
+          placeItems: 'center',
+          color: 'white',
+        }}
+      >
+        {checked ? '→' : '←'}
+      </span>
+      <span style={{ padding: '0 7px', opacity: checked ? 1 : 0.45 }}>{labelRight}</span>
+    </button>
+  );
+}
+
+function WelcomeCard({ L, onCreate }: any) {
+  return (
+    <div className="card empty-state">
+      <div className="big">👋</div>
+      <h2>{L.welcome}</h2>
+      <p>{L.welcomeDesc}</p>
+      <button className="btn" onClick={onCreate}><UserPlus size={18} />{L.createFirstProfile}</button>
+    </div>
+  );
+}
+
+function TodayView(props: any) {
+  const { L, lang, unitMode, activeProfile, activePlan, mealLogs, todayMealLogs, todayWaterMl, lastWaterId, dishById, generatePlan, changeDish, markMealEaten, undoMealLog, addWater, undoWater, setSelectedDish, todayMode, setTodayMode } = props;
+  const [showDone, setShowDone] = useState(false);
+
+  if (!activeProfile) return <WelcomeCard L={L} onCreate={() => {}} />;
+
+  const plan = activePlan;
+  const meals = plan?.data?.meals || [];
+  const todayMeals = meals.filter((m: Meal) => isSameDay(m.date, todayISO()));
+  const eatenIds = new Set(mealLogs.filter((l: any) => isSameDay(l.meal_date, todayISO())).map((l: any) => l.meal_id));
+  const pending = todayMeals.filter((m: Meal) => !eatenIds.has(m.id));
+  const done = todayMeals.filter((m: Meal) => eatenIds.has(m.id));
+  const waterGoal = activeProfile?.routine?.reminders?.dailyWaterMl || 3000;
+
+  return (
+    <section>
+      <div className="card">
+        <h1>{L.todayMeals}</h1>
+        <p>{L.profile}: <b>{activeProfile.name}</b> · {L.diet}: <b>{dietLabel(activeProfile.diet_type, lang)}</b></p>
+        <div className="actions">
+          <button className={`btn ${todayMode === 'today' ? '' : 'secondary'}`} onClick={() => setTodayMode('today')}>{L.home}</button>
+          <button className={`btn ${todayMode === 'week' ? '' : 'secondary'}`} onClick={() => setTodayMode('week')}>{L.viewWeek}</button>
+          <button className="btn outline" onClick={() => generatePlan(activeProfile)}><CalendarDays size={17} />{L.generateWeek}</button>
+        </div>
+      </div>
+
+      <div className="card">
+        <h2><Droplets size={22} /> {L.waterToday}</h2>
+        <span className="badge blue">{L.waterGoal}: {waterGoal} ml</span>
+        <span className="badge">{todayWaterMl} ml</span>
+        <div className="actions">
+          <button className="btn secondary small" onClick={() => addWater(unitMode === 'kg' ? 250 : 237)}>+{unitMode === 'kg' ? '250 ml' : '8 oz'}</button>
+          <button className="btn secondary small" onClick={() => addWater(unitMode === 'kg' ? 500 : 473)}>+{unitMode === 'kg' ? '500 ml' : '16 oz'}</button>
+          <button className="btn secondary small" onClick={() => addWater(unitMode === 'kg' ? 1000 : 946)}>+{unitMode === 'kg' ? '1 L' : '32 oz'}</button>
+          {lastWaterId && <button className="btn outline small" onClick={undoWater}><Undo2 size={15} />{L.undoWater}</button>}
+        </div>
+      </div>
+
+      {!plan && (
+        <div className="card empty-state">
+          <div className="big">📅</div>
+          <h2>{L.noPlan}</h2>
+          <p>{L.noPlanDesc}</p>
+          <button className="btn" onClick={() => generatePlan(activeProfile)}>{L.generateWeek}</button>
+        </div>
+      )}
+
+      {plan && todayMode === 'today' && (
+        <div className="card">
+          <h2>{formatLong(todayISO(), lang)}</h2>
+          <span className="badge">{formatShortRange(plan.week_start, plan.data?.duration || 7, lang)}</span>
+          {pending.length === 0 ? <p className="notice">{lang === 'es' ? 'No quedan comidas pendientes hoy.' : 'No pending meals today.'}</p> : pending.map((m: Meal) => {
+            const d = dishById(m.dishId);
+            return <DishCard key={m.id} L={L} lang={lang} d={d} meal={m} onView={() => setSelectedDish(d)} onChange={() => changeDish(m, activeProfile)} onEat={() => markMealEaten(m, activeProfile, plan)} />;
+          })}
+
+          {!!done.length && (
+            <div style={{ marginTop: 18 }}>
+              <button className="btn secondary small" onClick={() => setShowDone(!showDone)}>{showDone ? L.hideFound : L.todayDone}</button>
+              {showDone && done.map((m: Meal) => {
+                const d = dishById(m.dishId);
+                const log = mealLogs.find((l: any) => l.meal_id === m.id);
+                return <DishCard key={m.id} L={L} lang={lang} d={d} meal={m} eaten onView={() => setSelectedDish(d)} onChange={() => {}} onEat={() => log && undoMealLog(log)} />;
+              })}
+            </div>
+          )}
+        </div>
+      )}
+
+      {plan && todayMode === 'week' && <WeekPlan L={L} lang={lang} plan={plan} profile={activeProfile} dishById={dishById} changeDish={changeDish} setSelectedDish={setSelectedDish} />}
+    </section>
+  );
+}
+
+function DishCard({ L, lang, d, meal, eaten, onView, onChange, onEat }: any) {
+  if (!d) return null;
+  return (
+    <div className={`card dish-card ${eaten ? 'found' : ''}`}>
+      <img src={d.image_url || '/dishes/placeholder-meal.jpg'} alt={dishName(d, lang)} />
+      <div style={{ flex: 1 }}>
+        <div className="muted">{formatTime12(meal.time)} · {meal.slot}</div>
+        <h3>{dishName(d, lang)}</h3>
+        <span className="badge">{d.calories} cal</span>
+        <span className="badge blue">{d.protein_g}g</span>
+        <span className="badge orange">{d.total_minutes} min</span>
+        {meal.workMeal && <span className="badge orange">{L.workMeal}</span>}
+        {eaten && <span className="badge">{L.eaten}</span>}
+        <div className="actions">
+          <button className="btn small secondary" onClick={onView}><Eye size={15} />{L.recipe}</button>
+          {!eaten && <button className="btn small outline" onClick={onChange}><RefreshCw size={15} />{L.changeDish}</button>}
+          <button className={`btn small ${eaten ? 'outline' : ''}`} onClick={onEat}>
+            {eaten ? <Undo2 size={15} /> : <Check size={15} />}
+            {eaten ? L.undo : L.markEaten}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function PlanView({ L, lang, unitMode, profiles, plans, planStart, setPlanStart, planDays, setPlanDays, dishById, generatePlan, changeDish, setSelectedDish }: any) {
+  const [filter, setFilter] = useState('all');
+  const visible = filter === 'all' ? profiles : profiles.filter((p: any) => p.id === filter);
+
+  return (
+    <section>
+      <div className="card">
+        <h1>{L.weeklyPlan}</h1>
+        <span className="badge">{L.weekRange}: {formatShortRange(planStart, planDays, lang)}</span>
+
+        <div className="grid" style={{ marginTop: 14 }}>
+          <div className="col6">
+            <label>{L.startDate}</label>
+            <input type="date" value={planStart} onChange={(e) => setPlanStart(e.target.value)} />
+          </div>
+          <div className="col6">
+            <label>{L.duration}</label>
+            <select value={planDays} onChange={(e) => setPlanDays(Number(e.target.value))}>
+              {[3, 5, 7, 10, 14].map((d) => <option key={d} value={d}>{d} {L.days}</option>)}
+            </select>
+          </div>
+        </div>
+
+        <div className="actions">
+          <button className="btn secondary" onClick={() => setPlanStart(mondayISO())}>{L.generateNormal}</button>
+          <button className="btn secondary" onClick={() => setPlanStart(todayISO())}>{L.generateFromDate}</button>
+        </div>
+
+        <div className="actions">
+          <button className={`btn ${filter === 'all' ? '' : 'secondary'}`} onClick={() => setFilter('all')}>{L.allProfiles}</button>
+          {profiles.map((p: any) => <button key={p.id} className={`btn ${filter === p.id ? '' : 'secondary'}`} onClick={() => setFilter(p.id)}>{p.name}</button>)}
+        </div>
+
+        <div className="actions">
+          {profiles.map((p: any) => <button key={p.id} className="btn outline" onClick={() => generatePlan(p, planStart, planDays)}>{L.generateWeek}: {p.name}</button>)}
+        </div>
+      </div>
+
+      {visible.map((p: any) => {
+        const plan = plans.find((pl: any) => pl.profile_id === p.id && pl.week_start === planStart);
+        if (!plan) return null;
+        return <WeekPlan key={p.id} L={L} lang={lang} plan={plan} profile={p} dishById={dishById} changeDish={changeDish} setSelectedDish={setSelectedDish} />;
+      })}
+    </section>
+  );
+}
+
+function WeekPlan({ L, lang, plan, profile, dishById, changeDish, setSelectedDish }: any) {
+  const duration = plan.data?.duration || 7;
+  return (
+    <div className="card">
+      <h2>{profile.name}</h2>
+      <p>{dietLabel(profile.diet_type, lang)}</p>
+      <span className="badge">{L.weekRange}: {formatShortRange(plan.week_start, duration, lang)}</span>
+
+      {Array.from({ length: duration }).map((_, i) => {
+        const dateISO = datePlus(plan.week_start, i);
+        const dayMeals = (plan.data.meals || []).filter((m: Meal) => isSameDay(m.date, dateISO));
+        const isWork = dayMeals.some((m: Meal) => m.workMeal);
+
+        return (
+          <div key={dateISO} style={{ marginTop: 18 }}>
+            <h3>{formatLong(dateISO, lang)}</h3>
+            <span className={`badge ${isWork ? 'orange' : 'blue'}`}>{isWork ? L.workDay : L.offDay}</span>
+            {dayMeals.map((m: Meal) => {
+              const d = dishById(m.dishId);
+              return <DishCard key={m.id} L={L} lang={lang} d={d} meal={m} onView={() => setSelectedDish(d)} onChange={() => changeDish(m, profile)} onEat={() => {}} />;
+            })}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function MarketView({ L, lang, profiles, marketProfiles, setMarketProfiles, pendingItems, foundItems, buildMarket, toggleFound, markMissing, setReplacement, addManualMarketItem, exportWhatsapp, productPhotos, productResult, handlePhoto, analyzeProduct }: any) {
+  const [showFound, setShowFound] = useState(false);
+
+  function toggleProfile(id: string) {
+    setMarketProfiles((prev: string[]) => prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]);
+  }
+
+  return (
+    <section>
+      <div className="card">
+        <h1>{L.market}</h1>
+        <p>{L.shoppingDesc}</p>
+        <h3>{L.selectedProfiles}</h3>
+        <div className="grid">
+          {profiles.map((p: any) => (
+            <button key={p.id} className={`btn ${marketProfiles.includes(p.id) ? '' : 'secondary'}`} onClick={() => toggleProfile(p.id)}>
+              {marketProfiles.includes(p.id) ? '✅ ' : ''}{p.name}
+            </button>
+          ))}
+        </div>
+        <div className="actions">
+          <button className="btn" onClick={() => buildMarket(marketProfiles, true)}><ShoppingCart size={17} />{L.updateShopping}</button>
+          <button className="btn outline" onClick={exportWhatsapp}>{L.sendWhats}</button>
+          <button className="btn secondary" onClick={addManualMarketItem}>+ {L.addManual}</button>
+        </div>
+      </div>
+
+      <div className="grid">
+        <div className="col8 card">
+          <h2>{L.list}</h2>
+          {!pendingItems.length && !foundItems.length && <div className="empty-state"><div className="big">🛒</div><p>{L.shoppingEmpty}</p></div>}
+
+          {pendingItems.map((item: MarketItem) => (
+            <div key={item.key} className="market-item">
+              <button className="market-check" onClick={() => toggleFound(item.key)}></button>
+              <div style={{ flex: 1 }}>
+                <b>{item.name}</b> — {item.display}
+                <div className="actions">
+                  <button className="btn small secondary" onClick={() => toggleFound(item.key)}><Check size={14} />{L.markReady}</button>
+                  <button className="btn small danger" onClick={() => markMissing(item.key)}><X size={14} />{L.notFound}</button>
+                  <button className="btn small outline" onClick={() => {
+                    const r = window.prompt(L.replace);
+                    if (r) setReplacement(item.key, r);
+                  }}>{L.replace}</button>
+                </div>
+
+                {item.missing && <span className="badge red">{L.notFound}</span>}
+                {item.replacement && (
+                  <p className="notice">
+                    {L.chosenReplacement}: <b>{item.replacement}</b>
+                    <br />
+                    {L.replacementNote}
+                  </p>
+                )}
+
+                {item.missing && item.suggestions?.length > 0 && (
+                  <div className="actions">
+                    {item.suggestions.slice(0, 4).map((s: string) => <button key={s} className="btn small secondary" onClick={() => setReplacement(item.key, s)}>{s}</button>)}
+                  </div>
+                )}
+
+                <details>
+                  <summary className="muted">{L.relatedRecipes}</summary>
+                  {item.usedSummary.map((u) => <p key={u} className="muted">• {u}</p>)}
+                </details>
+              </div>
+            </div>
+          ))}
+
+          {!!foundItems.length && (
+            <div style={{ marginTop: 18 }}>
+              <button className="btn secondary small" onClick={() => setShowFound(!showFound)}>{showFound ? L.hideFound : `${L.showFound} (${foundItems.length})`}</button>
+              {showFound && foundItems.map((item: MarketItem) => (
+                <div key={item.key} className="market-item found">
+                  <button className="market-check active" onClick={() => toggleFound(item.key)}><Check size={18} /></button>
+                  <div style={{ flex: 1 }}><b>{item.name}</b> — {item.display}</div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <div className="col4 card">
+          <h2>📷 {L.analyze}</h2>
+          <p className="muted">{L.analyzeDesc}</p>
+          <input type="file" accept="image/*" capture="environment" multiple onChange={handlePhoto} />
+          <div className="actions">{productPhotos.map((p: string, i: number) => <img key={i} src={p} style={{ width: 78, height: 78, objectFit: 'cover', borderRadius: 14 }} />)}</div>
+          <button className="btn" style={{ width: '100%', marginTop: 10 }} onClick={analyzeProduct}>{L.analyzeBtn}</button>
+          {productResult && <div className="notice" style={{ marginTop: 10 }}>{productResult}</div>}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function SettingsView({ L, lang, unitMode, profiles, activeProfile, editingProfiles, setEditingProfiles, addProfile, saveProfile, deleteProfile }: any) {
+  const [openProfiles, setOpenProfiles] = useState(true);
+
+  return (
+    <section>
+      <div className="card">
+        <h1>{L.configuration}</h1>
+        <p>{L.configDesc}</p>
+      </div>
+
+      <div className="card">
+        <div className="profile-summary">
+          <div>
+            <h2>{L.profiles}</h2>
+            <p>{L.profilesDesc}</p>
+          </div>
+          <div className="actions">
+            <button className="btn secondary small" onClick={() => setOpenProfiles(!openProfiles)}>{openProfiles ? <ChevronUp size={16} /> : <ChevronDown size={16} />}</button>
+            <button className="btn" onClick={addProfile}><Plus size={17} />{L.addProfile}</button>
+          </div>
+        </div>
+
+        {!profiles.length && <WelcomeCard L={L} onCreate={addProfile} />}
+
+        {openProfiles && profiles.map((p: Profile) => (
+          <ProfileRow
+            key={p.id}
+            L={L}
+            lang={lang}
+            unitMode={unitMode}
+            p={p}
+            isEditing={!!editingProfiles[p.id]}
+            setEditing={(v: boolean) => setEditingProfiles((prev: any) => ({ ...prev, [p.id]: v }))}
+            saveProfile={saveProfile}
+            deleteProfile={deleteProfile}
+          />
+        ))}
+      </div>
+
+      <div className="card" style={{ textAlign: 'center' }}>
+        <b>{L.footer}</b>
+      </div>
+    </section>
+  );
+}
+
+function ProfileRow({ L, lang, unitMode, p, isEditing, setEditing, saveProfile, deleteProfile }: any) {
+  const [local, setLocal] = useState<Profile>(p);
+  const [showDiet, setShowDiet] = useState(false);
+  const [showRestrictions, setShowRestrictions] = useState(false);
+  const [showRoutine, setShowRoutine] = useState(false);
+  const [showReminders, setShowReminders] = useState(false);
+  const [avoidInput, setAvoidInput] = useState('');
+  const [preferInput, setPreferInput] = useState('');
+
+  useEffect(() => setLocal(p), [p]);
+
+  const routine = { ...defaultRoutine, ...(local.routine || {}) };
+  const rem = { ...defaultRoutine.reminders, ...(routine.reminders || {}) };
+
+  function setRoutine(next: any) {
+    setLocal({ ...local, routine: { ...routine, ...next } });
+  }
+
+  function addTag(kind: 'avoidedFoods' | 'preferredFoods', value: string) {
+    const v = value.trim().toLowerCase();
+    if (!v) return;
+    const current = routine[kind] || [];
+    if (current.includes(v)) return;
+    setRoutine({ [kind]: [...current, v] });
+    if (kind === 'avoidedFoods') setAvoidInput('');
+    else setPreferInput('');
+  }
+
+  function removeTag(kind: 'avoidedFoods' | 'preferredFoods', value: string) {
+    setRoutine({ [kind]: (routine[kind] || []).filter((x: string) => x !== value) });
+  }
+
+  function changeMeals(key: 'mealsWork' | 'mealsOff', delta: number) {
+    const next = Math.max(1, Number(routine[key] || 3) + delta);
+    setRoutine({ [key]: next });
+  }
+
+  return (
+    <div className="card" style={{ boxShadow: 'none' }}>
+      <div className="profile-summary">
+        <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+          <div className="profile-avatar">👤</div>
+          <div>
+            <h3>{p.name}</h3>
+            <div className="muted">{dietLabel(p.diet_type, lang)} · {formatWeight(Number(p.current_weight_kg || 0), unitMode)} → {formatWeight(Number(p.goal_weight_kg || 0), unitMode)}</div>
+          </div>
+        </div>
+        <button className="btn secondary small" onClick={() => setEditing(!isEditing)}>{isEditing ? L.close : L.edit}</button>
+      </div>
+
+      {isEditing && (
+        <>
+          <label>{L.name}</label>
+          <input value={local.name || ''} onChange={(e) => setLocal({ ...local, name: e.target.value })} />
+
+          <div className="grid">
+            <div className="col6">
+              <label>{L.currentWeight} ({unitMode})</label>
+              <input type="number" value={unitMode === 'lb' ? clean(kgToLb(Number(local.current_weight_kg || 0))) : local.current_weight_kg || ''} onChange={(e) => setLocal({ ...local, current_weight_kg: unitMode === 'lb' ? lbToKg(Number(e.target.value || 0)) : Number(e.target.value || 0) })} />
+            </div>
+            <div className="col6">
+              <label>{L.goalWeight} ({unitMode})</label>
+              <input type="number" value={unitMode === 'lb' ? clean(kgToLb(Number(local.goal_weight_kg || 0))) : local.goal_weight_kg || ''} onChange={(e) => setLocal({ ...local, goal_weight_kg: unitMode === 'lb' ? lbToKg(Number(e.target.value || 0)) : Number(e.target.value || 0) })} />
+            </div>
+            <div className="col6">
+              <label>{L.height} (cm)</label>
+              <input type="number" value={local.height_cm || ''} onChange={(e) => setLocal({ ...local, height_cm: Number(e.target.value || 0) })} />
+            </div>
+            <div className="col6">
+              <label>{L.age}</label>
+              <input type="number" value={local.age || ''} onChange={(e) => setLocal({ ...local, age: Number(e.target.value || 0) })} />
+            </div>
+          </div>
+
+          <label>{L.sex}</label>
+          <select value={local.sex || 'other'} onChange={(e) => setLocal({ ...local, sex: e.target.value })}>
+            <option value="male">{L.male}</option>
+            <option value="female">{L.female}</option>
+            <option value="other">{L.other}</option>
+          </select>
+
+          <label>{L.goalType}</label>
+          <select value={routine.goalType || 'lose'} onChange={(e) => setRoutine({ goalType: e.target.value })}>
+            <option value="lose">{L.lose}</option>
+            <option value="maintain">{L.maintain}</option>
+            <option value="gain">{L.gain}</option>
+          </select>
+
+          <label>{L.goalDate}</label>
+          <input type="date" value={routine.goalDate || ''} onChange={(e) => setRoutine({ goalDate: e.target.value })} />
+
+          <label>{L.activity}</label>
+          <select value={routine.activityLevel || 'normal'} onChange={(e) => setRoutine({ activityLevel: e.target.value })}>
+            <option value="low">{L.activityLow}</option>
+            <option value="normal">{L.activityNormal}</option>
+            <option value="high">{L.activityHigh}</option>
+          </select>
+
+          <label>{L.diet}</label>
+          <select value={local.diet_type || 'carnivore_flexible'} onChange={(e) => setLocal({ ...local, diet_type: e.target.value })}>
+            <option value="carnivore_strict">Carnivore strict</option>
+            <option value="carnivore_flexible">Carnivore flexible</option>
+            <option value="animal_based">Animal-based</option>
+            <option value="keto_carnivore">Keto carnivore</option>
+            <option value="lacto_ovo_vegetarian">Lacto-ovo vegetarian</option>
+            <option value="lacto_vegetarian">Lacto vegetarian</option>
+            <option value="ovo_vegetarian">Ovo vegetarian</option>
+            <option value="vegan">Vegan</option>
+          </select>
+
+          <Collapsible title={L.dietInfo} open={showDiet} setOpen={setShowDiet}>
+            <p>{dietInfo(local.diet_type, lang)}</p>
+          </Collapsible>
+
+          <Collapsible title={L.restrictions} open={showRestrictions} setOpen={setShowRestrictions}>
+            <label>{L.omitFoods}</label>
+            <div className="actions">
+              <input value={avoidInput} onChange={(e) => setAvoidInput(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter') addTag('avoidedFoods', avoidInput); }} />
+              <button className="btn secondary" onClick={() => addTag('avoidedFoods', avoidInput)}>{L.addFood}</button>
+            </div>
+            <div className="actions">{(routine.avoidedFoods || []).map((x: string) => <button key={x} className="btn small danger" onClick={() => removeTag('avoidedFoods', x)}>× {x}</button>)}</div>
+
+            <label>{L.preferFoods}</label>
+            <div className="actions">
+              <input value={preferInput} onChange={(e) => setPreferInput(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter') addTag('preferredFoods', preferInput); }} />
+              <button className="btn secondary" onClick={() => addTag('preferredFoods', preferInput)}>{L.addFood}</button>
+            </div>
+            <div className="actions">{(routine.preferredFoods || []).map((x: string) => <button key={x} className="btn small secondary" onClick={() => removeTag('preferredFoods', x)}>× {x}</button>)}</div>
+          </Collapsible>
+
+          <Collapsible title={L.routine} open={showRoutine} setOpen={setShowRoutine}>
+            <label>
+              <input type="checkbox" checked={!!routine.worksNow} onChange={(e) => setRoutine({ worksNow: e.target.checked })} /> {L.worksNow}
+            </label>
+
+            {routine.worksNow && (
+              <>
+                <h3>{L.workDays}</h3>
+                <DayPicker days={routine.workDays || []} setDays={(days: string[]) => setRoutine({ workDays: days })} />
+                <div className="grid">
+                  <div className="col6"><label>{L.wakeWork}</label><input type="time" value={routine.wakeWork} onChange={(e) => setRoutine({ wakeWork: e.target.value })} /></div>
+                  <div className="col6"><label>{L.startWork}</label><input type="time" value={routine.startWork} onChange={(e) => setRoutine({ startWork: e.target.value })} /></div>
+                  <div className="col6"><label>{L.breakWork}</label><input type="time" value={routine.breakWork} onChange={(e) => setRoutine({ breakWork: e.target.value })} /></div>
+                  <div className="col6"><label>{L.endWork}</label><input type="time" value={routine.endWork} onChange={(e) => setRoutine({ endWork: e.target.value })} /></div>
+                </div>
+                <Stepper label={L.mealsWork} value={routine.mealsWork || 3} dec={() => changeMeals('mealsWork', -1)} inc={() => changeMeals('mealsWork', 1)} />
+              </>
+            )}
+
+            <div className="grid">
+              <div className="col6"><label>{L.wakeOff}</label><input type="time" value={routine.wakeOff} onChange={(e) => setRoutine({ wakeOff: e.target.value })} /></div>
+              <div className="col6"><label>{L.sleepOff}</label><input type="time" value={routine.sleepOff} onChange={(e) => setRoutine({ sleepOff: e.target.value })} /></div>
+            </div>
+            <Stepper label={L.mealsOff} value={routine.mealsOff || 3} dec={() => changeMeals('mealsOff', -1)} inc={() => changeMeals('mealsOff', 1)} />
+          </Collapsible>
+
+          <Collapsible title={L.hydrationReminder} open={showReminders} setOpen={setShowReminders}>
+            <label><input type="checkbox" checked={!!rem.enabledMeal} onChange={(e) => setRoutine({ reminders: { ...rem, enabledMeal: e.target.checked } })} /> {L.mealEnabled}</label>
+            <label>{L.mealBefore}</label>
+            <select value={rem.mealReminderMinutes} onChange={(e) => setRoutine({ reminders: { ...rem, mealReminderMinutes: Number(e.target.value) } })}>
+              {[0, 10, 15, 30, 60].map((m) => <option key={m} value={m}>{m} {L.minutes}</option>)}
+            </select>
+            <label><input type="checkbox" checked={!!rem.enabledWater} onChange={(e) => setRoutine({ reminders: { ...rem, enabledWater: e.target.checked } })} /> {L.waterEnabled}</label>
+            <label>{L.waterEvery}</label>
+            <select value={rem.waterEveryHours} onChange={(e) => setRoutine({ reminders: { ...rem, waterEveryHours: Number(e.target.value) } })}>
+              {[1, 2, 3, 4].map((h) => <option key={h} value={h}>{h} {L.hours}</option>)}
+            </select>
+            <label>{L.hydrationGoal} ({unitMode === 'kg' ? 'ml' : 'oz'})</label>
+            <input type="number" value={unitMode === 'kg' ? rem.dailyWaterMl : clean(rem.dailyWaterMl / 29.5735)} onChange={(e) => setRoutine({ reminders: { ...rem, dailyWaterMl: unitMode === 'kg' ? Number(e.target.value || 0) : Number(e.target.value || 0) * 29.5735 } })} />
+            <label><input type="checkbox" checked={!!rem.prepWorkMeal} onChange={(e) => setRoutine({ reminders: { ...rem, prepWorkMeal: e.target.checked } })} /> {L.workPrep}</label>
+            <label><input type="checkbox" checked={!!rem.groceryReminder} onChange={(e) => setRoutine({ reminders: { ...rem, groceryReminder: e.target.checked } })} /> {L.groceryReminder}</label>
+            <label><input type="checkbox" checked={!!rem.weightReminder} onChange={(e) => setRoutine({ reminders: { ...rem, weightReminder: e.target.checked } })} /> {L.weightReminder}</label>
+          </Collapsible>
+
+          <div className="actions">
+            <button className="btn" onClick={() => saveProfile(local)}>{L.save}</button>
+            <button className="btn danger" onClick={() => deleteProfile(local.id)}><Trash2 size={16} />{L.delete}</button>
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
+function DayPicker({ days, setDays }: any) {
+  const active = (days || []).map(normalizeDay);
+  return (
+    <div className="actions">
+      {DAYS_ES.map((d) => (
+        <button key={d} className={`btn small ${active.includes(d) ? '' : 'secondary'}`} onClick={() => {
+          const next = active.includes(d) ? active.filter((x: string) => x !== d) : [...active, d];
+          setDays(next);
+        }}>
+          {d.slice(0, 3)}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+function Stepper({ label, value, dec, inc }: any) {
+  return (
+    <div className="card" style={{ boxShadow: 'none' }}>
+      <div className="profile-summary">
+        <b>{label}</b>
+        <div className="actions">
+          <button className="btn secondary small" onClick={dec}>−</button>
+          <span className="badge">{value}</span>
+          <button className="btn secondary small" onClick={inc}>+</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Collapsible({ title, open, setOpen, children }: any) {
+  return (
+    <div className="card" style={{ boxShadow: 'none' }}>
+      <div className="profile-summary">
+        <h3>{title}</h3>
+        <button className="btn secondary small" onClick={() => setOpen(!open)}>{open ? <ChevronUp size={16} /> : <ChevronDown size={16} />}</button>
+      </div>
+      {open && <div>{children}</div>}
+    </div>
+  );
+}
+
+function HistoryView({ L, lang, unitMode, activeProfile, mealLogs, waterLogs, reminders, setShowReminderModal, setShowExceptionModal }: any) {
+  const [range, setRange] = useState('day');
+
+  const caloriesToday = mealLogs.filter((m: any) => isSameDay(m.meal_date, todayISO())).reduce((s: number, m: any) => s + Number(m.calories || 0), 0);
+  const proteinToday = mealLogs.filter((m: any) => isSameDay(m.meal_date, todayISO())).reduce((s: number, m: any) => s + Number(m.protein_g || 0), 0);
+  const bmrVal = activeProfile ? Math.round(bmr(activeProfile)) : 0;
+  const tdeeVal = activeProfile ? Math.round(bmr(activeProfile) * activityFactor(activeProfile?.routine?.activityLevel || 'normal')) : 0;
+  const targetVal = activeProfile ? targetCalories(activeProfile) : 0;
+  const bmiVal = activeProfile ? bmi(activeProfile) : 0;
+
+  const last7 = Array.from({ length: 7 }).map((_, i) => {
+    const date = datePlus(todayISO(), i - 6);
+    const cal = mealLogs.filter((m: any) => isSameDay(m.meal_date, date)).reduce((s: number, m: any) => s + Number(m.calories || 0), 0);
+    return { date, cal };
+  });
+
+  const maxCal = Math.max(1, ...last7.map((x) => x.cal));
+
+  return (
+    <section>
+      <div className="card">
+        <h1>{L.historyTitle}</h1>
+        <p>{L.historyDesc}</p>
+        <div className="actions">
+          <button className="btn secondary" onClick={() => setShowExceptionModal(true)}>{L.logException}</button>
+          <button className="btn secondary" onClick={() => setShowReminderModal(true)}><Bell size={16} />{L.addReminder}</button>
+        </div>
+      </div>
+
+      <div className="grid">
+        <div className="col6 card">
+          <h2>{L.caloriesToday}</h2>
+          <span className="badge orange">{caloriesToday} cal</span>
+          <span className="badge blue">{L.proteinToday}: {clean(proteinToday)}g</span>
+          <p className="muted">{targetVal ? `${L.target}: ${targetVal} cal` : ''}</p>
+        </div>
+        <div className="col6 card">
+          <h2>{L.bmi}</h2>
+          <span className="badge">{bmiVal ? bmiVal.toFixed(1) : '—'}</span>
+          <p className="muted">{formatWeight(Number(activeProfile?.current_weight_kg || 0), unitMode)} · {activeProfile?.height_cm || 0} cm</p>
+        </div>
+      </div>
+
+      <div className="card">
+        <h2>{L.bmr}: {bmrVal} · {L.tdee}: {tdeeVal} · {L.target}: {targetVal} cal</h2>
+        <p>{L.bmrExplain}</p>
+        <p>{L.tdeeExplain}</p>
+        <p>{L.targetExplain}</p>
+      </div>
+
+      <div className="card">
+        <h2>{L.chart}</h2>
+        <div className="actions">
+          <button className={`btn small ${range === 'day' ? '' : 'secondary'}`} onClick={() => setRange('day')}>{L.daily}</button>
+          <button className={`btn small ${range === 'week' ? '' : 'secondary'}`} onClick={() => setRange('week')}>{L.weekly}</button>
+          <button className={`btn small ${range === 'month' ? '' : 'secondary'}`} onClick={() => setRange('month')}>{L.monthly}</button>
+        </div>
+        <div style={{ display: 'grid', gap: 10, marginTop: 12 }}>
+          {last7.map((x) => (
+            <div key={x.date}>
+              <div className="muted">{formatLong(x.date, lang)} — {x.cal} cal</div>
+              <div style={{ height: 14, borderRadius: 999, background: '#f0e5d5' }}>
+                <div style={{ height: 14, width: `${Math.min(100, (x.cal / maxCal) * 100)}%`, borderRadius: 999, background: '#1f7a4d' }} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="card">
+        <h2>{L.addReminder}</h2>
+        {!reminders.length && <p className="muted">{L.noItems}</p>}
+        {reminders.map((r: any) => <p key={r.id}>🔔 {r.title}<br /><span className="muted">{new Date(r.remind_at).toLocaleString()}</span></p>)}
+      </div>
+    </section>
+  );
+}
+
+function FormModal({ title, L, children, onClose, onSave }: any) {
+  return (
+    <div className="modal" onClick={onClose}>
+      <div className="card modalbox" onClick={(e) => e.stopPropagation()}>
+        <h2>{title}</h2>
+        {children}
+        <div className="actions">
+          <button classNa
