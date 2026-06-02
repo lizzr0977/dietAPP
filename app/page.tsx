@@ -38,6 +38,7 @@ type MarketItem = {
   replacement: string;
   suggestions: string[];
   usedSummary: string[];
+  loadedFound?: boolean;
 };
 
 const DAYS_ES = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
@@ -869,6 +870,89 @@ export default function Home() {
     setTimeout(() => setToast(''), 2600);
   }
 
+
+  function normalizeTextKey(value: string) {
+    return String(value || '')
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  function normalizeIngredientName(name: string) {
+    const raw = normalizeTextKey(name);
+    const rules: Array<[RegExp, string]> = [
+      [/^(huevo|huevos|huevo cocido|huevos cocidos)$/i, 'Huevos'],
+      [/^(atun|atún)$/i, 'Atún'],
+      [/^(carne molida|molida|ground beef)$/i, 'Carne molida'],
+      [/^(bistec|steak|carne asada)$/i, 'Bistec / carne asada'],
+      [/^(pollo|pechuga de pollo|muslos de pollo|piernas de pollo|pollo deshebrado|pollo rostizado)$/i, 'Pollo'],
+      [/^(queso|queso opcional|cheese|optional cheese)$/i, 'Queso'],
+      [/^(mantequilla|butter|grasa|grasa de res)$/i, 'Mantequilla / grasa'],
+      [/^(frijol|frijoles|frijoles negros|beans|black beans)$/i, 'Frijoles'],
+      [/^(lenteja|lentejas|lentils|lentejas cocidas)$/i, 'Lentejas'],
+      [/^(garbanzo|garbanzos|chickpeas|garbanzos cocidos)$/i, 'Garbanzos'],
+      [/^(arroz|arroz cocido|rice|cooked rice)$/i, 'Arroz'],
+      [/^(tortilla|tortillas|tortilla grande|large tortilla)$/i, 'Tortillas'],
+      [/^(sal|salt)$/i, 'Sal'],
+      [/^(salsa|salsa opcional)$/i, 'Salsa'],
+      [/^(verduras|verduras fajita|vegetables|fajita vegetables)$/i, 'Verduras'],
+      [/^(yogurt griego|yogurt griego natural|greek yogurt|plain greek yogurt)$/i, 'Yogurt griego'],
+      [/^(queso cottage|cottage|cottage cheese)$/i, 'Queso cottage'],
+    ];
+
+    for (const [regex, normalized] of rules) {
+      if (regex.test(raw)) return normalized;
+    }
+
+    return raw.charAt(0).toUpperCase() + raw.slice(1);
+  }
+
+  function normalizeIngredientUnit(unit: string) {
+    const raw = normalizeTextKey(unit);
+    if (['pieza', 'piezas', 'piece', 'pieces'].includes(raw)) return 'piezas';
+    if (['taza', 'tazas', 'cup', 'cups'].includes(raw)) return 'taza';
+    if (['cucharadita', 'cucharaditas', 'tsp', 'teaspoon'].includes(raw)) return 'cucharadita';
+    if (['cucharada', 'cucharadas', 'tbsp', 'tablespoon'].includes(raw)) return 'cucharada';
+    if (['lata', 'latas', 'can', 'cans'].includes(raw)) return 'lata';
+    if (['gramo', 'gramos', 'g'].includes(raw)) return 'g';
+    if (['porcion', 'porción', 'serving'].includes(raw)) return 'porción';
+    if (['al gusto', 'to taste'].includes(raw)) return 'al gusto';
+    return raw || 'item';
+  }
+
+  function groceryListKey(selectedIds: string[]) {
+    return `${planStart}__${[...selectedIds].sort().join('_') || 'none'}`;
+  }
+
+  async function saveGroceryList(items: MarketItem[], selectedIds = marketProfiles) {
+    if (!householdId) return;
+    const listKey = groceryListKey(selectedIds);
+    await supabase.from('grocery_lists').upsert({
+      household_id: householdId,
+      profile_ids: selectedIds,
+      list_key: listKey,
+      data: { items },
+      updated_at: new Date().toISOString(),
+    }, { onConflict: 'household_id,list_key' });
+  }
+
+  async function loadSavedGroceryList(selectedIds: string[]) {
+    if (!householdId) return [] as MarketItem[];
+    const { data } = await supabase
+      .from('grocery_lists')
+      .select('data')
+      .eq('household_id', householdId)
+      .eq('list_key', groceryListKey(selectedIds))
+      .maybeSingle();
+
+    return ((data?.data as any)?.items || []).map((item: MarketItem) => ({
+      ...item,
+      loadedFound: !!item.found,
+    })) as MarketItem[];
+  }
+
   async function boot() {
     const { data: member, error } = await supabase
       .from('household_members')
@@ -1182,8 +1266,9 @@ export default function Home() {
     }
   }
 
-  function buildMarket(selectedIds: string[], keepChecks = false, mode = unitMode) {
-    const prev = new Map(marketItems.map((i) => [i.key, i]));
+  async function buildMarket(selectedIds: string[], keepChecks = false, mode = unitMode) {
+    const savedItems = keepChecks ? await loadSavedGroceryList(selectedIds) : [];
+    const prev = new Map([...marketItems, ...savedItems].map((i) => [i.key, i]));
     const map = new Map<string, MarketItem>();
 
     plans
@@ -1195,28 +1280,32 @@ export default function Home() {
           if (!d) return;
 
           (d.shopping_items || []).forEach((ing: any) => {
-            const key = `${String(ing.name).toLowerCase()}__${ing.unit}`;
+            const normalizedName = normalizeIngredientName(String(ing.name || ''));
+            const normalizedUnit = normalizeIngredientUnit(String(ing.unit || 'item'));
+            const key = `${normalizeTextKey(normalizedName)}__${normalizedUnit}`;
             const prevItem = prev.get(key);
-            const summaryKey = `${meal.date}|${meal.day}|${dishName(d, lang)}`;
+            const amount = Number(ing.amount || 1);
+            const line = `${prof?.name || ''} · ${formatLong(meal.date, lang)} · ${dishName(d, lang)}`;
 
             if (!map.has(key)) {
               map.set(key, {
                 key,
-                name: ing.name,
-                amount: Number(ing.amount || 1),
-                unit: ing.unit,
+                name: normalizedName,
+                amount,
+                unit: normalizedUnit,
                 display: '',
                 found: keepChecks ? !!prevItem?.found : false,
+                loadedFound: keepChecks ? !!prevItem?.found : false,
                 missing: keepChecks ? !!prevItem?.missing : false,
                 replacement: keepChecks ? prevItem?.replacement || '' : '',
                 suggestions: lang === 'es' ? d.replacements_es || [] : d.replacements_en || [],
-                usedSummary: [`${prof?.name || ''} · ${formatLong(meal.date, lang)} · ${dishName(d, lang)}`],
+                usedSummary: [line],
               });
             } else {
               const item = map.get(key)!;
-              item.amount += Number(ing.amount || 1);
-              const line = `${prof?.name || ''} · ${formatLong(meal.date, lang)} · ${dishName(d, lang)}`;
+              item.amount += amount;
               if (!item.usedSummary.includes(line)) item.usedSummary.push(line);
+              item.suggestions = Array.from(new Set([...(item.suggestions || []), ...((lang === 'es' ? d.replacements_es : d.replacements_en) || [])]));
             }
           });
         });
@@ -1228,43 +1317,55 @@ export default function Home() {
     }));
 
     setMarketItems(next);
+    await saveGroceryList(next, selectedIds);
     notify(L.updated);
   }
 
   function toggleFound(key: string) {
-    setMarketItems((items) =>
-      items.map((item) => item.key === key ? { ...item, found: !item.found, missing: false } : item)
-    );
+    setMarketItems((items) => {
+      const next = items.map((item) => item.key === key ? { ...item, found: !item.found, loadedFound: false, missing: false } : item);
+      saveGroceryList(next);
+      return next;
+    });
   }
 
   function markMissing(key: string) {
-    setMarketItems((items) =>
-      items.map((item) => item.key === key ? { ...item, missing: !item.missing, found: false } : item)
-    );
+    setMarketItems((items) => {
+      const next = items.map((item) => item.key === key ? { ...item, missing: !item.missing, found: false, loadedFound: false } : item);
+      saveGroceryList(next);
+      return next;
+    });
   }
 
   function setReplacement(key: string, value: string) {
-    setMarketItems((items) =>
-      items.map((item) => item.key === key ? { ...item, replacement: value, missing: true } : item)
-    );
+    setMarketItems((items) => {
+      const next = items.map((item) => item.key === key ? { ...item, replacement: value, missing: true } : item);
+      saveGroceryList(next);
+      return next;
+    });
     notify(L.updated);
   }
 
   function addManualMarketItem() {
     const name = window.prompt(lang === 'es' ? 'Producto manual' : 'Manual item');
     if (!name) return;
-    setMarketItems((items) => [...items, {
-      key: `manual_${Date.now()}`,
-      name,
-      amount: 1,
-      unit: 'item',
-      display: '1 item',
-      found: false,
-      missing: false,
-      replacement: '',
-      suggestions: [],
-      usedSummary: ['Manual'],
-    }]);
+    setMarketItems((items) => {
+      const next = [...items, {
+        key: `manual_${Date.now()}`,
+        name,
+        amount: 1,
+        unit: 'item',
+        display: '1 item',
+        found: false,
+        loadedFound: false,
+        missing: false,
+        replacement: '',
+        suggestions: [],
+        usedSummary: ['Manual'],
+      }];
+      saveGroceryList(next);
+      return next;
+    });
     notify(L.productAdded);
   }
 
@@ -1333,8 +1434,8 @@ export default function Home() {
     });
   }
 
-  const foundItems = marketItems.filter((i) => i.found);
-  const pendingItems = marketItems.filter((i) => !i.found);
+  const foundItems = marketItems.filter((i) => i.found && i.loadedFound);
+  const pendingItems = marketItems.filter((i) => !i.found || !i.loadedFound);
 
   if (showSplash) {
     return (
@@ -1479,7 +1580,7 @@ export default function Home() {
         )}
       </main>
 
-      {selectedDish && <RecipeModal L={L} lang={lang} dish={selectedDish} onClose={() => setSelectedDish(null)} />}
+      {selectedDish && <RecipeModal L={L} lang={lang} dish={selectedDish} profile={activeProfile} onClose={() => setSelectedDish(null)} />}
 
       {showReminderModal && (
         <FormModal title={L.newReminder} L={L} onClose={() => setShowReminderModal(false)} onSave={saveReminder}>
@@ -1778,12 +1879,11 @@ function MarketView({ L, lang, profiles, marketProfiles, setMarketProfiles, pend
           {!pendingItems.length && !foundItems.length && <div className="empty-state"><div className="big">🛒</div><p>{L.shoppingEmpty}</p></div>}
 
           {pendingItems.map((item: MarketItem) => (
-            <div key={item.key} className="market-item">
-              <button className="market-check" onClick={() => toggleFound(item.key)}></button>
+            <div key={item.key} className={`market-item ${item.found ? 'found' : ''}`}>
+              <button className={`market-check ${item.found ? 'active' : ''}`} onClick={() => toggleFound(item.key)}>{item.found ? <Check size={18} /> : ''}</button>
               <div style={{ flex: 1 }}>
                 <b>{item.name}</b> — {item.display}
                 <div className="actions">
-                  <button className="btn small secondary" onClick={() => toggleFound(item.key)}><Check size={14} />{L.markReady}</button>
                   <button className="btn small danger" onClick={() => markMissing(item.key)}><X size={14} />{L.notFound}</button>
                   <button className="btn small outline" onClick={() => {
                     const r = window.prompt(L.replace);
@@ -2206,8 +2306,38 @@ function FormModal({ title, L, children, onClose, onSave }: any) {
   );
 }
 
-function RecipeModal({ L, lang, dish, onClose }: any) {
+function RecipeModal({ L, lang, dish, profile, onClose }: any) {
   const recipe = buildRealRecipe(dish, lang);
+  const [aiRecipe, setAiRecipe] = useState<any>(null);
+  const [loadingAi, setLoadingAi] = useState(false);
+
+  async function improveWithAi() {
+    setLoadingAi(true);
+    try {
+      const res = await fetch('/api/ai/recipe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          lang,
+          profile,
+          dish,
+          baseRecipe: recipe,
+          instruction: lang === 'es'
+            ? 'Haz una receta mexicana clara, real y paso a paso. No uses frases genéricas. Incluye tiempos, orden de preparación, tips de tupper y cómo avanzar rápido mientras se cocina.'
+            : 'Create a clear real Mexican-style step-by-step recipe. Avoid generic wording. Include timing, prep order, container tips and multitasking tips.',
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || data.error) throw new Error(data.error || 'AI error');
+      setAiRecipe(data.recipe);
+    } catch (e: any) {
+      alert(e.message || 'No se pudo usar IA. Revisa GEMINI_API_KEY en Vercel.');
+    } finally {
+      setLoadingAi(false);
+    }
+  }
+
+  const view = aiRecipe || recipe;
 
   return (
     <div className="modal" onClick={onClose}>
@@ -2222,26 +2352,34 @@ function RecipeModal({ L, lang, dish, onClose }: any) {
         <span className="badge blue">{dish.protein_g}g</span>
         <span className="badge orange">{dish.total_minutes} min</span>
 
+        <div className="actions">
+          <button className="btn" onClick={improveWithAi} disabled={loadingAi}>
+            {loadingAi ? (lang === 'es' ? 'Mejorando...' : 'Improving...') : (lang === 'es' ? '✨ Mejorar receta con IA' : '✨ Improve with AI')}
+          </button>
+        </div>
+
+        {aiRecipe?.notes && <div className="notice">{aiRecipe.notes}</div>}
+
         <h2>{L.ingredients}</h2>
         <ul>
-          {recipe.ingredients.map((i: string) => <li key={i}>{i}</li>)}
+          {view.ingredients.map((i: string) => <li key={i}>{i}</li>)}
         </ul>
 
         <h2>{L.utensils}</h2>
         <ul>
-          {recipe.utensils.map((i: string) => <li key={i}>{i}</li>)}
+          {view.utensils.map((i: string) => <li key={i}>{i}</li>)}
         </ul>
 
         <h2>{L.stepByStep}</h2>
         <ol>
-          {recipe.steps.map((i: string, idx: number) => (
+          {view.steps.map((i: string, idx: number) => (
             <li key={`${idx}-${i}`} style={{ marginBottom: 10 }}>{i}</li>
           ))}
         </ol>
 
         <h2>{L.tips}</h2>
         <ul>
-          {recipe.tips.map((i: string, idx: number) => <li key={`${idx}-${i}`}>{i}</li>)}
+          {view.tips.map((i: string, idx: number) => <li key={`${idx}-${i}`}>{i}</li>)}
         </ul>
       </div>
     </div>
