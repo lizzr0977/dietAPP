@@ -798,6 +798,79 @@ function buildRealRecipe(dish: any, lang: Lang) {
   };
 }
 
+
+function mealDateTimePassed(meal: any) {
+  if (!meal?.date || !meal?.time) return false;
+  const dt = new Date(`${meal.date}T${meal.time}:00`);
+  return Date.now() >= dt.getTime();
+}
+
+function cleanAITextBlock(value: any) {
+  let text = typeof value === 'string' ? value : JSON.stringify(value || '', null, 2);
+
+  text = text
+    .replace(/^```json\s*/i, '')
+    .replace(/^```\s*/i, '')
+    .replace(/```$/i, '')
+    .replace(/^\s*\{\s*/g, '')
+    .replace(/\s*\}\s*$/g, '')
+    .replace(/^\s*\[\s*/g, '')
+    .replace(/\s*\]\s*$/g, '')
+    .replace(/["`]/g, '')
+    .replace(/,\s*$/gm, '')
+    .trim();
+
+  text = text
+    .replace(/\btitle\s*:/gi, 'Título:')
+    .replace(/\bingredients\s*:/gi, 'Ingredientes:')
+    .replace(/\butensils\s*:/gi, 'Utensilios:')
+    .replace(/\bsteps\s*:/gi, 'Paso a paso:')
+    .replace(/\btips\s*:/gi, 'Tips:')
+    .replace(/\bdiet_notes\s*:/gi, 'Notas de dieta:')
+    .replace(/\bshopping_items\s*:[\s\S]*$/gi, '')
+    .replace(/\\n/g, '\n');
+
+  return text.trim();
+}
+
+function normalizeAIRecipeForDisplay(input: any, lang: Lang) {
+  if (!input) return null;
+
+  if (typeof input === 'string') {
+    const cleaned = cleanAITextBlock(input);
+    return {
+      title: lang === 'es' ? 'Receta mejorada con IA' : 'AI improved recipe',
+      ingredients: [],
+      utensils: [],
+      steps: cleaned
+        .split('\n')
+        .map((x) => x.trim())
+        .filter(Boolean),
+      tips: [],
+      diet_notes: '',
+      shopping_items: [],
+      raw_text: cleaned,
+    };
+  }
+
+  const recipe = {
+    title: cleanAITextBlock(input.title || (lang === 'es' ? 'Receta mejorada con IA' : 'AI improved recipe')),
+    ingredients: Array.isArray(input.ingredients) ? input.ingredients.map(cleanAITextBlock).filter(Boolean) : [],
+    utensils: Array.isArray(input.utensils) ? input.utensils.map(cleanAITextBlock).filter(Boolean) : [],
+    steps: Array.isArray(input.steps) ? input.steps.map(cleanAITextBlock).filter(Boolean) : [],
+    tips: Array.isArray(input.tips) ? input.tips.map(cleanAITextBlock).filter(Boolean) : [],
+    diet_notes: cleanAITextBlock(input.diet_notes || ''),
+    shopping_items: Array.isArray(input.shopping_items) ? input.shopping_items : [],
+    raw_text: cleanAITextBlock(input.raw_text || ''),
+  };
+
+  if (!recipe.steps.length && recipe.raw_text) {
+    recipe.steps = recipe.raw_text.split('\n').map((x) => x.trim()).filter(Boolean);
+  }
+
+  return recipe;
+}
+
 export default function Home() {
   const [session, setSession] = useState<any>(null);
   const [showSplash, setShowSplash] = useState(true);
@@ -1544,6 +1617,28 @@ export default function Home() {
 
   if (!session) {
     return (
+      <div className="profile-bar-wrap">
+        <div className="profile-bar">
+          <div className="profile-bar-title">
+            <span>👤</span>
+            <b>{lang === 'es' ? 'Perfil activo' : 'Active profile'}</b>
+          </div>
+          <div className="profile-chip-row">
+            {profiles.map((p) => (
+              <button
+                key={p.id}
+                className={`profile-chip ${activeProfileId === p.id ? 'active' : ''}`}
+                onClick={() => setActiveProfileId(p.id)}
+                title={p.name}
+              >
+                <span className="profile-chip-avatar">{String(p.name || '?').slice(0, 1).toUpperCase()}</span>
+                <span>{p.name}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <main className="shell">
         <div className="card">{L.loading}</div>
       </main>
@@ -1558,20 +1653,7 @@ export default function Home() {
         <div className="header-inner">
           <div className="logo">DietApp</div>
 
-          <div className="quick-controls">
-            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', justifyContent: 'flex-end' }}>
-              {profiles.map((p) => (
-                <button
-                  key={p.id}
-                  className={`btn small ${activeProfileId === p.id ? '' : 'secondary'}`}
-                  onClick={() => setActiveProfileId(p.id)}
-                  title={p.name}
-                >
-                  {activeProfileId === p.id ? '✅ ' : '👤 '}{p.name}
-                </button>
-              ))}
-            </div>
-
+          <div className="quick-controls top-actions">
             <Switch labelLeft="ES" labelRight="EN" checked={lang === 'en'} onChange={toggleLanguage} />
             <Switch labelLeft="kg" labelRight="lb" checked={unitMode === 'lb'} onChange={toggleUnitMode} />
           </div>
@@ -1707,6 +1789,508 @@ export default function Home() {
         </FormModal>
       )}
 
+      <style jsx global>{`
+        :root {
+          --bg: #fff8ef;
+          --card: rgba(255, 255, 255, 0.92);
+          --ink: #1d2b22;
+          --muted: #776d62;
+          --line: #eadfce;
+          --green: #1f7a4d;
+          --green-soft: #e4f5ea;
+          --orange: #c96f2e;
+          --orange-soft: #fff0dc;
+          --shadow: 0 14px 40px rgba(68, 46, 20, 0.10);
+          --radius: 22px;
+        }
+
+        body {
+          background:
+            radial-gradient(circle at 10% 0%, rgba(255, 221, 166, 0.35), transparent 32%),
+            radial-gradient(circle at 90% 10%, rgba(199, 239, 211, 0.55), transparent 28%),
+            var(--bg);
+          color: var(--ink);
+        }
+
+        .header {
+          position: sticky;
+          top: 0;
+          z-index: 30;
+          backdrop-filter: blur(18px);
+          background: rgba(255, 248, 239, 0.86);
+          border-bottom: 1px solid rgba(234, 223, 206, 0.8);
+        }
+
+        .header-inner {
+          max-width: 1180px;
+          margin: 0 auto;
+          padding: 12px 16px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 12px;
+        }
+
+        .logo {
+          font-size: clamp(24px, 6vw, 34px);
+          font-weight: 950;
+          letter-spacing: -0.04em;
+          color: var(--green);
+          white-space: nowrap;
+        }
+
+        .quick-controls,
+        .top-actions {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          flex-wrap: nowrap;
+        }
+
+        .profile-bar-wrap {
+          position: sticky;
+          top: 62px;
+          z-index: 25;
+          background: linear-gradient(to bottom, rgba(255,248,239,.95), rgba(255,248,239,.70));
+          backdrop-filter: blur(14px);
+          padding: 10px 12px;
+          border-bottom: 1px solid rgba(234, 223, 206, 0.65);
+        }
+
+        .profile-bar {
+          max-width: 1180px;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+        }
+
+        .profile-bar-title {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          color: var(--muted);
+          font-size: 13px;
+          white-space: nowrap;
+        }
+
+        .profile-chip-row {
+          display: flex;
+          gap: 8px;
+          overflow-x: auto;
+          padding-bottom: 2px;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        .profile-chip {
+          border: 1px solid var(--line);
+          background: rgba(255,255,255,.85);
+          border-radius: 999px;
+          padding: 7px 12px 7px 7px;
+          display: flex;
+          align-items: center;
+          gap: 7px;
+          font-weight: 850;
+          color: var(--ink);
+          min-height: 42px;
+          white-space: nowrap;
+          box-shadow: 0 6px 18px rgba(68, 46, 20, 0.06);
+        }
+
+        .profile-chip.active {
+          background: var(--green);
+          color: white;
+          border-color: var(--green);
+        }
+
+        .profile-chip-avatar {
+          width: 28px;
+          height: 28px;
+          border-radius: 999px;
+          background: var(--orange-soft);
+          color: var(--green);
+          display: grid;
+          place-items: center;
+          font-weight: 950;
+        }
+
+        .profile-chip.active .profile-chip-avatar {
+          background: rgba(255,255,255,.92);
+          color: var(--green);
+        }
+
+        .shell {
+          max-width: 1180px;
+          margin: 0 auto;
+          padding: 18px 14px 110px;
+        }
+
+        .card {
+          background: var(--card);
+          border: 1px solid rgba(234, 223, 206, 0.9);
+          border-radius: var(--radius);
+          padding: clamp(14px, 3vw, 22px);
+          box-shadow: var(--shadow);
+          margin-bottom: 14px;
+        }
+
+        .card h1,
+        .card h2,
+        .card h3 {
+          letter-spacing: -0.03em;
+          line-height: 1.1;
+        }
+
+        .grid {
+          display: grid;
+          grid-template-columns: repeat(12, minmax(0, 1fr));
+          gap: 12px;
+        }
+
+        .col4 { grid-column: span 4; }
+        .col6 { grid-column: span 6; }
+        .col8 { grid-column: span 8; }
+
+        label {
+          display: block;
+          font-size: 13px;
+          color: var(--muted);
+          font-weight: 800;
+          margin: 12px 0 6px;
+        }
+
+        input,
+        select,
+        textarea {
+          width: 100%;
+          min-height: 48px;
+          border: 1px solid var(--line);
+          border-radius: 16px;
+          background: rgba(255,255,255,.95);
+          padding: 11px 13px;
+          font: inherit;
+          font-size: 16px;
+          color: var(--ink);
+          outline: none;
+          box-sizing: border-box;
+        }
+
+        textarea {
+          min-height: 110px;
+          resize: vertical;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+          border-color: var(--green);
+          box-shadow: 0 0 0 4px rgba(31, 122, 77, .10);
+        }
+
+        .btn {
+          min-height: 44px;
+          border: 0;
+          border-radius: 999px;
+          padding: 10px 16px;
+          background: var(--green);
+          color: white;
+          font-weight: 900;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          box-shadow: 0 10px 22px rgba(31, 122, 77, .18);
+        }
+
+        .btn.secondary {
+          background: white;
+          color: var(--ink);
+          border: 1px solid var(--line);
+          box-shadow: none;
+        }
+
+        .btn.outline {
+          background: var(--green-soft);
+          color: var(--green);
+          border: 1px solid rgba(31, 122, 77, .20);
+          box-shadow: none;
+        }
+
+        .btn.danger {
+          background: #ffe8e1;
+          color: #a43720;
+          box-shadow: none;
+        }
+
+        .btn.small {
+          min-height: 36px;
+          padding: 7px 11px;
+          font-size: 13px;
+        }
+
+        .actions {
+          display: flex;
+          gap: 8px;
+          flex-wrap: wrap;
+          align-items: center;
+          margin-top: 10px;
+        }
+
+        .badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+          padding: 6px 10px;
+          border-radius: 999px;
+          background: #f4eadc;
+          color: #5d5146;
+          font-weight: 850;
+          font-size: 12px;
+          margin: 3px 4px 3px 0;
+        }
+
+        .badge.blue {
+          background: var(--green-soft);
+          color: var(--green);
+        }
+
+        .badge.orange {
+          background: var(--orange-soft);
+          color: var(--orange);
+        }
+
+        .muted {
+          color: var(--muted);
+        }
+
+        .notice {
+          background: #fff4df;
+          border: 1px solid #f1dfbd;
+          border-radius: 18px;
+          padding: 12px;
+          color: #5d5146;
+        }
+
+        .error {
+          background: #ffe8e1;
+          border: 1px solid #ffc8b9;
+          border-radius: 18px;
+          padding: 12px;
+          color: #9b2f1a;
+        }
+
+        .dish-card {
+          display: flex;
+          gap: 14px;
+          align-items: stretch;
+        }
+
+        .dish-card img {
+          width: 112px;
+          min-width: 112px;
+          height: 112px;
+          object-fit: cover;
+          border-radius: 18px;
+          background: #f4eadc;
+        }
+
+        .market-item {
+          display: flex;
+          gap: 12px;
+          align-items: flex-start;
+          padding: 12px;
+          border-radius: 18px;
+          border: 1px solid var(--line);
+          background: rgba(255,255,255,.78);
+          margin-bottom: 10px;
+        }
+
+        .market-item.found {
+          opacity: .65;
+          text-decoration: line-through;
+        }
+
+        .market-check {
+          width: 30px;
+          min-width: 30px;
+          height: 30px;
+          border-radius: 10px;
+          border: 2px solid var(--green);
+          background: white;
+          color: white;
+          display: grid;
+          place-items: center;
+        }
+
+        .market-check.active {
+          background: var(--green);
+        }
+
+        .modal {
+          position: fixed;
+          inset: 0;
+          z-index: 80;
+          background: rgba(33, 24, 17, .45);
+          display: grid;
+          place-items: center;
+          padding: 14px;
+        }
+
+        .modalbox {
+          width: min(760px, 100%);
+          max-height: 92vh;
+          overflow: auto;
+        }
+
+        .recipe-hero {
+          width: 100%;
+          height: min(42vh, 310px);
+          object-fit: cover;
+          border-radius: 22px;
+          background: #f4eadc;
+          margin: 12px 0;
+        }
+
+        .tabs {
+          position: fixed;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 40;
+          background: rgba(255, 248, 239, .92);
+          backdrop-filter: blur(18px);
+          border-top: 1px solid var(--line);
+          padding: 8px 10px max(8px, env(safe-area-inset-bottom));
+        }
+
+        .tabs-inner {
+          max-width: 720px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 6px;
+        }
+
+        .tab {
+          border: 0;
+          border-radius: 18px;
+          background: transparent;
+          color: var(--muted);
+          padding: 8px 4px;
+          font-size: 12px;
+          font-weight: 850;
+          display: grid;
+          gap: 2px;
+          place-items: center;
+        }
+
+        .tab.active {
+          background: var(--green);
+          color: white;
+        }
+
+        .toast {
+          position: fixed;
+          top: 14px;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 200;
+          background: #1f7a4d;
+          color: white;
+          padding: 12px 18px;
+          border-radius: 999px;
+          font-weight: 900;
+          box-shadow: 0 14px 30px rgba(0,0,0,.18);
+        }
+
+        @media (max-width: 760px) {
+          .header-inner {
+            padding: 10px 12px;
+          }
+
+          .top-actions {
+            transform: scale(.86);
+            transform-origin: right center;
+            gap: 4px;
+          }
+
+          .profile-bar {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 8px;
+          }
+
+          .profile-chip-row {
+            width: 100%;
+          }
+
+          .grid {
+            grid-template-columns: 1fr;
+          }
+
+          .col4,
+          .col6,
+          .col8 {
+            grid-column: 1 / -1;
+          }
+
+          .dish-card {
+            gap: 12px;
+          }
+
+          .dish-card img {
+            width: 92px;
+            min-width: 92px;
+            height: 92px;
+          }
+
+          .actions .btn {
+            flex: 1 1 auto;
+          }
+
+          .market-item {
+            padding: 10px;
+          }
+
+          .card {
+            border-radius: 20px;
+          }
+        }
+
+        @media (max-width: 420px) {
+          .logo {
+            font-size: 24px;
+          }
+
+          .top-actions {
+            transform: scale(.78);
+          }
+
+          .dish-card {
+            flex-direction: column;
+          }
+
+          .dish-card img {
+            width: 100%;
+            height: 180px;
+          }
+
+          .btn {
+            width: 100%;
+          }
+
+          .tabs-inner {
+            gap: 4px;
+          }
+
+          .tab {
+            font-size: 11px;
+            border-radius: 14px;
+          }
+        }
+      `}</style>
+
       <nav className="tabs">
         <div className="tabs-inner">
           {[
@@ -1827,7 +2411,7 @@ function TodayView(props: any) {
           <span className="badge">{formatShortRange(plan.week_start, plan.data?.duration || 7, lang)}</span>
           {pending.length === 0 ? <p className="notice">{lang === 'es' ? 'No quedan comidas pendientes hoy.' : 'No pending meals today.'}</p> : pending.map((m: Meal) => {
             const d = dishById(m.dishId);
-            return <DishCard key={m.id} L={L} lang={lang} d={d} meal={m} onView={() => setSelectedDish(d)} onChange={() => changeDish(m, activeProfile)} onEat={() => markMealEaten(m, activeProfile, plan)} />;
+            return <DishCard key={m.id} L={L} lang={lang} d={d} meal={m} allowEat={mealDateTimePassed(m)} onView={() => setSelectedDish(d)} onChange={() => changeDish(m, activeProfile)} onEat={() => markMealEaten(m, activeProfile, plan)} />;
           })}
 
           {!!done.length && (
@@ -1836,7 +2420,7 @@ function TodayView(props: any) {
               {showDone && done.map((m: Meal) => {
                 const d = dishById(m.dishId);
                 const log = mealLogs.find((l: any) => l.meal_id === m.id);
-                return <DishCard key={m.id} L={L} lang={lang} d={d} meal={m} eaten onView={() => setSelectedDish(d)} onChange={() => {}} onEat={() => log && undoMealLog(log)} />;
+                return <DishCard key={m.id} L={L} lang={lang} d={d} meal={m} eaten allowEat onView={() => setSelectedDish(d)} onChange={() => {}} onEat={() => log && undoMealLog(log)} />;
               })}
             </div>
           )}
@@ -1848,7 +2432,7 @@ function TodayView(props: any) {
   );
 }
 
-function DishCard({ L, lang, d, meal, eaten, onView, onChange, onEat }: any) {
+function DishCard({ L, lang, d, meal, eaten, allowEat, onView, onChange, onEat }: any) {
   if (!d) return null;
   return (
     <div className={`card dish-card ${eaten ? 'found' : ''}`}>
@@ -1864,10 +2448,12 @@ function DishCard({ L, lang, d, meal, eaten, onView, onChange, onEat }: any) {
         <div className="actions">
           <button className="btn small secondary" onClick={onView}><Eye size={15} />{L.recipe}</button>
           {!eaten && <button className="btn small outline" onClick={onChange}><RefreshCw size={15} />{L.changeDish}</button>}
-          <button className={`btn small ${eaten ? 'outline' : ''}`} onClick={onEat}>
-            {eaten ? <Undo2 size={15} /> : <Check size={15} />}
-            {eaten ? L.undo : L.markEaten}
-          </button>
+          {(allowEat || eaten) && (
+            <button className={`btn small ${eaten ? 'outline' : ''}`} onClick={onEat}>
+              {eaten ? <Undo2 size={15} /> : <Check size={15} />}
+              {eaten ? L.undo : L.markEaten}
+            </button>
+          )}
         </div>
       </div>
     </div>
@@ -1940,7 +2526,7 @@ function WeekPlan({ L, lang, plan, profile, dishById, changeDish, setSelectedDis
             <span className={`badge ${isWork ? 'orange' : 'blue'}`}>{isWork ? L.workDay : L.offDay}</span>
             {dayMeals.map((m: Meal) => {
               const d = dishById(m.dishId);
-              return <DishCard key={m.id} L={L} lang={lang} d={d} meal={m} onView={() => setSelectedDish(d)} onChange={() => changeDish(m, profile)} onEat={() => {}} />;
+              return <DishCard key={m.id} L={L} lang={lang} d={d} meal={m} allowEat={false} onView={() => setSelectedDish(d)} onChange={() => changeDish(m, profile)} onEat={() => {}} />;
             })}
           </div>
         );
@@ -2434,7 +3020,7 @@ function RecipeModal({ L, lang, dish, onClose, activeProfile, recipeOverride, on
       };
 
   const savedRecipe = recipeOverride
-    ? {
+    ? normalizeAIRecipeForDisplay({
         title: recipeOverride.title || dishName(dish, lang),
         ingredients: recipeOverride.ingredients || [],
         utensils: recipeOverride.utensils || [],
@@ -2443,7 +3029,7 @@ function RecipeModal({ L, lang, dish, onClose, activeProfile, recipeOverride, on
         diet_notes: recipeOverride.diet_notes || '',
         shopping_items: recipeOverride.shopping_items || [],
         raw_text: recipeOverride.raw_text || '',
-      }
+      }, lang)
     : null;
 
   const recipe = savedRecipe || baseRecipe;
@@ -2501,18 +3087,9 @@ function RecipeModal({ L, lang, dish, onClose, activeProfile, recipeOverride, on
       }
 
       if (data.recipe) {
-        setAiRecipe(data.recipe);
+        setAiRecipe(normalizeAIRecipeForDisplay(data.recipe, lang));
       } else if (data.result) {
-        setAiRecipe({
-          title: lang === 'es' ? 'Receta mejorada con IA' : 'AI improved recipe',
-          ingredients: [],
-          utensils: [],
-          steps: String(data.result).split('\\n').filter(Boolean),
-          tips: [],
-          diet_notes: '',
-          shopping_items: [],
-          raw_text: String(data.result),
-        });
+        setAiRecipe(normalizeAIRecipeForDisplay(String(data.result), lang));
       } else {
         setAiError(data.error || (lang === 'es' ? 'La IA respondió vacío.' : 'AI returned empty.'));
       }
