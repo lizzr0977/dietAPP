@@ -1,0 +1,40 @@
+DIETAPP - PASOS FACILES
+
+YA HICISTE EL PASO 1:
+Pegaste el codigo SQL en Supabase.
+
+AHORA SOLO FALTA PUBLICAR EN VERCEL.
+
+OPCION MAS FACIL CON GITHUB:
+1. Descomprime este ZIP.
+2. Entra a github.com y crea una cuenta si no tienes.
+3. Crea un repositorio nuevo llamado dietapp.
+4. Sube TODOS los archivos y carpetas de esta carpeta.
+5. Entra a vercel.com.
+6. Inicia sesion.
+7. Presiona Add New Project.
+8. Conecta tu GitHub.
+9. Escoge el repositorio dietapp.
+10. Presiona Deploy.
+
+IMPORTANTE:
+La app ya trae puesta tu URL publica de Supabase y tu anon key.
+
+PARA QUE FUNCIONE LA IA DE ANALIZAR PRODUCTOS:
+En Vercel tienes que agregar una variable:
+OPENAI_API_KEY = tu llave de OpenAI
+
+Si no la pones, la app abre y funciona, pero el analisis de productos con IA dira que falta OPENAI_API_KEY.
+
+DESPUES DE PUBLICAR:
+1. Vercel te dara un link tipo https://dietapp-xxxxx.vercel.app
+2. Abre ese link en Safari de iPhone.
+3. Toca Compartir.
+4. Toca Agregar a pantalla de inicio.
+
+LOGIN:
+Usa tu correo. Te llegara un magic link.
+El primer correo crea DietApp Casa automaticamente.
+
+NOTA:
+Las fotos de platillos son placeholders limpios con fondo blanco. Despues se pueden cambiar por fotos reales generadas.
