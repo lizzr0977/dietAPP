@@ -847,7 +847,7 @@ export default function Home() {
           day: dayEs,
           date: dateISO,
           time: times[j] || times[0],
-          slot: `${L.meal || 'Comida'} ${j + 1}`,
+          slot: `${lang === 'es' ? 'Comida' : 'Meal'} ${j + 1}`,
           workMeal: works,
           dishId: selected.id,
         });
