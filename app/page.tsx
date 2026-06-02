@@ -584,6 +584,219 @@ function shiftDateByIndex(startISO: string, index: number) {
   return datePlus(startISO, index);
 }
 
+
+function hasAny(text: string, words: string[]) {
+  const lower = text.toLowerCase();
+  return words.some((w) => lower.includes(w.toLowerCase()));
+}
+
+function dishAllText(dish: any) {
+  return [
+    dish?.name_es || '',
+    dish?.name_en || '',
+    ...((dish?.ingredients_es || []) as string[]),
+    ...((dish?.ingredients_en || []) as string[]),
+  ].join(' ').toLowerCase();
+}
+
+function buildRealRecipe(dish: any, lang: Lang) {
+  const text = dishAllText(dish);
+  const name = dishName(dish, lang);
+  const isCold = !!dish.good_cold;
+  const isOven = hasAny(text, ['horno', 'baked', 'muffins', 'cazuela', 'costillas', 'rostizado', 'camote']);
+  const isSoup = hasAny(text, ['sopa', 'caldo', 'broth', 'soup', 'lentejas tipo', 'curry']);
+  const hasEgg = hasAny(text, ['huevo', 'huevos', 'egg', 'eggs']);
+  const hasBeef = hasAny(text, ['res', 'bistec', 'carne molida', 'carne asada', 'beef', 'steak', 'ground beef']);
+  const hasChicken = hasAny(text, ['pollo', 'chicken', 'pavo', 'turkey']);
+  const hasPork = hasAny(text, ['cerdo', 'chuleta', 'tocino', 'chorizo', 'panceta', 'pork', 'bacon', 'sausage']);
+  const hasFish = hasAny(text, ['salmón', 'atun', 'atún', 'tilapia', 'bacalao', 'sardina', 'camarones', 'salmon', 'tuna', 'shrimp', 'cod', 'fish']);
+  const hasTofu = hasAny(text, ['tofu']);
+  const hasTempeh = hasAny(text, ['tempeh']);
+  const hasBeans = hasAny(text, ['frijol', 'frijoles', 'beans', 'garbanzos', 'chickpeas']);
+  const hasLentils = hasAny(text, ['lenteja', 'lentejas', 'lentil', 'lentils']);
+  const hasRice = hasAny(text, ['arroz', 'rice', 'quinoa', 'pasta', 'avena', 'oats']);
+  const hasCheese = hasAny(text, ['queso', 'cheese', 'cottage', 'yogurt', 'yogur']);
+  const hasTortilla = hasAny(text, ['tortilla', 'tortillas', 'wrap', 'burrito', 'taco', 'tacos', 'quesadilla']);
+  const hasVeg = hasAny(text, ['verduras', 'espinaca', 'pepino', 'jitomate', 'nopales', 'champiñones', 'vegetables', 'spinach', 'cucumber', 'tomato', 'mushroom']);
+
+  const es: string[] = [];
+  const en: string[] = [];
+  const tipsEs: string[] = [];
+  const tipsEn: string[] = [];
+
+  if (isCold) {
+    es.push(`Coloca todos los ingredientes de ${name} sobre la mesa antes de empezar.`);
+    en.push(`Place all ingredients for ${name} on the counter before starting.`);
+    es.push('Si lleva huevo cocido, pon primero los huevos en agua hirviendo durante 10 a 12 minutos; mientras se cuecen, prepara el resto.');
+    en.push('If it uses boiled eggs, boil them first for 10 to 12 minutes; while they cook, prepare the rest.');
+    if (hasBeans || hasLentils) {
+      es.push('Enjuaga y escurre los frijoles, garbanzos o lentejas para quitar exceso de líquido.');
+      en.push('Rinse and drain beans, chickpeas or lentils to remove extra liquid.');
+    }
+    if (hasCheese) {
+      es.push('Agrega yogurt, cottage o queso al bowl y mantenlo frío hasta el momento de comer.');
+      en.push('Add yogurt, cottage cheese or cheese to the bowl and keep it cold until eating.');
+    }
+    if (hasVeg) {
+      es.push('Pica las verduras en cubos pequeños para que sea más fácil comerlo en el trabajo.');
+      en.push('Chop vegetables into small pieces so it is easier to eat at work.');
+    }
+    es.push('Mezcla solo lo necesario. Si lleva limón, salsa o aderezo, guárdalo aparte y agrégalo al comer.');
+    en.push('Mix only what is needed. If it has lemon, salsa or dressing, pack it separately and add it when eating.');
+    es.push('Guarda en tupper frío. Si vas al trabajo, agrega una cuchara o tenedor desde antes.');
+    en.push('Pack cold in a container. If taking to work, add a spoon or fork ahead of time.');
+
+    tipsEs.push('Esta comida sirve cuando no tienes microondas.');
+    tipsEn.push('This meal works when you do not have a microwave.');
+    tipsEs.push('No cierres el tupper con ingredientes calientes; primero enfría huevos o proteínas.');
+    tipsEn.push('Do not close the container with hot ingredients; cool eggs or proteins first.');
+  } else if (isSoup) {
+    es.push(`Empieza ${name} poniendo una olla a fuego medio.`);
+    en.push(`Start ${name} by placing a pot over medium heat.`);
+    if (hasBeef || hasChicken || hasPork) {
+      es.push('Agrega la carne o pollo primero con sal y dórala 3 a 5 minutos para que tome sabor.');
+      en.push('Add the meat or chicken first with salt and brown it for 3 to 5 minutes for flavor.');
+    }
+    if (hasBeans || hasLentils) {
+      es.push('Agrega las lentejas, frijoles o garbanzos ya cocidos; si son de lata, enjuágalos antes.');
+      en.push('Add cooked lentils, beans or chickpeas; if canned, rinse them first.');
+    }
+    es.push('Agrega caldo o agua suficiente para cubrir los ingredientes y deja hervir suave.');
+    en.push('Add enough broth or water to cover the ingredients and let it simmer gently.');
+    if (hasVeg) {
+      es.push('Agrega verduras cuando el caldo ya esté caliente para que no se sobrecocinen.');
+      en.push('Add vegetables once the broth is hot so they do not overcook.');
+    }
+    es.push('Cocina 15 a 25 minutos, moviendo ocasionalmente, hasta que todo esté suave y caliente.');
+    en.push('Cook 15 to 25 minutes, stirring occasionally, until everything is tender and hot.');
+    es.push('Prueba sal al final. Deja reposar 5 minutos antes de cerrar el tupper o termo.');
+    en.push('Adjust salt at the end. Let it rest 5 minutes before closing the container or thermos.');
+
+    tipsEs.push('Mientras hierve, prepara el termo, cuchara y servilletas.');
+    tipsEn.push('While it simmers, prepare the thermos, spoon and napkins.');
+    tipsEs.push('Si lo llevarás al trabajo, usa termo para que no se derrame.');
+    tipsEn.push('If taking it to work, use a thermos to avoid spills.');
+  } else if (isOven) {
+    es.push(`Precalienta el horno o air fryer a 375°F / 190°C para preparar ${name}.`);
+    en.push(`Preheat oven or air fryer to 375°F / 190°C to make ${name}.`);
+    es.push('Seca la proteína o base principal con servilleta para que dore mejor.');
+    en.push('Pat the main protein or base dry with a paper towel so it browns better.');
+    es.push('Sazona con sal y acomoda todo en una sola capa; evita amontonar para que no se cueza con vapor.');
+    en.push('Season with salt and arrange everything in one layer; avoid crowding so it does not steam.');
+    if (hasEgg) {
+      es.push('Si lleva huevo mezclado, bátelo en un bowl aparte y agrégalo cuando el molde o mezcla esté listo.');
+      en.push('If it uses beaten eggs, beat them separately and add when the baking dish or mixture is ready.');
+    }
+    es.push('Hornea de 18 a 35 minutos según el grosor, volteando a la mitad si son piezas de carne o pollo.');
+    en.push('Bake 18 to 35 minutes depending on thickness, flipping halfway for meat or chicken pieces.');
+    es.push('Déjalo reposar 5 minutos antes de cortar para que no pierda jugo.');
+    en.push('Let it rest 5 minutes before cutting so it does not lose juices.');
+    es.push('Si es para meal prep, divide porciones antes de guardar.');
+    en.push('If meal prepping, divide portions before storing.');
+
+    tipsEs.push('Mientras está en el horno, lava tabla/cuchillo y prepara tu tupper.');
+    tipsEn.push('While it bakes, wash board/knife and prepare your container.');
+    tipsEs.push('No cierres el tupper hasta que deje de salir vapor fuerte.');
+    tipsEn.push('Do not close the container until strong steam is gone.');
+  } else {
+    es.push(`Para ${name}, empieza calentando un sartén a fuego medio durante 1 a 2 minutos.`);
+    en.push(`For ${name}, start by heating a pan over medium heat for 1 to 2 minutes.`);
+
+    if (hasEgg && !hasBeef && !hasChicken && !hasPork && !hasFish && !hasTofu && !hasTempeh) {
+      es.push('Rompe los huevos en un bowl, agrega sal y bátelos 20 a 30 segundos.');
+      en.push('Crack eggs into a bowl, add salt and beat for 20 to 30 seconds.');
+      es.push('Agrega mantequilla o aceite al sartén y baja un poco el fuego para que el huevo no se queme.');
+      en.push('Add butter or oil to the pan and lower the heat slightly so the eggs do not burn.');
+      if (hasVeg) {
+        es.push('Cocina primero las verduras 2 a 3 minutos; después agrega el huevo batido.');
+        en.push('Cook vegetables first for 2 to 3 minutes; then add beaten eggs.');
+      }
+      es.push('Cocina moviendo suavemente hasta que el huevo esté firme pero no seco.');
+      en.push('Cook while stirring gently until eggs are set but not dry.');
+      if (hasCheese) {
+        es.push('Agrega el queso al final y tapa 1 minuto para que se derrita.');
+        en.push('Add cheese at the end and cover 1 minute to melt.');
+      }
+    } else {
+      if (hasBeef) {
+        es.push('Seca la carne con servilleta y agrega sal antes de ponerla al sartén.');
+        en.push('Pat beef dry with a paper towel and salt it before placing it in the pan.');
+        es.push('Cocina la carne 3 a 5 minutos por lado si es bistec, o 8 a 10 minutos si es molida, moviendo cada 2 minutos.');
+        en.push('Cook beef 3 to 5 minutes per side if steak, or 8 to 10 minutes if ground, stirring every 2 minutes.');
+      }
+      if (hasChicken) {
+        es.push('Corta el pollo en tiras medianas para que se cocine parejo y agrega sal.');
+        en.push('Cut chicken into medium strips so it cooks evenly and add salt.');
+        es.push('Cocina el pollo 5 a 7 minutos por lado; si es grueso, tapa el sartén 3 minutos extra.');
+        en.push('Cook chicken 5 to 7 minutes per side; if thick, cover the pan for 3 extra minutes.');
+      }
+      if (hasPork) {
+        es.push('Coloca el cerdo, tocino o chorizo en sartén caliente y cocina hasta que suelte grasa y se dore.');
+        en.push('Place pork, bacon or chorizo in the hot pan and cook until it releases fat and browns.');
+        es.push('Si suelta demasiada grasa, retira un poco antes de agregar otros ingredientes.');
+        en.push('If it releases too much fat, remove some before adding other ingredients.');
+      }
+      if (hasFish) {
+        es.push('Seca el pescado o marisco con servilleta, agrega sal y cocínalo con mantequilla o aceite.');
+        en.push('Pat fish or seafood dry, add salt and cook it with butter or oil.');
+        es.push('Cocina pescado 3 a 5 minutos por lado; camarones 2 a 3 minutos por lado hasta que cambien de color.');
+        en.push('Cook fish 3 to 5 minutes per side; shrimp 2 to 3 minutes per side until color changes.');
+      }
+      if (hasTofu || hasTempeh) {
+        es.push('Presiona el tofu o tempeh con servilleta para quitar humedad y córtalo en cubos o tiras.');
+        en.push('Press tofu or tempeh with a paper towel to remove moisture and cut into cubes or strips.');
+        es.push('Dóralo 8 a 10 minutos, moviendo cada 2 minutos para que agarre textura.');
+        en.push('Brown it for 8 to 10 minutes, stirring every 2 minutes so it gets texture.');
+      }
+      if (hasBeans || hasLentils) {
+        es.push('Calienta frijoles, garbanzos o lentejas aparte o a un lado del sartén para que no se deshagan demasiado.');
+        en.push('Heat beans, chickpeas or lentils separately or on one side of the pan so they do not break down too much.');
+      }
+      if (hasRice) {
+        es.push('Si lleva arroz, quinoa, pasta o avena, úsala ya cocida y caliéntala al final para ahorrar tiempo.');
+        en.push('If it uses rice, quinoa, pasta or oats, use it cooked and heat it at the end to save time.');
+      }
+      if (hasVeg) {
+        es.push('Agrega verduras después de la proteína y cocina 3 a 5 minutos, solo hasta que se suavicen.');
+        en.push('Add vegetables after the protein and cook 3 to 5 minutes, just until softened.');
+      }
+      if (hasEgg) {
+        es.push('Si lleva huevo, cocínalo al final en el mismo sartén o hiérvelo aparte 10 a 12 minutos mientras se cocina la proteína.');
+        en.push('If it uses egg, cook it at the end in the same pan or boil it separately 10 to 12 minutes while the protein cooks.');
+      }
+      if (hasCheese) {
+        es.push('Agrega queso al final, baja el fuego y tapa 1 minuto para que se derrita sin quemarse.');
+        en.push('Add cheese at the end, lower the heat and cover 1 minute so it melts without burning.');
+      }
+      if (hasTortilla) {
+        es.push('Calienta tortillas o wrap al final 20 a 30 segundos por lado para que no se rompan al doblarlas.');
+        en.push('Warm tortillas or wrap at the end 20 to 30 seconds per side so they do not tear when folding.');
+      }
+    }
+
+    es.push('Prueba sal y ajusta antes de servir.');
+    en.push('Taste and adjust salt before serving.');
+    es.push('Si lo llevarás al trabajo, pasa la comida al tupper y déjala enfriar 5 a 8 minutos antes de cerrarla.');
+    en.push('If taking it to work, transfer to a container and let it cool 5 to 8 minutes before closing.');
+
+    tipsEs.push('Empieza siempre por lo que tarda más: carne, pollo, tofu, lentejas o arroz.');
+    tipsEn.push('Always start with what takes longest: beef, chicken, tofu, lentils or rice.');
+    tipsEs.push('Mientras se cocina la proteína, prepara el tupper, cubiertos y botella de agua.');
+    tipsEn.push('While the protein cooks, prepare your container, utensils and water bottle.');
+    tipsEs.push('Si vas a recalentar, deja salsas, limón o ingredientes frescos aparte.');
+    tipsEn.push('If reheating, keep sauces, lemon or fresh ingredients separate.');
+  }
+
+  const ingredients = (lang === 'es' ? dish.ingredients_es : dish.ingredients_en) || [];
+  const utensils = (lang === 'es' ? dish.utensils_es : dish.utensils_en) || [];
+  return {
+    ingredients,
+    utensils,
+    steps: lang === 'es' ? es : en,
+    tips: lang === 'es' ? tipsEs : tipsEn,
+  };
+}
+
 export default function Home() {
   const [session, setSession] = useState<any>(null);
   const [showSplash, setShowSplash] = useState(true);
@@ -1994,24 +2207,42 @@ function FormModal({ title, L, children, onClose, onSave }: any) {
 }
 
 function RecipeModal({ L, lang, dish, onClose }: any) {
+  const recipe = buildRealRecipe(dish, lang);
+
   return (
     <div className="modal" onClick={onClose}>
       <div className="card modalbox" onClick={(e) => e.stopPropagation()}>
         <button className="btn secondary small" onClick={onClose}>{L.closeRecipe}</button>
+
         <img className="recipe-hero" src={dish.image_url || '/dishes/placeholder-meal.jpg'} alt={dishName(dish, lang)} />
         <p className="muted">{L.recipeImageNote}</p>
+
         <h1>{dishName(dish, lang)}</h1>
         <span className="badge">{dish.calories} cal</span>
         <span className="badge blue">{dish.protein_g}g</span>
         <span className="badge orange">{dish.total_minutes} min</span>
+
         <h2>{L.ingredients}</h2>
-        <ul>{((lang === 'es' ? dish.ingredients_es : dish.ingredients_en) || []).map((i: string) => <li key={i}>{i}</li>)}</ul>
+        <ul>
+          {recipe.ingredients.map((i: string) => <li key={i}>{i}</li>)}
+        </ul>
+
         <h2>{L.utensils}</h2>
-        <ul>{((lang === 'es' ? dish.utensils_es : dish.utensils_en) || []).map((i: string) => <li key={i}>{i}</li>)}</ul>
+        <ul>
+          {recipe.utensils.map((i: string) => <li key={i}>{i}</li>)}
+        </ul>
+
         <h2>{L.stepByStep}</h2>
-        <ol>{((lang === 'es' ? dish.steps_es : dish.steps_en) || []).map((i: string) => <li key={i} style={{ marginBottom: 10 }}>{i}</li>)}</ol>
+        <ol>
+          {recipe.steps.map((i: string, idx: number) => (
+            <li key={`${idx}-${i}`} style={{ marginBottom: 10 }}>{i}</li>
+          ))}
+        </ol>
+
         <h2>{L.tips}</h2>
-        <ul>{((lang === 'es' ? dish.tips_es : dish.tips_en) || []).map((i: string) => <li key={i}>{i}</li>)}</ul>
+        <ul>
+          {recipe.tips.map((i: string, idx: number) => <li key={`${idx}-${i}`}>{i}</li>)}
+        </ul>
       </div>
     </div>
   );
