@@ -1617,6 +1617,27 @@ export default function Home() {
 
   if (!session) {
     return (
+      <main className="shell">
+        <div className="card">{L.loading}</div>
+      </main>
+    );
+  }
+
+  return (
+    <>
+      {toast && <div className="toast">{toast}</div>}
+
+      <header className="header">
+        <div className="header-inner">
+          <div className="logo">DietApp</div>
+
+          <div className="quick-controls top-actions">
+            <Switch labelLeft="ES" labelRight="EN" checked={lang === 'en'} onChange={toggleLanguage} />
+            <Switch labelLeft="kg" labelRight="lb" checked={unitMode === 'lb'} onChange={toggleUnitMode} />
+          </div>
+        </div>
+      </header>
+
       <div className="profile-bar-wrap">
         <div className="profile-bar">
           <div className="profile-bar-title">
@@ -1638,27 +1659,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      <main className="shell">
-        <div className="card">{L.loading}</div>
-      </main>
-    );
-  }
-
-  return (
-    <>
-      {toast && <div className="toast">{toast}</div>}
-
-      <header className="header">
-        <div className="header-inner">
-          <div className="logo">DietApp</div>
-
-          <div className="quick-controls top-actions">
-            <Switch labelLeft="ES" labelRight="EN" checked={lang === 'en'} onChange={toggleLanguage} />
-            <Switch labelLeft="kg" labelRight="lb" checked={unitMode === 'lb'} onChange={toggleUnitMode} />
-          </div>
-        </div>
-      </header>
 
       <main className="shell">
         {lastSwap && (
